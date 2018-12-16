@@ -1,0 +1,239 @@
+﻿@model IEnumerable<Task2.Models.UserList>
+
+@{
+    ViewData["Title"] = "Table";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+  
+    <style>
+
+        .btn-toolbar {
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: auto;
+            left: auto;
+            margin: auto;
+            background: #808080;
+            font-size: medium;
+            font-weight: bold;
+            border-bottom-width: medium;
+        }
+
+        .btn {
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        .bg-danger {
+            background: #808080;
+        }
+
+        .table {
+            border-style: double;
+            border-color: #808080;
+            margin-top: 3%;
+        }
+
+        .btn-xs {
+            background: #808080;
+            font-size: small;
+        }
+
+        thead {
+            background-color: #808080;
+        }
+
+        footer {
+            margin-top: 55%;
+            text-align: right
+        }
+
+        .btn-primary {
+            background: #808080;
+            border-color: #808080;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <meta charset="utf-8">
+
+    <div class="bg-danger">
+
+        <div class="btn-group" role="toolbar">
+            <button type="button" class="btn btn-toolbar" onclick="Locking()">Block</button>
+            <button type="button" class="btn btn-toolbar" onclick="Unlocking()">Unblock</button>
+            <button type="button" class="btn btn-toolbar" onclick="Delete()">Delete</button>
+        </div>
+
+    </div>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Auth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Register)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    Access permissions
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        <input class="checkbox" type="checkbox" name="statuses" value="@item.ID">
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Auth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Register)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Status)*@
+                        @if (item.Status == true)
+                        {
+                            <p>Active</p>
+                        }
+                        @if (item.Status == false)
+                        {
+                            <p>Blocked</p>
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-xs btn-primary" asp-action="Edit" asp-route-userid="@item.ID">Access permissions</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+    <a class="btn btn-primary" asp-area="" asp-controller="Roles" asp-action="RolesList">Roles List</a>
+
+</body>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function Locking()
+    {
+        $.ajax({
+            type: 'POST',
+            url: "@Url.Action("LockUser", "Account")",
+            data: { arr: getCheckedCheckBoxes() },
+            success: function (data) {
+                if (data == true) {
+                    location.reload();
+                }
+                else {
+
+                }
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    }
+
+    function Unlocking()
+    {
+        $.ajax(
+            {
+                type: 'POST',
+                url: "@Url.Action("UnLockUser", "Account")",
+                data: { arr: getCheckedCheckBoxes() },
+                success: function (data) {
+                    if (data == true) {
+                        location.reload();
+                    }
+                    else {
+
+                    }
+                },
+                error: function () {
+                    alert("Error");
+                }
+            }
+        );
+    }
+
+    function Delete()
+    {
+        $.ajax(
+            {
+                type: 'POST',
+                url: "@Url.Action("DeleteUser", "Account")",
+                data: { arr: getCheckedCheckBoxes() },
+                success: function (data) {
+                    if (data == true) {
+                        location.reload();
+                    }
+                    else {
+
+                    }
+                },
+                error: function () {
+                    alert("Error");
+                }
+            }
+        );
+    }
+
+    function getCheckedCheckBoxes()
+    {
+        var checkboxes = document.getElementsByClassName('checkbox');
+        var checkboxesChecked = [];
+        for (var index = 0; index < checkboxes.length; index++)
+        {
+            if (checkboxes[index].checked)
+            {
+            checkboxesChecked.push(checkboxes[index].value);
+            }
+        }
+        return checkboxesChecked;
+    }
+
+</script>

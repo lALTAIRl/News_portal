@@ -1,0 +1,12 @@
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\bin\Debug\netcoreapp2.0\reg.deps.json
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\bin\Debug\netcoreapp2.0\reg.runtimeconfig.json
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\bin\Debug\netcoreapp2.0\reg.runtimeconfig.dev.json
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\bin\Debug\netcoreapp2.0\reg.dll
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\bin\Debug\netcoreapp2.0\reg.pdb
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\obj\Debug\netcoreapp2.0\reg.csprojAssemblyReference.cache
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\obj\Debug\netcoreapp2.0\reg.csproj.CoreCompileInputs.cache
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\obj\Debug\netcoreapp2.0\reg.AssemblyInfoInputs.cache
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\obj\Debug\netcoreapp2.0\reg.AssemblyInfo.cs
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\obj\Debug\netcoreapp2.0\reg.dll
+C:\Users\ALTAIR\Desktop\ITransition\Task2.RA\Task2\Task2\obj\Debug\netcoreapp2.0\reg.pdb

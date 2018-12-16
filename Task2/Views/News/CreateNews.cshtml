@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "CreateNews";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+
+    <style>
+
+        .form-group {
+            margin-top: 2%;
+        }
+    </style>
+
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+
+</head>
+
+
+
+<form method="post" class="form-horizontal">
+    <div>
+          
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Heading</label>
+        <div class="col-sm-3">
+            <input class="form-control" id="caption" name="caption" placeholder="Heading">
+        </div>
+    </div>
+  
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Text</label>
+        <div class="col-sm-8">
+            <textarea class="form-control" rows="12" id="text" name="text" placeholder="Text"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class=" col-sm-offset-2">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+
+
+    <markdown>
+        </markdown>
+</form>
+
