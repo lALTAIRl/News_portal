@@ -71,18 +71,33 @@ namespace Task2.Controllers
             return RedirectToAction("NewsCollection");
         }
 
-        //public async Task<IActionResult> EditNewsAsync(int id)
+        //public IActionResult EditNews(int id)
         //{
-        //    var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
-        //    return View(new EditNewsViewModel(id));
+        //    News post=db.NewsCollection.FirstOrDefault(m => m.Id == id);
+        //    return View(new ViewNewsViewModel(post));
+        //}
+
+        //public IActionResult ViewNews(int id)
+        //{
+        //    News post = db.NewsCollection.FirstOrDefault(m => m.Id == id);
+        //    return View(new ViewNewsViewModel(post));
         //}
 
 
-        public IActionResult EditNews(int id)
+
+
+
+        public IActionResult ViewNews(int id)
         {
-            //var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
-            return View(new EditNewsViewModel());
+            News post = db.NewsCollection.FirstOrDefault(m => m.Id == id);
+            return View(post);
         }
+
+
+
+
+
+
 
         public async Task<IActionResult> ApplyNewsEditing(int id)
         {
@@ -91,22 +106,10 @@ namespace Task2.Controllers
             return RedirectToAction("NewsCollection");
         }
 
-        public IActionResult NewsCollection(SortState sortOrder = SortState.DateOfCreatingDescendingly)
+        public IActionResult NewsCollection()
         {
             IQueryable<News> news = db.NewsCollection;
-            ViewData["DateOfCreating"] = sortOrder == SortState.DateOfCreatingAscending ?
-                SortState.DateOfCreatingDescendingly : SortState.DateOfCreatingAscending;
-
-            switch(sortOrder)
-            {
-                case SortState.DateOfCreatingDescendingly:
-                    news = news.OrderByDescending(s => s.DateOfCreating);
-                    break;
-                default:
-                    news = news.OrderBy(s => s.DateOfCreating);
-                    break;
-            }
-
+            news = news.OrderByDescending(s => s.DateOfCreating);
             return View(news);
         }
 
