@@ -12,7 +12,6 @@ namespace Task2.Models
        
         public DateTime Register { get; set; }
         public DateTime Auth { get; set; }
-        //public IdentityRole Role { get; set; }
 
     }   
 }

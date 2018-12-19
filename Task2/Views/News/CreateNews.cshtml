@@ -13,7 +13,9 @@
     </style>
 
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+
+
 
 </head>
 
@@ -21,7 +23,7 @@
 
 <form method="post" class="form-horizontal">
     <div>
-          
+
     </div>
 
     <div class="form-group">
@@ -30,7 +32,7 @@
             <input class="form-control" id="caption" name="caption" placeholder="Heading">
         </div>
     </div>
-  
+
     <div class="form-group">
         <label class="col-sm-2 control-label">Text</label>
         <div class="col-sm-8">
@@ -39,13 +41,170 @@
     </div>
 
     <div class="form-group">
+        <label class="col-sm-2 control-label">ImageURL</label>
+        <div class="col-sm-3">
+            <input class="form-control" id="imageurl" name="imageurl" placeholder="ImageURL">
+        </div>
+    </div>
+
+    @*<div id="drop-area">
+        @*<form class="my-form">
+            <p>Загрузите изображения с помощью диалога выбора файлов или перетащив нужные изображения в выделенную область</p>
+            <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+            <label class="button" for="fileElem">Выбрать изображения</label>
+        @*</form>
+        <progress id="progress-bar" max=100 value=0></progress>
+        <div id="gallery"></div>
+    </div>*@
+
+    <div class="form-group">
         <div class=" col-sm-offset-2">
             <button type="submit" class="btn btn-primary">Create</button>
         </div>
     </div>
 
-
-    <markdown>
-        </markdown>
 </form>
+
+
+
+
+
+@*
+
+
+
+<style>
+    #drop-area {
+        border: 2px dashed #ccc;
+        border-radius: 20px;
+        width: 480px;
+        font-family: sans-serif;
+        margin: 100px auto;
+        padding: 20px;
+    }
+
+        #drop-area.highlight {
+            border-color: purple;
+        }
+
+    p {
+        margin-top: 0;
+    }
+
+    .my-form {
+        margin-bottom: 10px;
+    }
+
+    #gallery {
+        margin-top: 10px;
+    }
+
+        #gallery img {
+            width: 150px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+    .button {
+        display: inline-block;
+        padding: 10px;
+        background: #ccc;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+        .button:hover {
+            background: #ddd;
+        }
+
+    #fileElem {
+        display: none;
+    }
+ </style>
+
+
+
+<script>
+
+    let filesDone = 0
+    let filesToDo = 0
+    let progressBar = document.getElementById('progress-bar')
+    let dropArea = document.getElementById('drop-area')
+        
+    ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false)
+    })
+    function preventDefaults(e) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+
+    ;['dragenter', 'dragover'].forEach(eventName => {
+        dropArea.addEventListener(eventName, highlight, false)
+    })
+        ;['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, unhighlight, false)
+        })
+    function highlight(e) {
+        dropArea.classList.add('highlight')
+    }
+    function unhighlight(e) {
+        dropArea.classList.remove('highlight')
+    }
+
+
+    dropArea.addEventListener('drop', handleDrop, false)
+    function handleDrop(e) {
+        let dt = e.dataTransfer
+        let files = dt.files
+        handleFiles(files)
+    }
+
+
+    function handleFiles(files) {
+        files = [...files]
+        initializeProgress(files.length) // <- Добавили эту строку
+        files.forEach(uploadFile)
+        files.forEach(previewFile)
+    }
+
+    function uploadFile(file) {
+        let url = 'ВАШ URL ДЛЯ ЗАГРУЗКИ ФАЙЛОВ'
+        let formData = new FormData()
+        formData.append('file', file)
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(progressDone) // <- Добавим вызов `progressDone` здесь
+            .catch(() => { /* Ошибка. Сообщаем пользователю */ })
+    }
+
+
+    function previewFile(file) {
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = function () {
+            let img = document.createElement('img')
+            img.src = reader.result
+            document.getElementById('gallery').appendChild(img)
+        }
+    }
+
+    function initializeProgress(numfiles) {
+        progressBar.value = 0
+        filesDone = 0
+        filesToDo = numfiles
+    }
+    function progressDone() {
+        filesDone++
+        progressBar.value = filesDone / filesToDo * 100
+    }
+
+</script>
+
+
+*@
 

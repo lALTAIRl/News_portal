@@ -11,9 +11,10 @@ using Task2.Data;
 namespace Task2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181218132212_pictures")]
+    partial class pictures
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -190,9 +191,7 @@ namespace Task2.Data.Migrations
 
                     b.Property<string>("Caption");
 
-                    b.Property<DateTime>("DateOfCreating");
-
-                    b.Property<string>("ImageURL");
+                    b.Property<string>("Image");
 
                     b.Property<string>("Text");
 

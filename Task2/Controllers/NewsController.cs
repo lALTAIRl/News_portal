@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using System.Text.Encodings.Web;
 using Task2.Models;
+using Task2.ViewModels;
+using Microsoft.AspNetCore.Http;
+using System.Globalization;
 
 
 namespace Task2.Controllers
@@ -49,9 +52,10 @@ namespace Task2.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateNews(string caption, string text)
+        public IActionResult CreateNews(string caption, string text, string imageurl, DateTime dateofcreating)
         {
-            News news = new News(caption,  text);
+            News news = new News(caption,  text, imageurl, dateofcreating);
+            
             db.NewsCollection.Add(news);
             db.SaveChanges();
             return RedirectToAction("NewsCollection");
@@ -59,7 +63,7 @@ namespace Task2.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteNews(int id)
         {
             var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
             db.NewsCollection.Remove(news);
@@ -67,11 +71,42 @@ namespace Task2.Controllers
             return RedirectToAction("NewsCollection");
         }
 
+        //public async Task<IActionResult> EditNewsAsync(int id)
+        //{
+        //    var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+        //    return View(new EditNewsViewModel(id));
+        //}
 
 
-        public IActionResult NewsCollection()
+        public IActionResult EditNews(int id)
         {
-            var news = db.NewsCollection;
+            //var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            return View(new EditNewsViewModel());
+        }
+
+        public async Task<IActionResult> ApplyNewsEditing(int id)
+        {
+            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            db.SaveChanges();
+            return RedirectToAction("NewsCollection");
+        }
+
+        public IActionResult NewsCollection(SortState sortOrder = SortState.DateOfCreatingDescendingly)
+        {
+            IQueryable<News> news = db.NewsCollection;
+            ViewData["DateOfCreating"] = sortOrder == SortState.DateOfCreatingAscending ?
+                SortState.DateOfCreatingDescendingly : SortState.DateOfCreatingAscending;
+
+            switch(sortOrder)
+            {
+                case SortState.DateOfCreatingDescendingly:
+                    news = news.OrderByDescending(s => s.DateOfCreating);
+                    break;
+                default:
+                    news = news.OrderBy(s => s.DateOfCreating);
+                    break;
+            }
+
             return View(news);
         }
 

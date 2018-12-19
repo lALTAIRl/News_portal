@@ -1,18 +1,81 @@
 ﻿@model IEnumerable<Task2.Models.News>
 
-<h2>News Collection</h2>
+<h2 align="center">News Collection</h2>
+
+<style>
+    body {
+        background-color: #edeef0;
+    }
+    table{
+        margin-top:10%;
+        background-color:white;
+    }
+    .control-label{
+        align-self:center;
+    }
+    tr{
+        border-style:hidden;
+    }
+</style>
+
+
+@foreach (var news in Model)
+{
+   
 <table class="table">
-    @foreach (var news in Model)
+    <tr>
+        <td align="center">
+            <div class="control-label">
+                @news.Caption
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center">
+            @*<img src="~/images/pic1.png">*@
+            <img src="@news.ImageURL">
+           
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+
+            @Html.Raw(news.Text)
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <div class="control-label">
+                <a asp-action="NewsCollection" asp-route-sortOrder="@ViewBag.DateOfCreatingSort">Created: @news.DateOfCreating</a>
+                
+            </div>
+        </td>
+    </tr>
+
+    @if (User.IsInRole("admin"))
     {
         <tr>
-            <td>@news.Caption</td>
             <td>
-                <form asp-action="Delete" asp-route-id="@news.Id" method="post">
-                    <button type="submit" class="btn btn-sm btn-danger">
-                        Delete
-                    </button>
-                </form>
+                <div class=" btn-toolbar">
+                    <form asp-action="EditNews" asp-route-id="@news.Id" method="post">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            Edit
+                        </button>
+                    </form>
+
+                    <form asp-action="DeleteNews" asp-route-id="@news.Id" method="post">
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            Delete
+                        </button>
+                    </form>
+                </div>
             </td>
         </tr>
     }
 </table>
+ }
+    

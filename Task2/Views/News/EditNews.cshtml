@@ -1,0 +1,45 @@
+﻿@model Task2.ViewModels.EditNewsViewModel
+@{
+    ViewData["Title"] = "EditNews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    input[type="radio"] {
+        display: none;
+    }
+
+    .form-group{
+        margin-top: 2%;
+    }
+
+</style>
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector: 'textarea' });</script>
+
+
+
+<form method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Heading</label>
+        <div class="col-sm-3">
+            <input class="form-control" id="caption" name="caption" value="@Model.Caption">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Text</label>
+        <div class="col-sm-8">
+            <textarea class="form-control" rows="8" id="text" name="text">@Model.Text</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class=" col-sm-offset-2">
+            <button asp-action="ApplyNewsEditing" asp-route-id="@Model.Id" type="submit" class="btn btn-primary">Edit</button>
+        </div>
+    </div>
+
+</form>

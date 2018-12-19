@@ -12,7 +12,8 @@ namespace Task2.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            //return View();
+            return RedirectPermanent("/News/NewsCollection");
         }
 
         public IActionResult Error()
