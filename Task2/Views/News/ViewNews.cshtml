@@ -9,27 +9,55 @@
         background-color: #edeef0;
     }
 
-    .panel {
+    table {
         background-color: white;
+    }
+
+    tr {
+        border-style: hidden;
+        width: auto;
+    }
+
+    p {
+        padding-left:5%;
+        padding-right:5%;
     }
 </style>
 
-<div class="panel">
-    <h2 class="text-center">@Model.Caption</h2>
 
-    <div class="text-center">
-        <img src="@Model.ImageURL">
-    </div>
 
-    <p>@Html.Raw(Model.Text)</p>
 
+<table class="table">
+
+    <tr>
+        <td align="center">
+            <div class="control-label">
+                <h2 class="text-center">@Model.Caption</h2>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center">
+            <img src="@Model.ImageURL">
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>@Html.Raw(Model.Text)</p>
+        </td>
+    </tr>
     @if (User.IsInRole("admin"))
     {
-        <form asp-action="DeleteNews" asp-route-id="@Model.Id" method="post">
-            <button type="submit" class="btn btn-sm btn-danger">
-                Delete
-            </button>
-        </form>
+        <tr>
+            <td>
+                <form asp-action="DeleteNews" asp-route-id="@Model.Id" method="post">
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
     }
-
-</div>
+    </table>
