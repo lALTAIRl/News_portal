@@ -100,7 +100,6 @@ namespace Knowledge_pantry.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(string userId, List<string> roles)
         {
-            // получаем пользователя
             ApplicationUser user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
