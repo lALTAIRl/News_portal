@@ -1,5 +1,6 @@
 ﻿@*@model IEnumerable<Task2.Models.News>*@
 @model Task2.ViewModels.PageIndexViewModel
+@addTagHelper "*, Task2"
 
 <h2 align="center">News Collection</h2>
 
@@ -104,22 +105,24 @@
         }
     </table>
 }
+<page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
+@*
 @if (Model.PageViewModel.HasPreviousPage)
-{
-    <a asp-action="NewsCollection"
-       asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
-       class="btn btn-default btn">
-        <i class="glyphicon glyphicon-chevron-left"></i>
-        Previous Page
-    </a>
-}
+    {
+        <a asp-action="NewsCollection"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           class="btn btn-default btn">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Previous Page
+        </a>
+    }
 
-@if (Model.PageViewModel.HasNextPage)
-{
-    <a asp-action="NewsCollection"
-       asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
-       class="btn btn-default btn">
-        Next Page
-        <i class="glyphicon glyphicon-chevron-right"></i>
-    </a>
-}
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="NewsCollection"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           class="btn btn-default btn">
+            Next Page
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    }*@
