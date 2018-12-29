@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Task2.Data;
+
 
 namespace Task2.Models
 {
     public class NewsInitializer
     {
-        public static async Task NewsInitializeAsync()
+        public static void Initialize(ApplicationDbContext context)
         {
-            string firstNewsCaption = "test news";
-            string firstNewsText = "<b>first test news<b>";
-            string firstNewsImageUrl = "https://dpchas.com.ua/sites/default/files/u85/22_27.jpg";
-            DateTime firstNewsDateOfCreating = DateTime.Now;
-            bool firstNewsIsPublished = true;
-            DateTime firstNewsDateOfPublishing = DateTime.Now;
-
-            News firstNews = new News
+            if(!context.NewsCollection.Any())
             {
-                Caption = firstNewsCaption,
-                Text = firstNewsText,
-                ImageURL = firstNewsImageUrl,
-                DateOfCreating = firstNewsDateOfCreating,
-                IsPublished = firstNewsIsPublished,
-                DateOfPublishing = firstNewsDateOfPublishing
-            };
-        }
+                context.NewsCollection.Add(
+                    new News
+                    {
+                        Caption = "test news",
+                        Text = "<b>first test news<b>",
+                        ImageURL = "https://dpchas.com.ua/sites/default/files/u85/22_27.jpg",
+                        DateOfCreating = DateTime.Now,
+                        IsPublished = true,
+                        DateOfPublishing = DateTime.Now
+                    }
+                    );
+                context.SaveChanges();
+            }
+        }     
     }
 }

@@ -24,10 +24,8 @@ namespace Task2.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateNews(string caption, string text, string imageUrl, DateTime dateOfCreating, bool isPublished, DateTime dateOfPublishing)
-        {
-            var news = new News(caption,  text, imageUrl, dateOfCreating, isPublished, dateOfPublishing);
-            
+        public IActionResult CreateNews(News news)
+        {            
             db.NewsCollection.Add(news);
             db.SaveChanges();
             return RedirectToAction("NewsCollection");
@@ -39,7 +37,7 @@ namespace Task2.Controllers
             var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
             db.NewsCollection.Remove(news);
             db.SaveChanges();
-            return RedirectToAction("NewsCollection");
+            return RedirectToAction("NewsManagement");
         }
 
         //public IActionResult EditNews(int id)
@@ -58,7 +56,7 @@ namespace Task2.Controllers
         {
             var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
             db.SaveChanges();
-            return RedirectToAction("NewsCollection");
+            return RedirectToAction("NewsManagement");
         }
 
         //public IActionResult NewsCollection()
@@ -95,27 +93,7 @@ namespace Task2.Controllers
             };
             return View(viewModel);
         }
-
-        [HttpPost]
-        public IActionResult CreateFirstNews()
-        {
-            if (db.NewsCollection.FirstOrDefault() == null)
-            {
-                var news = new News
-                {
-                    Caption = "test news",
-                    Text = "<b>first test news<b>",
-                    ImageURL = "https://dpchas.com.ua/sites/default/files/u85/22_27.jpg",
-                    DateOfCreating = DateTime.Now,
-                    IsPublished = true,
-                    DateOfPublishing = DateTime.Now
-                };
-
-                db.NewsCollection.Add(news);
-                db.SaveChanges();
-            }
-            return RedirectToAction("NewsCollection");
-        }
+       
 
     }
 

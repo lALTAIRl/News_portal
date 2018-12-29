@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
 using Task2.Models;
+using Task2.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Task2
@@ -28,6 +29,8 @@ namespace Task2
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await RoleInitializer.InitializeAsync(userManager, rolesManager);
+                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    NewsInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
