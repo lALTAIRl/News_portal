@@ -10,7 +10,7 @@
     }
 
     table {
-        margin-top: 10%;
+        margin-top: 5%;
         background-color: white;
     }
 
@@ -32,11 +32,6 @@
     }
 </style>
 
-@if (User.IsInRole("admin"))
-{
-    <a asp-area="" asp-controller="News" asp-action="CreateNews" class="btn form-control btn-success">Create news</a>
-}
-
 
 @foreach (var news in Model.EnumNews)
 {
@@ -52,60 +47,15 @@
 
         <tr>
             <td align="center">
-                @*<img src="~/images/pic1.png">*@
                 <img src="@news.ImageURL">
-
             </td>
         </tr>
 
-        @*<tr>
-                <td>
-
-                    @Html.Raw(news.Text)
-
-                </td>
-            </tr>*@
-
-        <tr>
-            <td>
-                <div class="control-label">
-                    Created: @news.DateOfCreating
-                </div>
-            </td>
-        </tr>
-
-        @if (User.IsInRole("admin"))
-        {
-            <tr>
-                <td>
-                    <div class=" btn-toolbar">
-
-                        @*<form asp-action="ViewNews" asp-route-id="@news.Id" method="post">
-                                <button type="submit" class="btn btn-sm btn-success">
-                                    View
-                                </button>
-                            </form>
-
-                            <form asp-action="EditNews" asp-route-id="@news.Id" method="post">
-                                <button type="submit" class="btn btn-sm btn-primary">
-                                    Edit
-                                </button>
-                            </form>*@
-
-                        <form asp-action="DeleteNews" asp-route-id="@news.Id" method="post">
-                            <button type="submit" class="btn btn-sm btn-danger">
-                                Delete
-                            </button>
-                        </form>
-
-
-                    </div>
-                </td>
-            </tr>
-        }
     </table>
 }
+
 <page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
+
 @*
 @if (Model.PageViewModel.HasPreviousPage)
     {

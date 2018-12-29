@@ -192,7 +192,11 @@ namespace Task2.Data.Migrations
 
                     b.Property<DateTime>("DateOfCreating");
 
+                    b.Property<DateTime>("DateOfPublishing");
+
                     b.Property<string>("ImageURL");
+
+                    b.Property<bool>("IsPublished");
 
                     b.Property<string>("Text");
 
