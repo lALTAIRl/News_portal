@@ -25,7 +25,8 @@ namespace Task2.Controllers
 
         [HttpPost]
         public IActionResult CreateNews(News news)
-        {            
+        {
+            news.DateOfCreating = DateTime.Now;
             db.NewsCollection.Add(news);
             db.SaveChanges();
             return RedirectToAction("NewsCollection");
@@ -93,7 +94,25 @@ namespace Task2.Controllers
             };
             return View(viewModel);
         }
-       
+
+        [HttpPost]
+        public async Task<IActionResult> PublishNews(int id)
+        {
+            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            news.IsPublished = true;
+            news.DateOfPublishing = DateTime.Now;
+            db.SaveChanges();
+            return RedirectToAction("NewsManagement");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UnpublishNews(int id)
+        {
+            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            news.IsPublished = false;
+            db.SaveChanges();
+            return RedirectToAction("NewsManagement");
+        }
 
     }
 

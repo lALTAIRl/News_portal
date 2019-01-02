@@ -35,23 +35,25 @@
 
 @foreach (var news in Model.EnumNews)
 {
+    @if (news.IsPublished == true)
+    {
+        <table class="table">
+            <tr>
+                <td align="center">
+                    <div class="control-label">
+                        <a asp-action="ViewNews" asp-route-id="@news.Id"><h2>@news.Caption</h2></a>
+                    </div>
+                </td>
+            </tr>
 
-    <table class="table">
-        <tr>
-            <td align="center">
-                <div class="control-label">
-                    <a asp-action="ViewNews" asp-route-id="@news.Id"><h2>@news.Caption</h2></a>
-                </div>
-            </td>
-        </tr>
+            <tr>
+                <td align="center">
+                    <img src="@news.ImageURL">
+                </td>
+            </tr>
 
-        <tr>
-            <td align="center">
-                <img src="@news.ImageURL">
-            </td>
-        </tr>
-
-    </table>
+        </table>
+    }
 }
 
 <page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>

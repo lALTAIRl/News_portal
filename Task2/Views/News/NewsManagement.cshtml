@@ -1,5 +1,4 @@
-﻿@*@model IEnumerable<Task2.Models.News>*@
-@model Task2.ViewModels.PageIndexViewModel
+﻿@model Task2.ViewModels.PageIndexViewModel
 @addTagHelper "*, Task2"
 
 <h2 align="center">News Management</h2>
@@ -57,12 +56,10 @@
         </tr>
 
         <tr>
-                <td>
-
-                    @Html.Raw(news.Text)
-
-                </td>
-            </tr>*@
+            <td>
+                @Html.Raw(news.Text)
+            </td>
+        </tr>*@
 
         <tr>
             <td>
@@ -78,23 +75,29 @@
                 <td>
                     <div class=" btn-toolbar">
 
-                        @*<form asp-action="ViewNews" asp-route-id="@news.Id" method="post">
-                            <button type="submit" class="btn btn-sm btn-success">
-                                View
-                            </button>
-                        </form>
-
-                        <form asp-action="EditNews" asp-route-id="@news.Id" method="post">
-                            <button type="submit" class="btn btn-sm btn-primary">
-                                Edit
-                            </button>
-                        </form>*@
-
                         <form asp-action="DeleteNews" asp-route-id="@news.Id" method="post">
                             <button type="submit" class="btn btn-sm btn-danger">
                                 Delete
                             </button>
                         </form>
+
+                        @if (news.IsPublished == false)
+                        {
+                            <form asp-action="PublishNews" asp-route-id="@news.Id" method="post">
+                                <button type="submit" class="btn btn-sm btn-primary">
+                                    Publish
+                                </button>
+                            </form>
+                        }
+
+                        @if (news.IsPublished == true)
+                        {
+                            <form asp-action="UnpublishNews" asp-route-id="@news.Id" method="post">
+                                <button type="submit" class="btn btn-sm btn-primary">
+                                    Unublish
+                                </button>
+                            </form>
+                        }
 
                     </div>
                 </td>
@@ -103,23 +106,3 @@
     </table>
 }
 <page-link page-model="Model.PageViewModel" page-action="NewsManagement"></page-link>
-@*
-    @if (Model.PageViewModel.HasPreviousPage)
-        {
-            <a asp-action="NewsCollection"
-               asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
-               class="btn btn-default btn">
-                <i class="glyphicon glyphicon-chevron-left"></i>
-                Previous Page
-            </a>
-        }
-
-        @if (Model.PageViewModel.HasNextPage)
-        {
-            <a asp-action="NewsCollection"
-               asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
-               class="btn btn-default btn">
-                Next Page
-                <i class="glyphicon glyphicon-chevron-right"></i>
-            </a>
-        }*@
