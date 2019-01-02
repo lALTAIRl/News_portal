@@ -37,6 +37,13 @@
     </div>
 
     <div class="form-group">
+        <label class="col-sm-2 control-label">ImageURL</label>
+        <div class="col-sm-3">
+            <input class="form-control" id="imageurl" name="imageurl" placeholder="@Model.ImageURL">
+        </div>
+    </div>
+
+    <div class="form-group">
         <div class=" col-sm-offset-2">
             <button asp-action="ApplyNewsEditing" asp-route-id="@Model.Id" type="submit" class="btn btn-primary">Edit</button>
         </div>

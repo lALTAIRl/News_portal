@@ -27,6 +27,9 @@
           "lib/netstandard2.0/Brik.Security.VkontakteMiddleware.dll": {}
         }
       },
+      "ckeditor-full/4.10.0": {
+        "type": "package"
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -5066,6 +5069,366 @@
         "lib/netstandard2.0/Brik.Security.VkontakteMiddleware.xml"
       ]
     },
+    "ckeditor-full/4.10.0": {
+      "sha512": "r38KbWKphT+gdReurc3oQ/XyMT3siOSWOBIXlfy0A5SrtakFxlLYD1otOK7qbR5EpGii/3ybNVEY3rCkLq/DAw==",
+      "type": "package",
+      "path": "ckeditor-full/4.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ckeditor-full.4.10.0.nupkg.sha512",
+        "ckeditor-full.nuspec",
+        "content/Scripts/ckeditor/CHANGES.md",
+        "content/Scripts/ckeditor/LICENSE.md",
+        "content/Scripts/ckeditor/README.md",
+        "content/Scripts/ckeditor/adapters/jquery.js",
+        "content/Scripts/ckeditor/ckeditor.js",
+        "content/Scripts/ckeditor/config.js",
+        "content/Scripts/ckeditor/contents.css",
+        "content/Scripts/ckeditor/lang/af.js",
+        "content/Scripts/ckeditor/lang/ar.js",
+        "content/Scripts/ckeditor/lang/az.js",
+        "content/Scripts/ckeditor/lang/bg.js",
+        "content/Scripts/ckeditor/lang/bn.js",
+        "content/Scripts/ckeditor/lang/bs.js",
+        "content/Scripts/ckeditor/lang/ca.js",
+        "content/Scripts/ckeditor/lang/cs.js",
+        "content/Scripts/ckeditor/lang/cy.js",
+        "content/Scripts/ckeditor/lang/da.js",
+        "content/Scripts/ckeditor/lang/de-ch.js",
+        "content/Scripts/ckeditor/lang/de.js",
+        "content/Scripts/ckeditor/lang/el.js",
+        "content/Scripts/ckeditor/lang/en-au.js",
+        "content/Scripts/ckeditor/lang/en-ca.js",
+        "content/Scripts/ckeditor/lang/en-gb.js",
+        "content/Scripts/ckeditor/lang/en.js",
+        "content/Scripts/ckeditor/lang/eo.js",
+        "content/Scripts/ckeditor/lang/es-mx.js",
+        "content/Scripts/ckeditor/lang/es.js",
+        "content/Scripts/ckeditor/lang/et.js",
+        "content/Scripts/ckeditor/lang/eu.js",
+        "content/Scripts/ckeditor/lang/fa.js",
+        "content/Scripts/ckeditor/lang/fi.js",
+        "content/Scripts/ckeditor/lang/fo.js",
+        "content/Scripts/ckeditor/lang/fr-ca.js",
+        "content/Scripts/ckeditor/lang/fr.js",
+        "content/Scripts/ckeditor/lang/gl.js",
+        "content/Scripts/ckeditor/lang/gu.js",
+        "content/Scripts/ckeditor/lang/he.js",
+        "content/Scripts/ckeditor/lang/hi.js",
+        "content/Scripts/ckeditor/lang/hr.js",
+        "content/Scripts/ckeditor/lang/hu.js",
+        "content/Scripts/ckeditor/lang/id.js",
+        "content/Scripts/ckeditor/lang/is.js",
+        "content/Scripts/ckeditor/lang/it.js",
+        "content/Scripts/ckeditor/lang/ja.js",
+        "content/Scripts/ckeditor/lang/ka.js",
+        "content/Scripts/ckeditor/lang/km.js",
+        "content/Scripts/ckeditor/lang/ko.js",
+        "content/Scripts/ckeditor/lang/ku.js",
+        "content/Scripts/ckeditor/lang/lt.js",
+        "content/Scripts/ckeditor/lang/lv.js",
+        "content/Scripts/ckeditor/lang/mk.js",
+        "content/Scripts/ckeditor/lang/mn.js",
+        "content/Scripts/ckeditor/lang/ms.js",
+        "content/Scripts/ckeditor/lang/nb.js",
+        "content/Scripts/ckeditor/lang/nl.js",
+        "content/Scripts/ckeditor/lang/no.js",
+        "content/Scripts/ckeditor/lang/oc.js",
+        "content/Scripts/ckeditor/lang/pl.js",
+        "content/Scripts/ckeditor/lang/pt-br.js",
+        "content/Scripts/ckeditor/lang/pt.js",
+        "content/Scripts/ckeditor/lang/ro.js",
+        "content/Scripts/ckeditor/lang/ru.js",
+        "content/Scripts/ckeditor/lang/si.js",
+        "content/Scripts/ckeditor/lang/sk.js",
+        "content/Scripts/ckeditor/lang/sl.js",
+        "content/Scripts/ckeditor/lang/sq.js",
+        "content/Scripts/ckeditor/lang/sr-latn.js",
+        "content/Scripts/ckeditor/lang/sr.js",
+        "content/Scripts/ckeditor/lang/sv.js",
+        "content/Scripts/ckeditor/lang/th.js",
+        "content/Scripts/ckeditor/lang/tr.js",
+        "content/Scripts/ckeditor/lang/tt.js",
+        "content/Scripts/ckeditor/lang/ug.js",
+        "content/Scripts/ckeditor/lang/uk.js",
+        "content/Scripts/ckeditor/lang/vi.js",
+        "content/Scripts/ckeditor/lang/zh-cn.js",
+        "content/Scripts/ckeditor/lang/zh.js",
+        "content/Scripts/ckeditor/package.json",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/af.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/az.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/da.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/de-ch.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/de.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/el.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/en-au.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/en.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/es-mx.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/es.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/et.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/eu.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/fo.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/he.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/id.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/it.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/km.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/no.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/oc.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/si.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/th.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js",
+        "content/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js",
+        "content/Scripts/ckeditor/plugins/about/dialogs/about.js",
+        "content/Scripts/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png",
+        "content/Scripts/ckeditor/plugins/about/dialogs/logo_ckeditor.png",
+        "content/Scripts/ckeditor/plugins/clipboard/dialogs/paste.js",
+        "content/Scripts/ckeditor/plugins/colordialog/dialogs/colordialog.css",
+        "content/Scripts/ckeditor/plugins/colordialog/dialogs/colordialog.js",
+        "content/Scripts/ckeditor/plugins/copyformatting/cursors/cursor-disabled.svg",
+        "content/Scripts/ckeditor/plugins/copyformatting/cursors/cursor.svg",
+        "content/Scripts/ckeditor/plugins/copyformatting/styles/copyformatting.css",
+        "content/Scripts/ckeditor/plugins/dialog/dialogDefinition.js",
+        "content/Scripts/ckeditor/plugins/div/dialogs/div.js",
+        "content/Scripts/ckeditor/plugins/find/dialogs/find.js",
+        "content/Scripts/ckeditor/plugins/flash/dialogs/flash.js",
+        "content/Scripts/ckeditor/plugins/flash/images/placeholder.png",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/button.js",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/checkbox.js",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/form.js",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/hiddenfield.js",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/radio.js",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/select.js",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/textarea.js",
+        "content/Scripts/ckeditor/plugins/forms/dialogs/textfield.js",
+        "content/Scripts/ckeditor/plugins/forms/images/hiddenfield.gif",
+        "content/Scripts/ckeditor/plugins/icons.png",
+        "content/Scripts/ckeditor/plugins/icons_hidpi.png",
+        "content/Scripts/ckeditor/plugins/iframe/dialogs/iframe.js",
+        "content/Scripts/ckeditor/plugins/iframe/images/placeholder.png",
+        "content/Scripts/ckeditor/plugins/image/dialogs/image.js",
+        "content/Scripts/ckeditor/plugins/image/images/noimage.png",
+        "content/Scripts/ckeditor/plugins/link/dialogs/anchor.js",
+        "content/Scripts/ckeditor/plugins/link/dialogs/link.js",
+        "content/Scripts/ckeditor/plugins/link/images/anchor.png",
+        "content/Scripts/ckeditor/plugins/link/images/hidpi/anchor.png",
+        "content/Scripts/ckeditor/plugins/liststyle/dialogs/liststyle.js",
+        "content/Scripts/ckeditor/plugins/magicline/images/hidpi/icon-rtl.png",
+        "content/Scripts/ckeditor/plugins/magicline/images/hidpi/icon.png",
+        "content/Scripts/ckeditor/plugins/magicline/images/icon-rtl.png",
+        "content/Scripts/ckeditor/plugins/magicline/images/icon.png",
+        "content/Scripts/ckeditor/plugins/pagebreak/images/pagebreak.gif",
+        "content/Scripts/ckeditor/plugins/pastefromword/filter/default.js",
+        "content/Scripts/ckeditor/plugins/preview/preview.html",
+        "content/Scripts/ckeditor/plugins/scayt/CHANGELOG.md",
+        "content/Scripts/ckeditor/plugins/scayt/LICENSE.md",
+        "content/Scripts/ckeditor/plugins/scayt/README.md",
+        "content/Scripts/ckeditor/plugins/scayt/dialogs/dialog.css",
+        "content/Scripts/ckeditor/plugins/scayt/dialogs/options.js",
+        "content/Scripts/ckeditor/plugins/scayt/dialogs/toolbar.css",
+        "content/Scripts/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_address.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_blockquote.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_div.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_h1.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_h2.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_h3.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_h4.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_h5.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_h6.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_p.png",
+        "content/Scripts/ckeditor/plugins/showblocks/images/block_pre.png",
+        "content/Scripts/ckeditor/plugins/smiley/dialogs/smiley.js",
+        "content/Scripts/ckeditor/plugins/smiley/images/angel_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/angel_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/angry_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/angry_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/broken_heart.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/broken_heart.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/confused_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/confused_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/cry_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/cry_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/devil_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/devil_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/embaressed_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/embarrassed_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/embarrassed_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/envelope.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/envelope.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/heart.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/heart.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/kiss.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/kiss.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/lightbulb.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/lightbulb.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/omg_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/omg_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/regular_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/regular_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/sad_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/sad_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/shades_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/shades_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/teeth_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/teeth_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/thumbs_down.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/thumbs_down.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/thumbs_up.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/thumbs_up.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/tongue_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/tongue_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/tounge_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.png",
+        "content/Scripts/ckeditor/plugins/smiley/images/wink_smile.gif",
+        "content/Scripts/ckeditor/plugins/smiley/images/wink_smile.png",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/af.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ar.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/az.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/bg.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ca.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/cs.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/cy.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/da.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/de-ch.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/de.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/el.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/en-au.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/en-ca.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/en.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/eo.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/es-mx.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/es.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/et.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/eu.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/fa.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/fi.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/fr.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/gl.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/he.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/hr.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/hu.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/id.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/it.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ja.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/km.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ko.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ku.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/lt.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/lv.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/nb.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/nl.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/no.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/oc.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/pl.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/pt.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ro.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ru.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/si.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/sk.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/sl.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/sq.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/sv.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/th.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/tr.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/tt.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/ug.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/uk.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/vi.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/lang/zh.js",
+        "content/Scripts/ckeditor/plugins/specialchar/dialogs/specialchar.js",
+        "content/Scripts/ckeditor/plugins/table/dialogs/table.js",
+        "content/Scripts/ckeditor/plugins/tableselection/styles/tableselection.css",
+        "content/Scripts/ckeditor/plugins/tabletools/dialogs/tableCell.js",
+        "content/Scripts/ckeditor/plugins/templates/dialogs/templates.css",
+        "content/Scripts/ckeditor/plugins/templates/dialogs/templates.js",
+        "content/Scripts/ckeditor/plugins/templates/templates/default.js",
+        "content/Scripts/ckeditor/plugins/templates/templates/images/template1.gif",
+        "content/Scripts/ckeditor/plugins/templates/templates/images/template2.gif",
+        "content/Scripts/ckeditor/plugins/templates/templates/images/template3.gif",
+        "content/Scripts/ckeditor/plugins/widget/images/handle.png",
+        "content/Scripts/ckeditor/plugins/wsc/LICENSE.md",
+        "content/Scripts/ckeditor/plugins/wsc/README.md",
+        "content/Scripts/ckeditor/plugins/wsc/dialogs/ciframe.html",
+        "content/Scripts/ckeditor/plugins/wsc/dialogs/tmpFrameset.html",
+        "content/Scripts/ckeditor/plugins/wsc/dialogs/wsc.css",
+        "content/Scripts/ckeditor/plugins/wsc/dialogs/wsc.js",
+        "content/Scripts/ckeditor/plugins/wsc/dialogs/wsc_ie.js",
+        "content/Scripts/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/dialog.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/dialog_ie.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/dialog_ie8.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/dialog_iequirks.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/editor.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/editor_gecko.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/editor_ie.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/editor_ie8.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/editor_iequirks.css",
+        "content/Scripts/ckeditor/skins/moono-lisa/icons.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/icons_hidpi.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/arrow.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/close.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/hidpi/close.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/hidpi/lock-open.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/hidpi/lock.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/hidpi/refresh.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/lock-open.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/lock.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/refresh.png",
+        "content/Scripts/ckeditor/skins/moono-lisa/images/spinner.gif",
+        "content/Scripts/ckeditor/skins/moono-lisa/readme.md",
+        "content/Scripts/ckeditor/styles.js"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "zisTbxitzki256+rKY0myI2T1yLyO9+qAU8P+FXkd8Dv0Iymk484Y9SbwUlyL3igF/bpiCv7SCdv349rN/JbfQ==",
       "type": "package",
@@ -6233,10 +6596,13 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "EtegM+xm0HLJJJZ3+wcSRGKQmRpYexgObRj/7w65e3OEQ/5pCYNwmE7lbrqfbKC75X0RrFnUGjLRN8f5pnNKrA==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
+      "hasTools": true,
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.rtf",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
@@ -7837,10 +8203,11 @@
       ]
     },
     "Microsoft.NETCore.Targets/1.1.0": {
-      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "sha512": "4RgOpXEfShf8J8MUuUHk8iQ9WykNhHq5NmfpUy35sTzok/4OOqJ+T5RpvrcCLqFcb+3kY906ICF6fP8QGn0NvA==",
       "type": "package",
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8037,10 +8404,11 @@
       ]
     },
     "Microsoft.Win32.Primitives/4.3.0": {
-      "sha512": "9ZQKCWxH7Ijp9BfahvL2Zyf1cJIk8XYLF6Yjzr2yi0b2cOut/HQ31qf1ThHAgCc3WiZMdnWcfJCgN82/0UunxA==",
+      "sha512": "7bjKLR3UPc7pmIFOJytaK5PNe3Z3qGKOOb4RM7sFX4ePpB9zPN9q43sorKe18MIYW92e4pgUsKyJztJ+YcDVrQ==",
       "type": "package",
       "path": "microsoft.win32.primitives/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8324,10 +8692,11 @@
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
+      "sha512": "L+IyTSOG2Vcz1wCxkppnlsvANy5QcJB4tTaup40Ay8fr6mH6gmIMB3Ao1N+sXTbyVO4l4cKvXXOzRe05Q5Vwhg==",
       "type": "package",
       "path": "runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8336,10 +8705,11 @@
       ]
     },
     "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "+yH1a49wJMy8Zt4yx5RhJrxO/DBDByAiCzNwiETI+1S4mPdCu0OY4djdciC7Vssk0l22wQaDLrXxXkp+3+7bVA==",
+      "sha512": "mtx1RSi37odJW0PYWTf0GUgk6tJyiQ7Z+T4S2Sz8hK70bL11CinOPm6EWwdUwLZSewGowRe8CQdn2tgFfQZ7QQ==",
       "type": "package",
       "path": "runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8348,10 +8718,11 @@
       ]
     },
     "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "c3YNH1GQJbfIPJeCnr4avseugSqPrxwIqzthYyZDN6EuOyNOzq+y2KSUfRcXauya1sF4foESTgwM5e1A8arAKw==",
+      "sha512": "7BxduNo2qERc/fNIpe9KGv3dYrfR0s+7d2HCq9FgdKl8+KU9dqW3VRa5v8RliQkIKEVQoPOGfvc7FobRauAmIw==",
       "type": "package",
       "path": "runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8360,10 +8731,11 @@
       ]
     },
     "runtime.native.System/4.3.0": {
-      "sha512": "c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
+      "sha512": "/5ZAvAPs/Xo21zq1CRqZedIusH8x+ikcCFHPxsLxvrpRo4rNXGhxp4sBKrQ653gNAHgJyNyHCvBJxkVu3vjCRg==",
       "type": "package",
       "path": "runtime.native.system/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8385,10 +8757,11 @@
       ]
     },
     "runtime.native.System.IO.Compression/4.3.0": {
-      "sha512": "INBPonS5QPEgn7naufQFXJEp3zX6L4bwHgJ/ZH78aBTpeNfQMtf7C6VrAFhlq2xxWBveIOWyFzQjJ8XzHMhdOQ==",
+      "sha512": "aN81NgDahB24YA9goxPbL5WPMIPRtMPSp861yidTaHrz+sJeZ5MjLbnRvfCy+iV85uXYQ7Jreq2AusWOuK0mLQ==",
       "type": "package",
       "path": "runtime.native.system.io.compression/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8397,10 +8770,11 @@
       ]
     },
     "runtime.native.System.Net.Http/4.3.0": {
-      "sha512": "ZVuZJqnnegJhd2k/PtAbbIcZ3aZeITq3sj06oKfMBSfphW3HDmk/t4ObvbOk/JA/swGR0LNqMksAh/f7gpTROg==",
+      "sha512": "VJsyYJPRK/gfWXmUU+5Cko1cmwUGabYjLUchKbGXsMiZYOdNkI4rdLxFdCVzoZpD/X9ukh7g6CrGN0LrvgqaSg==",
       "type": "package",
       "path": "runtime.native.system.net.http/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8421,10 +8795,11 @@
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "DloMk88juo0OuOWr56QG7MNchmafTLYWvABy36izkrLI5VledI0rq28KGs1i9wbpeT9NPQrx/wTf8U2vazqQ3Q==",
+      "sha512": "YWrRRvrDG28ur/cZErPh+JjCeE1rGXGPVJpnXd8CDCxqhde8Iv28cvvki46inRQRE6DMDH4KISRjH9ALJHTjkQ==",
       "type": "package",
       "path": "runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8433,10 +8808,11 @@
       ]
     },
     "runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "NS1U+700m4KFRHR5o4vo9DSlTmlCKu/u7dtE5sUHVIPB+xpXxYQvgBgA6wEIeCz6Yfn0Z52/72WYsToCEPJnrw==",
+      "sha512": "vMZ/0Rj8o5Sh277jkordC6zSexcWyD0sdNlsCCS3x+IIBWcua5maCbLeYWR3mDT46PrrmFawzmY23tTaH/ntMg==",
       "type": "package",
       "path": "runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8445,10 +8821,11 @@
       ]
     },
     "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "b3pthNgxxFcD+Pc0WSEoC0+md3MyhRS6aCEeenvNE3Fdw1HyJ18ZhRFVJJzIeR/O/jpxPboB805Ho0T3Ul7w8A==",
+      "sha512": "s50B+PnwnqXzt8QX37HbdTjvWecnpk3cWoOb61HRf2g66ZsAy58eQ/qJoAbCVF5cyvIBi5B5kBoZInsUtUegGQ==",
       "type": "package",
       "path": "runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8457,10 +8834,11 @@
       ]
     },
     "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "KeLz4HClKf+nFS7p/6Fi/CqyLXh81FpiGzcmuS8DGi9lUqSnZ6Es23/gv2O+1XVGfrbNmviF7CckBpavkBoIFQ==",
+      "sha512": "HkkQz5AAgmZMN6f5LKfpJUwU6Ii6S8Kjd/qEVbtjEnXCWG+Yy/PGk0xW2yyCU/qrJ3Q/164v5YbQIrv8lCmkXA==",
       "type": "package",
       "path": "runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8469,10 +8847,11 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "kVXCuMTrTlxq4XOOMAysuNwsXWpYeboGddNGpIgNSZmv1b6r/s/DPk0fYMB7Q5Qo4bY68o48jt4T4y5BVecbCQ==",
+      "sha512": "sskAzUHrTu2FJsGQJWXsjwzmdZGtPWoLSzbkGgc6X1ZBbVtSv3NrjJY8ybhonH+OE9pwnDLQnWbbKSxv40n76Q==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
@@ -8481,10 +8860,11 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "X7IdhILzr4ROXd8mI1BUCQMSHSQwelUlBjF1JyTKCjXaOGn2fB4EKBxQbCK2VjO3WaWIdlXZL3W6TiIVnrhX4g==",
+      "sha512": "/yE/OdbWKe66afeu6zlRUC6Owsv52sU3XK255eVNMR/DeY2/edEoO5g4mxtXGyJvsa5cLUm8GlukM6EWRMLAGA==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8493,10 +8873,11 @@
       ]
     },
     "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "nyFNiCk/r+VOiIqreLix8yN+q3Wga9+SE8BCgkf+2BwEKiNx6DyvFjCgkfV743/grxv8jHJ8gUK4XEQw7yzRYg==",
+      "sha512": "46fhh3nG8HyCTvAL6aufNLbh08ecbMBFsF6rDiRo1KVI8TsCcRXwsUhVY7QCMZXjrN3dc08wY0BksA92mg3rww==",
       "type": "package",
       "path": "runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8505,10 +8886,11 @@
       ]
     },
     "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "ytoewC6wGorL7KoCAvRfsgoJPJbNq+64k2SqW6JcOAebWsFUvCCYgfzQMrnpvPiEl4OrblUlhF2ji+Q1+SVLrQ==",
+      "sha512": "U6Lw0dfcz1yT3i4tWBWGVP+YlLCgaj4GrPJp6e4k7LEXmKPXc+17FuOL45HoulFV6H4QARod8CPJFPZcmBF7rw==",
       "type": "package",
       "path": "runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8517,10 +8899,11 @@
       ]
     },
     "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "I8bKw2I8k58Wx7fMKQJn2R8lamboCAiHfHeV/pS65ScKWMMI0+wJkLYlEKvgW1D/XvSl/221clBoR2q9QNNM7A==",
+      "sha512": "bSt8xzoMEUQd4BcROKrn73ckmUWpRQPAw6HwVQlpEJNB+L0d9LohsARUD3tnVtPev+WXfp2A0GlOpMMUEdE8dA==",
       "type": "package",
       "path": "runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8529,10 +8912,11 @@
       ]
     },
     "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
+      "sha512": "9clld3yIntNv9FpUAxaAitG5L2754fiaaswI+duOTw0u5v95CRFt96C0kRn3LPHlx47wgIBGoAjYNIyEFT33JA==",
       "type": "package",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -8735,10 +9119,11 @@
       ]
     },
     "System.AppContext/4.3.0": {
-      "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
+      "sha512": "+6SRUH+vptJVH+GtUWF3/WGN32x4X5E2Jch6VT+QT0vDU2tSlIwy1FKRZ4CAV+fAY3OEZAz5VL5KufZf48sOKQ==",
       "type": "package",
       "path": "system.appcontext/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8813,10 +9198,11 @@
       ]
     },
     "System.Collections/4.3.0": {
-      "sha512": "3Dcj85/TBdVpL5Zr+gEEBUuFe2icOnLalmEh9hfck1PTYbbyWuZgh4fmm2ysCLTrqLQw6t3TgTyJ+VLp+Qb+Lw==",
+      "sha512": "25lEZHJgPoKM2X8WpyW7xnqY5SEaCTGAyDLJs6h+COxaa/58TsqknWYI09d8TE/YqdN2qPNb3NnGuJZImomU2w==",
       "type": "package",
       "path": "system.collections/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8879,10 +9265,11 @@
       ]
     },
     "System.Collections.Concurrent/4.3.0": {
-      "sha512": "ztl69Xp0Y/UXCL+3v3tEU+lIy+bvjKNUmopn1wep/a291pVPK7dxBd6T7WnlQqRog+d1a/hSsgRsmFnIBKTPLQ==",
+      "sha512": "VXahowB8nJxudbLhv0Ua0K3MAl5fLwiTJdzJ+iUW7M/mpWOvlvk47OWNW7YL4adrsWjPOgVjrOHnDYTpwF0WoQ==",
       "type": "package",
       "path": "system.collections.concurrent/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9352,10 +9739,11 @@
       ]
     },
     "System.Console/4.3.0": {
-      "sha512": "DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
+      "sha512": "0YUk/J32jvDhWLUENmZ5xaCEhSV3JG+mNussZ62V81Ts5AuqGIqGrW5vVee2KxZLuuLuLOXI76uguwKe8EJOMQ==",
       "type": "package",
       "path": "system.console/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9513,10 +9901,11 @@
       ]
     },
     "System.Diagnostics.Debug/4.3.0": {
-      "sha512": "ZUhUOdqmaG5Jk3Xdb8xi5kIyQYAA4PnTNlHx1mu9ZY3qv4ELIdKbnL/akbGaKi2RnNUWaZsAs31rvzFdewTj2g==",
+      "sha512": "Y3iUXDT00Ffz51Ez9GtTiv5cfe+08n8bP59oC06eQrObt1dD4rHbhBGdOqsbd2nZ4tNEBqzr3z3cFtuq7BI9CQ==",
       "type": "package",
       "path": "system.diagnostics.debug/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9684,10 +10073,11 @@
       ]
     },
     "System.Diagnostics.Tools/4.3.0": {
-      "sha512": "UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
+      "sha512": "L8o0ENI8vWukx4qW3znpjpDksC9svYZokQhi5jWCetWIsCTzNhMwAPJZ6cP7a/ihyVHApHWu085DAS45zaAg+A==",
       "type": "package",
       "path": "system.diagnostics.tools/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9739,10 +10129,11 @@
       ]
     },
     "System.Diagnostics.Tracing/4.3.0": {
-      "sha512": "rswfv0f/Cqkh78rA5S8eN8Neocz234+emGCtTF3lxPY96F+mmmUen6tbn0glN6PMvlKQb9bPAY5e9u7fgPTkKw==",
+      "sha512": "fZDyjvtVBvOxm7w+lWaBdrcyXRdLlaZuDiRIAeYhajpqHmtZSSrpSbIkT8+kL/9H43SCMpZze7BxQq/Fi/2/5A==",
       "type": "package",
       "path": "system.diagnostics.tracing/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9896,10 +10287,11 @@
       ]
     },
     "System.Globalization/4.3.0": {
-      "sha512": "kYdVd2f2PAdFGblzFswE4hkNANJBKRmsfa2X5LG2AcWE1c7/4t0pYae1L8vfZ5xvE2nK/R9JprtToA61OSHWIg==",
+      "sha512": "BeC2x+4bt4dH9l8yg+WaVGjr78KSVB+b77LvDK5UwU+ZLDwU5dZWp1fDwaf+B4D8Qlivs/VlMqVUa9JzYmf7jw==",
       "type": "package",
       "path": "system.globalization/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9962,10 +10354,11 @@
       ]
     },
     "System.Globalization.Calendars/4.3.0": {
-      "sha512": "GUlBtdOWT4LTV3I+9/PJW+56AnnChTaOqqTLFtdmype/L500M2LIyXgmtd9X2P2VOkmJd5c67H5SaC2QcL1bFA==",
+      "sha512": "ULQW/JiwvyA0psMFXPOMF9ZbfcBI88QIJFlW0L3d5iOX6HexRZ6sRjLMA+J2wcSZvuZDr3NSmDyP2zoUX8o9KA==",
       "type": "package",
       "path": "system.globalization.calendars/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9998,10 +10391,11 @@
       ]
     },
     "System.Globalization.Extensions/4.3.0": {
-      "sha512": "FhKmdR6MPG+pxow6wGtNAWdZh7noIOpdD5TwQ3CprzgIE1bBBoim0vbR1+AWsWjQmU7zXHgQo4TWSP6lCeiWcQ==",
+      "sha512": "+LpvT4ptmG9Av4+/Xvy5smK55ssAf6QPuA+SP+zk8RrMGm5aHyqA4TJzv8kg4CX9d2CL/PCuVa+u/cfHR10sqA==",
       "type": "package",
       "path": "system.globalization.extensions/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10072,10 +10466,11 @@
       ]
     },
     "System.IO/4.3.0": {
-      "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "sha512": "mwem55Pde1z1Wkm4KQni1C6MAH7bvHNj0QOfZ/Zr+Op8UNoGGvq2vV8mvgXhAYqYUGnKSaS2KsCe4C81i8Gp2w==",
       "type": "package",
       "path": "system.io/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10151,10 +10546,11 @@
       ]
     },
     "System.IO.Compression/4.3.0": {
-      "sha512": "YHndyoiV90iu4iKG115ibkhrG+S3jBm8Ap9OwoUAzO5oPDAWcr0SFwQFm0HjM8WkEZWo0zvLTyLmbvTkW1bXgg==",
+      "sha512": "QUJWv+npMRanebFtYLEpyzEzBAlAoMqwu9Q5SNScEbCCtJ6DyQ7AORKi1bKNG/bRKR/UVtqDdVWgU+PYkH8PbQ==",
       "type": "package",
       "path": "system.io.compression/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10220,10 +10616,11 @@
       ]
     },
     "System.IO.FileSystem/4.3.0": {
-      "sha512": "3wEMARTnuio+ulnvi+hkRNROYwa1kylvYahhcLk4HSoVdl+xxTFVeVlYOfLwrDPImGls0mDqbMhrza8qnWPTdA==",
+      "sha512": "5H+r6ZcnN0ew0MaOLPq5HSVTpO5y0H2sokxDRZDTkUlsSd8bXOgCPQasLYRT116K+lfoYBJjv28K3nnr4CFfKg==",
       "type": "package",
       "path": "system.io.filesystem/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10256,10 +10653,11 @@
       ]
     },
     "System.IO.FileSystem.Primitives/4.3.0": {
-      "sha512": "6QOb2XFLch7bEc4lIcJH49nJN2HV+OC3fHDgsLVsBVBk3Y4hFAnOBGzJ2lUu7CyDDFo9IBWkSsnbkT6IBwwiMw==",
+      "sha512": "Y6hSJZYb/zow1od7w8TSujHAd1wDqTpTpP+0i0uCQ8XcJ2lLBO8YkcnAUHK6F3VxGpBBoV4poOg+ZY1JNYguwQ==",
       "type": "package",
       "path": "system.io.filesystem.primitives/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10293,10 +10691,11 @@
       ]
     },
     "System.Linq/4.3.0": {
-      "sha512": "5DbqIUpsDp0dFftytzuMmc0oeMdQwjcP/EWxsksIz/w1TcFRkZ3yKKz0PqiYFMmEwPSWw+qNVqD7PJ889JzHbw==",
+      "sha512": "h2eKMWPEEJ+iJe0274fNc6HuwcpFIBkUUTo+fM6SywopYjM/qnPbRXUTEkc16WSHJzMIhNdaDsy/r43weYJ3sA==",
       "type": "package",
       "path": "system.linq/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10363,10 +10762,11 @@
       ]
     },
     "System.Linq.Expressions/4.3.0": {
-      "sha512": "PGKkrd2khG4CnlyJwxwwaWWiSiWFNBGlgXvJpeO0xCXrZ89ODrQ6tjEWS/kOqZ8GwEOUATtKtzp1eRgmYNfclg==",
+      "sha512": "4q0x2TZEJbuR4BOdb3FEb6UpNAlHrVSyPVX1/T2dXlWPysr0Rw2KYSJmuC7AeXsI1YKuySkTx9Ow1gyuOSznLw==",
       "type": "package",
       "path": "system.linq.expressions/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10500,10 +10900,12 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "5ljkXob+gmmIyw4FOnjvhbi6jqNIFzl5t9cFo11+mTw+fBu7KqzROVEePjBaDUpLh6T9KZA46VQ+Yzj+McB/4w==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/monoandroid10/_._",
@@ -10557,12 +10959,11 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "Z1UfSF6dlpCdZdxh6LeoGlYH+q6ptG/iiIWgUUeKhE3DbQACmZkU7Sz2nOX0qdHjz72MOdYRbkSJ5Qwl6sZgvg==",
+      "sha512": "3+PdqYF3o9VvqE8q9mq9XhBv5HL4/nKiy+HPTm6lNK4WUDMjZTd+jbyGlnxozN/VhdO2neJLeUa7RoMKDY4/Yw==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -10679,10 +11080,11 @@
       ]
     },
     "System.Net.Primitives/4.3.0": {
-      "sha512": "qOu+hDwFwoZPbzPvwut2qATe3ygjeQBDQj91xlsaqGFQUI5i4ZnZb8yyQuLGpDGivEPIt8EJkd1BVzVoP31FXA==",
+      "sha512": "6YoTVdiKxwkPUyNnPdFix4sR4CjYSKMmkmAqaH2EPPPY8ilmrK07MKZ3mCqWjXIja4BehcXaGpE5fFX91Xcskg==",
       "type": "package",
       "path": "system.net.primitives/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10796,10 +11198,11 @@
       ]
     },
     "System.Net.Sockets/4.3.0": {
-      "sha512": "m6icV6TqQOAdgt5N/9I5KNpjom/5NFtkmGseEH+AK/hny8XrytLH3+b5M8zL/Ycg3fhIocFpUMyl/wpFnVRvdw==",
+      "sha512": "bkuUWq2GDiXIJmBthQ8+xv8udhdoTjSQ8yMbTfEGGZ7Vnyp4OghGkAtFMHh9pqaHzpChqrcj3PDkZigw2eLESw==",
       "type": "package",
       "path": "system.net.sockets/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10875,10 +11278,11 @@
       ]
     },
     "System.ObjectModel/4.3.0": {
-      "sha512": "bdX+80eKv9bN6K4N+d77OankKHGn6CH711a6fcOpMQu2Fckp/Ft4L/kW9WznHpyR0NRAvJutzOMHNNlBGvxQzQ==",
+      "sha512": "san0AMf9hYYjF3b63yTPSq1feAGGgcmbeuJz6Fxicbll4UuthIiC4WrhvafynfGVpOP9VUiLWfXQMk77iDo25A==",
       "type": "package",
       "path": "system.objectmodel/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10957,10 +11361,11 @@
       ]
     },
     "System.Reflection/4.3.0": {
-      "sha512": "KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
+      "sha512": "VnpPQmw686ZPa/yEDjI9Y2bvqHMH/r3rIY4F1Nc9CqUQd6jLkbBzeNhGzmW44UcxtYrnSZJ2ZO3tax5ZQ9RHjA==",
       "type": "package",
       "path": "system.reflection/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11036,10 +11441,11 @@
       ]
     },
     "System.Reflection.Emit/4.3.0": {
-      "sha512": "228FG0jLcIwTVJyz8CLFKueVqQK36ANazUManGaJHkO0icjiIypKW7YLWLIWahyIkdh5M7mV2dJepllLyA1SKg==",
+      "sha512": "I5X14TH1WI2Yj1YtZ/ivVU4pnnPPOMuXdO5GYv3bn7sLvWwFf4y9bL9u7bX83IrJxQhNmCZc8knyvbUcsWHXPg==",
       "type": "package",
       "path": "system.reflection.emit/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11070,10 +11476,11 @@
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
-      "sha512": "59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
+      "sha512": "gURnrxAsYln1+iszEI018n+zcpNV4o/afzQckRyvzCKsbuck/uEBwZyMY493WU4HNSToJeXfY/gdDYQJNgq39A==",
       "type": "package",
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11113,10 +11520,11 @@
       ]
     },
     "System.Reflection.Emit.Lightweight/4.3.0": {
-      "sha512": "oadVHGSMsTmZsAF864QYN1t1QzZjIcuKU3l2S9cZOwDdDueNTrqq1yRj7koFfIGEnKpt6NjpL3rOzRhs4ryOgA==",
+      "sha512": "kvqhIGKhJUPW2dLBPGdOYIsHm3BKLM9VKujja6GTjN1x5laPGvBvaMEK7DrPgrXEcLJPl2wEoNASlq6zn8G2nw==",
       "type": "package",
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11156,10 +11564,11 @@
       ]
     },
     "System.Reflection.Extensions/4.3.0": {
-      "sha512": "rJkrJD3kBI5B712aRu4DpSIiHRtr6QlfZSQsb0hYHrDCZORXCFjQfoipo2LaMUHoT9i1B7j7MnfaEKWDFmFQNQ==",
+      "sha512": "DEhM+R/El7W8zplJFC6SVo7ZKOf+9w1uabTgVuyB0+FFbn4isRERtZ/reyo0Pv+3I4InV03ohZZxwvD6qwX0lA==",
       "type": "package",
       "path": "system.reflection.extensions/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11233,10 +11642,11 @@
       ]
     },
     "System.Reflection.Primitives/4.3.0": {
-      "sha512": "5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
+      "sha512": "nc+BxCaOxyOXp9ZZ8t+9n351b711r4RKfzxb088sPKP1wUQ4/Pv4qfTjqBg2qcXmWZPVmIz7GXJ0xuglBdrcLQ==",
       "type": "package",
       "path": "system.reflection.primitives/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11288,10 +11698,11 @@
       ]
     },
     "System.Reflection.TypeExtensions/4.3.0": {
-      "sha512": "7u6ulLcZbyxB5Gq0nMkQttcdBTx57ibzw+4IOXEfR+sXYQoHvjW5LTLyNr8O22UIMrqYbchJQJnos4eooYzYJA==",
+      "sha512": "A3pEMlIQnKUAEKAqbupaCnFhdnjfuWPvzyLLNnkK5FAUNJqkOdobjFzCKAqTJuEakYG0x4fkMJ3ZlRA2AFOh+w==",
       "type": "package",
       "path": "system.reflection.typeextensions/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11340,10 +11751,11 @@
       ]
     },
     "System.Resources.ResourceManager/4.3.0": {
-      "sha512": "/zrcPkkWdZmI4F92gL/TPumP98AVDu/Wxr3CSJGQQ+XN6wbRZcyfSKVoPo17ilb3iOr0cCRqJInGwNMolqhS8A==",
+      "sha512": "+ABF00pF0WT2CEEBn8p7GelpMukczXuZarhR4qzXZ6BehfvPVq3WABRH5lVLtcnJk45Cm3iGJvivVGdSjtuWow==",
       "type": "package",
       "path": "system.resources.resourcemanager/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11395,10 +11807,11 @@
       ]
     },
     "System.Runtime/4.3.0": {
-      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "sha512": "2I73m2s66Z5JWBL2uCnv/gYlcXg48LzBp2YPod3OxOGF/+kmR1kmAxeqGX/+RHriK01YNVicItI71p+jNcmGfA==",
       "type": "package",
       "path": "system.runtime/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11508,10 +11921,11 @@
       ]
     },
     "System.Runtime.Extensions/4.3.0": {
-      "sha512": "guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
+      "sha512": "k+MvP6REQAXvwbnSR4TTGfpYaIsRQriJKiffCS26knfChU1er/V0HhuocJ7JYnoX+iK15SIETPLlas2SO0VlaA==",
       "type": "package",
       "path": "system.runtime.extensions/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11587,10 +12001,11 @@
       ]
     },
     "System.Runtime.Handles/4.3.0": {
-      "sha512": "OKiSUN7DmTWeYb3l51A7EYaeNMnvxwE249YtZz7yooT4gOZhmTjIn48KgSsw2k2lYdLgTKNJw/ZIfSElwDRVgg==",
+      "sha512": "sDCYms9UrwHpVV9yghf/u3yfXD/OMPr3owtFzsikoF6/vqcvD+cSW1Xzp46D6DLfo0j4sg819svkkGWBYH03Kg==",
       "type": "package",
       "path": "system.runtime.handles/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11623,10 +12038,11 @@
       ]
     },
     "System.Runtime.InteropServices/4.3.0": {
-      "sha512": "uv1ynXqiMK8mp1GM3jDqPCFN66eJ5w5XNomaK2XD+TuCroNTLFGeZ+WCmBMcBDyTFKou3P6cR6J/QsaqDp7fGQ==",
+      "sha512": "K6Xin2dPEpgYhTObgoeS2WASMHzZUVfO3Y5FUC+Wfph3siQsawdT+fLCKMNuISxg8XYjLx1aHhoLUSMoIqtKLQ==",
       "type": "package",
       "path": "system.runtime.interopservices/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11714,10 +12130,11 @@
       ]
     },
     "System.Runtime.InteropServices.RuntimeInformation/4.3.0": {
-      "sha512": "cbz4YJMqRDR7oLeMRbdYv7mYzc++17lNhScCX0goO2XpGWdvAt60CGN+FHdePUEHCe/Jy9jUlvNAiNdM+7jsOw==",
+      "sha512": "hxz8arrW0m36RENzm1UMAfe2CPgEemkQThGAdlwyqX6qNQzXfr882XV7O+5+vYmbb6aSaaDopAEAqWQY3a8jfQ==",
       "type": "package",
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11747,10 +12164,11 @@
       ]
     },
     "System.Runtime.Numerics/4.3.0": {
-      "sha512": "yMH+MfdzHjy17l2KESnPiF2dwq7T+xLnSJar7slyimAkUh/gTrS9/UQOtv7xarskJ2/XDSNvfLGOBQPjL7PaHQ==",
+      "sha512": "J8zxIi/TyPQMJDWPQAmhY97aZtEzEAQR4wmg9zdDZFV0n85Qj4pzRx1gnAuKy4rnBNJ5gxcrK60+6WL7R1/XnA==",
       "type": "package",
       "path": "system.runtime.numerics/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12036,10 +12454,11 @@
       ]
     },
     "System.Security.Cryptography.Algorithms/4.3.0": {
-      "sha512": "W1kd2Y8mYSCgc3ULTAZ0hOP2dSdG5YauTb1089T0/kRcN2MpSAW1izOFROrJgxSlMn3ArsgHXagigyi+ibhevg==",
+      "sha512": "gBwOb0dqKjIapqhsPGUcdi85/NPfppaQ1x5pybWlsc0S55SxgGan+IhSYfmjVxvbSTYIhbSAKmNbGc7hRJUIKA==",
       "type": "package",
       "path": "system.security.cryptography.algorithms/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12075,10 +12494,11 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.3.0": {
-      "sha512": "03idZOqFlsKRL4W+LuCpJ6dBYDUWReug6lZjBa3uJWnk5sPCUXckocevTaUA8iT/MFSrY/2HXkOt753xQ/cf8g==",
+      "sha512": "ZEjlO3nBJSOCOxUVHmfb3D9+0xg0EMxBrOhdP9ZZjWdWSrafzsF2AnkuH8SBTuGs3Qv2oStztg2JHgkkETl6/Q==",
       "type": "package",
       "path": "system.security.cryptography.cng/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/System.Security.Cryptography.Cng.dll",
@@ -12101,10 +12521,11 @@
       ]
     },
     "System.Security.Cryptography.Csp/4.3.0": {
-      "sha512": "X4s/FCkEUnRGnwR3aSfVIkldBmtURMhmexALNTwpjklzxWU7yjMk7GHLKOZTNkgnWnE0q7+BCf9N2LVRWxewaA==",
+      "sha512": "6WFu12tDmdhPMVorP+6qFPK7Ff0De7qWrBzNd2Ji7rgCAKabaojbYwCVxJNhXlMbmyd9TB7J+DNfUw9hsq5aOA==",
       "type": "package",
       "path": "system.security.cryptography.csp/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12131,10 +12552,11 @@
       ]
     },
     "System.Security.Cryptography.Encoding/4.3.0": {
-      "sha512": "1DEWjZZly9ae9C79vFwqaO5kaOlI5q+3/55ohmq/7dpDyDfc8lYe7YVxJUZ5MF/NtbkRjwFRo14yM4OEo9EmDw==",
+      "sha512": "fiUGVnPDusHESE3cEuBX2nuIfKXpCfr/wpJldwYpW8CnqWywjOIFhHGqUd6jo7zHVHWxL9mDM0nn/DKWC1+DZg==",
       "type": "package",
       "path": "system.security.cryptography.encoding/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12170,10 +12592,11 @@
       ]
     },
     "System.Security.Cryptography.OpenSsl/4.3.0": {
-      "sha512": "h4CEgOgv5PKVF/HwaHzJRiVboL2THYCou97zpmhjghx5frc7fIvlkY1jL+lnIQyChrJDMNEXS6r7byGif8Cy4w==",
+      "sha512": "3bJsYHynYQ79+eggTTWe9BOSBXLKS7PvBH/Yk2izGUGNqKGBlvGoVgTy8se8j+ursZgiNuVVPvZzcECDLuH7Iw==",
       "type": "package",
       "path": "system.security.cryptography.openssl/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.6/System.Security.Cryptography.OpenSsl.dll",
@@ -12184,10 +12607,11 @@
       ]
     },
     "System.Security.Cryptography.Primitives/4.3.0": {
-      "sha512": "7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
+      "sha512": "0CwkD+kMvlk9gvGJki+qHrlZLX+n79ntaZdQjUU0ulFsmEY+VFBGK6KJVAwLHBfRojzMAUHgbmqahrfTK+wb+A==",
       "type": "package",
       "path": "system.security.cryptography.primitives/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12211,10 +12635,11 @@
       ]
     },
     "System.Security.Cryptography.X509Certificates/4.3.0": {
-      "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
+      "sha512": "wdrcMaQpXYkrzuMU5/DHxmxdZ9m/WcwGd9gfuFPml1CNIqm5CZMWNjW0dJ1rb7He5o7BVLPyFi9SW6uUbyDN7w==",
       "type": "package",
       "path": "system.security.cryptography.x509certificates/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12447,10 +12872,11 @@
       ]
     },
     "System.Text.Encoding/4.3.0": {
-      "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
+      "sha512": "UE1a2OPRpFgm2U9NqKPmbSKq1O8MYnaOEyEF/ycls6MYwlvQjuBDomrYzImbR2aJAT8meaeL0gt8i4EMocJ9vQ==",
       "type": "package",
       "path": "system.text.encoding/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12560,10 +12986,11 @@
       ]
     },
     "System.Text.Encoding.Extensions/4.3.0": {
-      "sha512": "YVMK0Bt/A43RmwizJoZ22ei2nmrhobgeiYwFzC4YAN+nue8RF6djXDMog0UCn+brerQoYVyaS+ghy9P/MUVcmw==",
+      "sha512": "OBGS9T1ZxN5IBtTwzFceTlzMFULaC/Hgz49PH6RmToNnjrjq5sGit/dZQwNFuavDKOjAntoy/f6oknwwVDF8eA==",
       "type": "package",
       "path": "system.text.encoding.extensions/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12645,10 +13072,11 @@
       ]
     },
     "System.Text.RegularExpressions/4.3.0": {
-      "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
+      "sha512": "LICNsj9Eey3KyyKuEtKXwcqwECnq73zf1XMohpkJKuR7nyviBqsSO/n8OfYx5OMwsWaenMgrnceeQ40G64FYCA==",
       "type": "package",
       "path": "system.text.regularexpressions/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12727,10 +13155,11 @@
       ]
     },
     "System.Threading/4.3.0": {
-      "sha512": "VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
+      "sha512": "OdvkjINp30Vr6/4tlGAnp9O04GMLC/0V+PdjIztRrXIa0bG34+1KRLaxpoP20+87gI/0Suc04k27VgVWcIaqgw==",
       "type": "package",
       "path": "system.threading/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12796,10 +13225,11 @@
       ]
     },
     "System.Threading.Tasks/4.3.0": {
-      "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
+      "sha512": "e808Lrx7vkwfJGpuHMYan4hi9AGOrxj1r46o2Wubcq3Th6ZE73BbDm08tCP1kkdWL8Wt4F61zySSs8VW1KI84A==",
       "type": "package",
       "path": "system.threading.tasks/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13015,10 +13445,11 @@
       ]
     },
     "System.Threading.Timer/4.3.0": {
-      "sha512": "Z6YfyYTCg7lOZjJzBjONJTFKGN9/NIYKSxhU5GRd+DTwHSZyvWp1xuI5aR+dLg+ayyC5Xv57KiY4oJ0tMO89fQ==",
+      "sha512": "1giQss5U8izL2Ztze5asFl1/KjP06/qpi5xe1v8ADDaPjY4bIPOoWGfAlPAQSOCRV3UE09dExOPZLNmVI4dC6Q==",
       "type": "package",
       "path": "system.threading.timer/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13113,10 +13544,11 @@
       ]
     },
     "System.Xml.ReaderWriter/4.3.0": {
-      "sha512": "GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
+      "sha512": "qVduHvb+ja0axd8khbyDgA8twpk2PJAfPkoSWbkdx3O/7qb3D2Pa2AoVt5CvCRehKr2W6TvpSp3ZrTHTp74XbA==",
       "type": "package",
       "path": "system.xml.readerwriter/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13183,10 +13615,11 @@
       ]
     },
     "System.Xml.XDocument/4.3.0": {
-      "sha512": "5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
+      "sha512": "T5AxZNC1lhfK/vwQf03By4vtannjXmfxgkp1auOyrgfzxbTM8N188dglXFQ2xGJUUcswia77iOjVCrugE5qoSg==",
       "type": "package",
       "path": "system.xml.xdocument/4.3.0",
       "files": [
+        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13462,7 +13895,8 @@
       "Microsoft.AspNetCore.All >= 2.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.3",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4",
+      "ckeditor-full >= 4.10.0"
     ]
   },
   "packageFolders": {
@@ -13532,6 +13966,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.4, )"
+          },
+          "ckeditor-full": {
+            "target": "Package",
+            "version": "[4.10.0, )"
           }
         },
         "imports": [

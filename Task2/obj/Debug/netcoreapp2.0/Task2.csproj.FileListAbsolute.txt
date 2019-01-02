@@ -77,8 +77,8 @@ D:\Projects\NEWS_PORTAL\Task2\bin\Debug\netcoreapp2.0\Task2.dll
 D:\Projects\NEWS_PORTAL\Task2\bin\Debug\netcoreapp2.0\Task2.pdb
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.csprojAssemblyReference.cache
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.csproj.CoreCompileInputs.cache
-D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.AssemblyInfoInputs.cache
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.AssemblyInfo.cs
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.dll
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.pdb
+D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

@@ -69,8 +69,6 @@ namespace Task2
 
                 //vkoptions.ClaimActions.MapJsonKey(ClaimTypes.)
             });
-
-
            
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();

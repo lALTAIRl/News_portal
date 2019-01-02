@@ -32,25 +32,36 @@ namespace Task2.Controllers
             return RedirectToAction("NewsCollection");
         }
 
+        public IActionResult ViewNews(int id)
+        {
+            var news = db.NewsCollection.FirstOrDefault(m => m.Id == id);
+            return View(news);
+        }
+
         [HttpPost]
-        public async Task<IActionResult> DeleteNews(int id)
+        public async Task<IActionResult> PublishNews(int id)
         {
             var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
-            db.NewsCollection.Remove(news);
+            news.IsPublished = true;
+            news.DateOfPublishing = DateTime.Now;
             db.SaveChanges();
             return RedirectToAction("NewsManagement");
         }
 
-        //public IActionResult EditNews(int id)
-        //{
-        //    News post=db.NewsCollection.FirstOrDefault(m => m.Id == id);
-        //    return View(new ViewNewsViewModel(post));
-        //}
-
-        public IActionResult ViewNews(int id)
+        [HttpPost]
+        public async Task<IActionResult> UnpublishNews(int id)
         {
-            var post = db.NewsCollection.FirstOrDefault(m => m.Id == id);
-            return View(post);
+            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            news.IsPublished = false;
+            db.SaveChanges();
+            return RedirectToAction("NewsManagement");
+        }
+
+        [HttpPost]
+        public IActionResult EditNews(int id)
+        {
+            var news = db.NewsCollection.FirstOrDefault(m => m.Id == id);
+            return View(news);
         }
 
         public async Task<IActionResult> ApplyNewsEditing(int id)
@@ -60,7 +71,15 @@ namespace Task2.Controllers
             return RedirectToAction("NewsManagement");
         }
 
-        //public IActionResult NewsCollection()
+        [HttpPost]
+        public async Task<IActionResult> DeleteNews(int id)
+        {
+            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            db.NewsCollection.Remove(news);
+            db.SaveChanges();
+            return RedirectToAction("NewsManagement");
+        }
+
         public async Task<IActionResult> NewsCollection(int page=1)
         {
             IQueryable<News> news = db.NewsCollection;
@@ -82,7 +101,7 @@ namespace Task2.Controllers
         {
             IQueryable<News> news = db.NewsCollection;
             news = news.OrderByDescending(s => s.DateOfCreating);
-            int pageSize = 5;
+            int pageSize = 10;
             var count = await news.CountAsync();
             var items = await news.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -93,25 +112,6 @@ namespace Task2.Controllers
                 EnumNews = items
             };
             return View(viewModel);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> PublishNews(int id)
-        {
-            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
-            news.IsPublished = true;
-            news.DateOfPublishing = DateTime.Now;
-            db.SaveChanges();
-            return RedirectToAction("NewsManagement");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> UnpublishNews(int id)
-        {
-            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
-            news.IsPublished = false;
-            db.SaveChanges();
-            return RedirectToAction("NewsManagement");
         }
 
     }
