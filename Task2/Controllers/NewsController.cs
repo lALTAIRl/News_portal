@@ -64,9 +64,8 @@ namespace Task2.Controllers
             return View(news);
         }
 
-        public async Task<IActionResult> ApplyNewsEditing(int id)
+        public IActionResult ApplyNewsEditing(News news)
         {
-            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
             db.NewsCollection.Update(news);
             db.SaveChanges();
             return RedirectToAction("NewsManagement");

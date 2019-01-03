@@ -45,7 +45,8 @@
 
     <div class="form-group">
         <div class=" col-sm-offset-2">
-            <button asp-action="ApplyNewsEditing" asp-route-id="@Model.Id" type="submit" class="btn btn-primary">Edit</button>
+            @*<button asp-action="ApplyNewsEditing" asp-route-id="@Model.Id" type="submit" class="btn btn-primary">Edit</button>*@
+            <button type="submit" class="btn btn-primary" asp-action="ApplyNewsEditing" asp-route-id="@Model.Id" >Edit</button>
         </div>
     </div>
 

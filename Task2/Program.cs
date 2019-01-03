@@ -29,6 +29,7 @@ namespace Task2
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await RoleInitializer.InitializeAsync(userManager, rolesManager);
+
                     var context = services.GetRequiredService<ApplicationDbContext>();
                     NewsInitializer.Initialize(context);
                 }
