@@ -33,16 +33,16 @@
     }
 
     p {
-        margin-bottom: 3%;
+        margin-bottom: 3%;    
     }
 
-    .description {
-        height: 4em;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .newstext {
+        margin-left: 3%;
+        margin-right: 2%;
     }
 </style>
 
+<page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
 
 @foreach (var news in Model.EnumNews)
 {
@@ -66,12 +66,14 @@
 
             <tr>
                 <td>
-                    <p>
-                        <div class="description">                        
-                            @Html.Raw(news.Text)
-                        </div>
-                    <a asp-action="ViewNews" asp-route-id="@news.Id">Show more</a>
-                    </p>
+                    <div class="newstext">
+                        <p>
+                            <div class="description">                        
+                                @Html.Raw(news.Description)
+                            </div>
+                            <a asp-action="ViewNews" asp-route-id="@news.Id">Show more</a>
+                        </p>
+                    </div>
                 </td>
             </tr>
 
@@ -82,12 +84,12 @@
 <page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
 
 
-@*<script>
+<script>
         function title() {
             var elem = document.getElementsByClassName('description');
             var text = elem.innerHTML;
-            var size = 220;
-            for (var i = 0; i < elem.length; i++) {
+            var size = 150;
+            for (var i = 0; i < @Model.EnumNews.Count(); i++) {
                 if (elem[i].innerHTML.length > size) {
                     text = elem[i].innerHTML.substr(0, size);
                 }
@@ -98,4 +100,4 @@
             }
         }
         title();
-    </script>*@
+    </script>

@@ -3,32 +3,34 @@
     ViewData["Title"] = "ViewNews";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <style>
+        body {
+            background-color: #edeef0;
+        }
 
-<style>
-    body {
-        background-color: #edeef0;
-    }
+        table {
+            background-color: white;
+        }
 
-    table {
-        background-color: white;
-    }
+        tr {
+            border-style: hidden;
+            width: auto;
+        }
 
-    tr {
-        border-style: hidden;
-        width: auto;
-    }
+        p {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
 
-    p {
-        padding-left:5%;
-        padding-right:5%;
-    }
-</style>
+        .news_text {
+            margin-left: 3%;
+        }
+    </style>
 
-
-
+</head>
 
 <table class="table">
-
     <tr>
         <td align="center">
             <div class="control-label">
@@ -45,7 +47,9 @@
 
     <tr>
         <td>
-            <p>@Html.Raw(Model.Text)</p>
+            <div class="fr-view">
+                <p>@Html.Raw(Model.Text)</p>
+            </div>
         </td>
     </tr>
 
@@ -53,6 +57,12 @@
     {
         <tr>
             <td>
+                <form asp-action="EditNews" asp-route-id="@Model.Id" method="get">
+                    <button type="submit" class="btn btn-sm btn-primary">
+                        Edit
+                    </button>
+                </form>
+
                 <form asp-action="DeleteNews" asp-route-id="@Model.Id" method="post">
                     <button type="submit" class="btn btn-sm btn-danger">
                         Delete
@@ -61,4 +71,4 @@
             </td>
         </tr>
     }
-    </table>
+</table>

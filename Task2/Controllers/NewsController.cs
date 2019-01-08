@@ -57,13 +57,14 @@ namespace Task2.Controllers
             return RedirectToAction("NewsManagement");
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult EditNews(int id)
         {
             var news = db.NewsCollection.FirstOrDefault(m => m.Id == id);
             return View(news);
         }
 
+        [HttpPost]
         public IActionResult ApplyNewsEditing(News news)
         {
             db.NewsCollection.Update(news);

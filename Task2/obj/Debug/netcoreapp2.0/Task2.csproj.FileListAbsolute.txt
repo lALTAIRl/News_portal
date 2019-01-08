@@ -82,3 +82,15 @@ D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.AssemblyInfo.cs
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.dll
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\Task2.pdb
 D:\Projects\NEWS_PORTAL\Task2\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\TASK\News_portal\Task2\bin\Debug\netcoreapp2.0\Task2.deps.json
+D:\TASK\News_portal\Task2\bin\Debug\netcoreapp2.0\Task2.runtimeconfig.json
+D:\TASK\News_portal\Task2\bin\Debug\netcoreapp2.0\Task2.runtimeconfig.dev.json
+D:\TASK\News_portal\Task2\bin\Debug\netcoreapp2.0\Task2.dll
+D:\TASK\News_portal\Task2\bin\Debug\netcoreapp2.0\Task2.pdb
+D:\TASK\News_portal\Task2\obj\Debug\netcoreapp2.0\Task2.csprojAssemblyReference.cache
+D:\TASK\News_portal\Task2\obj\Debug\netcoreapp2.0\Task2.csproj.CoreCompileInputs.cache
+D:\TASK\News_portal\Task2\obj\Debug\netcoreapp2.0\Task2.AssemblyInfoInputs.cache
+D:\TASK\News_portal\Task2\obj\Debug\netcoreapp2.0\Task2.AssemblyInfo.cs
+D:\TASK\News_portal\Task2\obj\Debug\netcoreapp2.0\Task2.dll
+D:\TASK\News_portal\Task2\obj\Debug\netcoreapp2.0\Task2.pdb
+D:\TASK\News_portal\Task2\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

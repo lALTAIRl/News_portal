@@ -30,6 +30,19 @@
       "ckeditor-full/4.10.0": {
         "type": "package"
       },
+      "FontAwesome/4.6.3": {
+        "type": "package"
+      },
+      "FroalaEditor/2.9.1": {
+        "type": "package",
+        "dependencies": {
+          "FontAwesome": "4.6.3",
+          "jQuery": "1.11.0"
+        }
+      },
+      "jQuery/1.11.0": {
+        "type": "package"
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -5240,6 +5253,7 @@
         "dependencies": {
           "AspNet.Security.OAuth.VK": "0.0.1",
           "Brik.Security.VkontakteMiddleware": "2.0.2",
+          "FroalaEditor": "2.9.1",
           "Microsoft.AspNetCore.All": "2.0.8",
           "Microsoft.NETCore.App": "2.0.0",
           "ckeditor-full": "4.10.0"
@@ -5641,6 +5655,191 @@
         "content/Scripts/ckeditor/skins/moono-lisa/images/spinner.gif",
         "content/Scripts/ckeditor/skins/moono-lisa/readme.md",
         "content/Scripts/ckeditor/styles.js"
+      ]
+    },
+    "FontAwesome/4.6.3": {
+      "sha512": "IfG4qXYe/zf+dl3+m3aOO6Nh401jNML3wXQgYSs1cw/HnHJgmiPsDJ5+RLflGEuzOjKr9/ITLzOP/iflhArxFA==",
+      "type": "package",
+      "path": "fontawesome/4.6.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Content/font-awesome.css",
+        "Content/Content/font-awesome.min.css",
+        "Content/fonts/FontAwesome.otf",
+        "Content/fonts/fontawesome-webfont.eot",
+        "Content/fonts/fontawesome-webfont.svg",
+        "Content/fonts/fontawesome-webfont.ttf",
+        "Content/fonts/fontawesome-webfont.woff",
+        "Content/fonts/fontawesome-webfont.woff2",
+        "fontawesome.4.6.3.nupkg.sha512",
+        "fontawesome.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "FroalaEditor/2.9.1": {
+      "sha512": "d0CXKmsWf4f0fwHj7ZRoHlOYj5V6gVOlqzkuMAyxkEvmJtUC5QLFdBIRwFK0wUxPdWaKOB2GVqusKDseINM/fQ==",
+      "type": "package",
+      "path": "froalaeditor/2.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/froala-editor/css/froala_editor.css",
+        "Content/Scripts/froala-editor/css/froala_editor.min.css",
+        "Content/Scripts/froala-editor/css/froala_editor.pkgd.css",
+        "Content/Scripts/froala-editor/css/froala_editor.pkgd.min.css",
+        "Content/Scripts/froala-editor/css/froala_style.css",
+        "Content/Scripts/froala-editor/css/froala_style.min.css",
+        "Content/Scripts/froala-editor/css/plugins/char_counter.css",
+        "Content/Scripts/froala-editor/css/plugins/char_counter.min.css",
+        "Content/Scripts/froala-editor/css/plugins/code_view.css",
+        "Content/Scripts/froala-editor/css/plugins/code_view.min.css",
+        "Content/Scripts/froala-editor/css/plugins/colors.css",
+        "Content/Scripts/froala-editor/css/plugins/colors.min.css",
+        "Content/Scripts/froala-editor/css/plugins/draggable.css",
+        "Content/Scripts/froala-editor/css/plugins/draggable.min.css",
+        "Content/Scripts/froala-editor/css/plugins/emoticons.css",
+        "Content/Scripts/froala-editor/css/plugins/emoticons.min.css",
+        "Content/Scripts/froala-editor/css/plugins/file.css",
+        "Content/Scripts/froala-editor/css/plugins/file.min.css",
+        "Content/Scripts/froala-editor/css/plugins/fullscreen.css",
+        "Content/Scripts/froala-editor/css/plugins/fullscreen.min.css",
+        "Content/Scripts/froala-editor/css/plugins/help.css",
+        "Content/Scripts/froala-editor/css/plugins/help.min.css",
+        "Content/Scripts/froala-editor/css/plugins/image.css",
+        "Content/Scripts/froala-editor/css/plugins/image.min.css",
+        "Content/Scripts/froala-editor/css/plugins/image_manager.css",
+        "Content/Scripts/froala-editor/css/plugins/image_manager.min.css",
+        "Content/Scripts/froala-editor/css/plugins/line_breaker.css",
+        "Content/Scripts/froala-editor/css/plugins/line_breaker.min.css",
+        "Content/Scripts/froala-editor/css/plugins/quick_insert.css",
+        "Content/Scripts/froala-editor/css/plugins/quick_insert.min.css",
+        "Content/Scripts/froala-editor/css/plugins/special_characters.css",
+        "Content/Scripts/froala-editor/css/plugins/special_characters.min.css",
+        "Content/Scripts/froala-editor/css/plugins/table.css",
+        "Content/Scripts/froala-editor/css/plugins/table.min.css",
+        "Content/Scripts/froala-editor/css/plugins/video.css",
+        "Content/Scripts/froala-editor/css/plugins/video.min.css",
+        "Content/Scripts/froala-editor/css/themes/dark.css",
+        "Content/Scripts/froala-editor/css/themes/dark.min.css",
+        "Content/Scripts/froala-editor/css/themes/gray.css",
+        "Content/Scripts/froala-editor/css/themes/gray.min.css",
+        "Content/Scripts/froala-editor/css/themes/red.css",
+        "Content/Scripts/froala-editor/css/themes/red.min.css",
+        "Content/Scripts/froala-editor/css/themes/royal.css",
+        "Content/Scripts/froala-editor/css/themes/royal.min.css",
+        "Content/Scripts/froala-editor/css/third_party/embedly.css",
+        "Content/Scripts/froala-editor/css/third_party/embedly.min.css",
+        "Content/Scripts/froala-editor/css/third_party/font_awesome.css",
+        "Content/Scripts/froala-editor/css/third_party/font_awesome.min.css",
+        "Content/Scripts/froala-editor/css/third_party/image_tui.css",
+        "Content/Scripts/froala-editor/css/third_party/image_tui.min.css",
+        "Content/Scripts/froala-editor/css/third_party/spell_checker.css",
+        "Content/Scripts/froala-editor/css/third_party/spell_checker.min.css",
+        "Content/Scripts/froala-editor/editor.jpg",
+        "Content/Scripts/froala-editor/img/photo1.jpg",
+        "Content/Scripts/froala-editor/index.html",
+        "Content/Scripts/froala-editor/js/froala_editor.min.js",
+        "Content/Scripts/froala-editor/js/froala_editor.pkgd.min.js",
+        "Content/Scripts/froala-editor/js/languages/ar.js",
+        "Content/Scripts/froala-editor/js/languages/bs.js",
+        "Content/Scripts/froala-editor/js/languages/cs.js",
+        "Content/Scripts/froala-editor/js/languages/da.js",
+        "Content/Scripts/froala-editor/js/languages/de.js",
+        "Content/Scripts/froala-editor/js/languages/el.js",
+        "Content/Scripts/froala-editor/js/languages/en_ca.js",
+        "Content/Scripts/froala-editor/js/languages/en_gb.js",
+        "Content/Scripts/froala-editor/js/languages/es.js",
+        "Content/Scripts/froala-editor/js/languages/et.js",
+        "Content/Scripts/froala-editor/js/languages/fa.js",
+        "Content/Scripts/froala-editor/js/languages/fi.js",
+        "Content/Scripts/froala-editor/js/languages/fr.js",
+        "Content/Scripts/froala-editor/js/languages/he.js",
+        "Content/Scripts/froala-editor/js/languages/hr.js",
+        "Content/Scripts/froala-editor/js/languages/hu.js",
+        "Content/Scripts/froala-editor/js/languages/id.js",
+        "Content/Scripts/froala-editor/js/languages/it.js",
+        "Content/Scripts/froala-editor/js/languages/ja.js",
+        "Content/Scripts/froala-editor/js/languages/ko.js",
+        "Content/Scripts/froala-editor/js/languages/ku.js",
+        "Content/Scripts/froala-editor/js/languages/me.js",
+        "Content/Scripts/froala-editor/js/languages/nb.js",
+        "Content/Scripts/froala-editor/js/languages/nl.js",
+        "Content/Scripts/froala-editor/js/languages/pl.js",
+        "Content/Scripts/froala-editor/js/languages/pt_br.js",
+        "Content/Scripts/froala-editor/js/languages/pt_pt.js",
+        "Content/Scripts/froala-editor/js/languages/ro.js",
+        "Content/Scripts/froala-editor/js/languages/ru.js",
+        "Content/Scripts/froala-editor/js/languages/sk.js",
+        "Content/Scripts/froala-editor/js/languages/sr.js",
+        "Content/Scripts/froala-editor/js/languages/sv.js",
+        "Content/Scripts/froala-editor/js/languages/th.js",
+        "Content/Scripts/froala-editor/js/languages/tr.js",
+        "Content/Scripts/froala-editor/js/languages/uk.js",
+        "Content/Scripts/froala-editor/js/languages/vi.js",
+        "Content/Scripts/froala-editor/js/languages/zh_cn.js",
+        "Content/Scripts/froala-editor/js/languages/zh_tw.js",
+        "Content/Scripts/froala-editor/js/plugins/align.min.js",
+        "Content/Scripts/froala-editor/js/plugins/char_counter.min.js",
+        "Content/Scripts/froala-editor/js/plugins/code_beautifier.min.js",
+        "Content/Scripts/froala-editor/js/plugins/code_view.min.js",
+        "Content/Scripts/froala-editor/js/plugins/colors.min.js",
+        "Content/Scripts/froala-editor/js/plugins/draggable.min.js",
+        "Content/Scripts/froala-editor/js/plugins/emoticons.min.js",
+        "Content/Scripts/froala-editor/js/plugins/entities.min.js",
+        "Content/Scripts/froala-editor/js/plugins/file.min.js",
+        "Content/Scripts/froala-editor/js/plugins/font_family.min.js",
+        "Content/Scripts/froala-editor/js/plugins/font_size.min.js",
+        "Content/Scripts/froala-editor/js/plugins/forms.min.js",
+        "Content/Scripts/froala-editor/js/plugins/fullscreen.min.js",
+        "Content/Scripts/froala-editor/js/plugins/help.min.js",
+        "Content/Scripts/froala-editor/js/plugins/image.min.js",
+        "Content/Scripts/froala-editor/js/plugins/image_manager.min.js",
+        "Content/Scripts/froala-editor/js/plugins/inline_class.min.js",
+        "Content/Scripts/froala-editor/js/plugins/inline_style.min.js",
+        "Content/Scripts/froala-editor/js/plugins/line_breaker.min.js",
+        "Content/Scripts/froala-editor/js/plugins/line_height.min.js",
+        "Content/Scripts/froala-editor/js/plugins/link.min.js",
+        "Content/Scripts/froala-editor/js/plugins/lists.min.js",
+        "Content/Scripts/froala-editor/js/plugins/paragraph_format.min.js",
+        "Content/Scripts/froala-editor/js/plugins/paragraph_style.min.js",
+        "Content/Scripts/froala-editor/js/plugins/print.min.js",
+        "Content/Scripts/froala-editor/js/plugins/quick_insert.min.js",
+        "Content/Scripts/froala-editor/js/plugins/quote.min.js",
+        "Content/Scripts/froala-editor/js/plugins/save.min.js",
+        "Content/Scripts/froala-editor/js/plugins/special_characters.min.js",
+        "Content/Scripts/froala-editor/js/plugins/table.min.js",
+        "Content/Scripts/froala-editor/js/plugins/url.min.js",
+        "Content/Scripts/froala-editor/js/plugins/video.min.js",
+        "Content/Scripts/froala-editor/js/plugins/word_paste.min.js",
+        "Content/Scripts/froala-editor/js/third_party/embedly.min.js",
+        "Content/Scripts/froala-editor/js/third_party/font_awesome.min.js",
+        "Content/Scripts/froala-editor/js/third_party/image_aviary.min.js",
+        "Content/Scripts/froala-editor/js/third_party/image_tui.min.js",
+        "Content/Scripts/froala-editor/js/third_party/spell_checker.min.js",
+        "froalaeditor.2.9.1.nupkg.sha512",
+        "froalaeditor.nuspec"
+      ]
+    },
+    "jQuery/1.11.0": {
+      "sha512": "mhS7dNNCAJNlKD9ftHsGuIRVbMED7QsmsU+TuopmHWrE9puxI9wrifQNI2Nbt1j+Khwq+fg7h4jlYzbsLsRSXA==",
+      "type": "package",
+      "path": "jquery/1.11.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.11.0-vsdoc.js",
+        "Content/Scripts/jquery-1.11.0.js",
+        "Content/Scripts/jquery-1.11.0.min.js",
+        "Content/Scripts/jquery-1.11.0.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.11.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.11.0.nupkg.sha512",
+        "jquery.nuspec"
       ]
     },
     "Libuv/1.10.0": {
@@ -14563,6 +14762,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "FroalaEditor >= 2.9.1",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "Task2 >= 1.0.0",
@@ -14578,11 +14778,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\NEWS_PORTAL\\XUnitTestProject1\\XUnitTestProject1.csproj",
+      "projectUniqueName": "D:\\TASK\\News_portal\\XUnitTestProject1\\XUnitTestProject1.csproj",
       "projectName": "XUnitTestProject1",
-      "projectPath": "D:\\Projects\\NEWS_PORTAL\\XUnitTestProject1\\XUnitTestProject1.csproj",
+      "projectPath": "D:\\TASK\\News_portal\\XUnitTestProject1\\XUnitTestProject1.csproj",
       "packagesPath": "C:\\Users\\i.garbuz\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\NEWS_PORTAL\\XUnitTestProject1\\obj\\",
+      "outputPath": "D:\\TASK\\News_portal\\XUnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -14601,8 +14801,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Projects\\NEWS_PORTAL\\Task2\\Task2.csproj": {
-              "projectPath": "D:\\Projects\\NEWS_PORTAL\\Task2\\Task2.csproj"
+            "D:\\TASK\\News_portal\\Task2\\Task2.csproj": {
+              "projectPath": "D:\\TASK\\News_portal\\Task2\\Task2.csproj"
             }
           }
         }
@@ -14616,6 +14816,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "FroalaEditor": {
+            "target": "Package",
+            "version": "[2.9.1, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[15.9.0, )"

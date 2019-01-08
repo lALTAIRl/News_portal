@@ -7,7 +7,7 @@
     body {
         background-color: #edeef0;
     }
-   
+
     table {
         margin-top: 5%;
         background-color: white;
@@ -21,7 +21,6 @@
     .form-control {
         margin-top: 3%;
     }
-
 </style>
 
 @if (User.IsInRole("admin"))
@@ -29,10 +28,9 @@
     <a asp-area="" asp-controller="News" asp-action="CreateNews" class="btn form-control btn-success">Create news</a>
 }
 
-    <table class="table">
-        @foreach (var news in Model.EnumNews)
-        {
-
+<table class="table">
+    @foreach (var news in Model.EnumNews)
+    {
         <tr>
             <td align="center">
                 <div class="control-label">
@@ -46,17 +44,8 @@
                 </div>
             </td>
 
-            @*<td align="center">
-            <img src="@news.ImageURL">
-        </td>
-
-        <td>
-            @Html.Raw(news.Text)
-        </td>*@
-
             @if (User.IsInRole("admin"))
             {
-
                 <td>
                     <a asp-action="ViewNews" asp-route-id="@news.Id" class="btn btn-sm btn-success">
                         View
@@ -86,7 +75,7 @@
                 }
 
                 <td>
-                    <form asp-action="EditNews" asp-route-id="@news.Id" method="post">
+                    <form asp-action="EditNews" asp-route-id="@news.Id" method="get">
                         <button type="submit" class="btn btn-sm btn-warning">
                             Edit
                         </button>
@@ -100,11 +89,9 @@
                         </button>
                     </form>
                 </td>
-
             }
         </tr>
-
-        }
-    </table>
+    }
+</table>
 
 <page-link page-model="Model.PageViewModel" page-action="NewsManagement"></page-link>

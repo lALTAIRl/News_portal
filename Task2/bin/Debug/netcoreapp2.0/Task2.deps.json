@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "7659945919444515491c778db4b236c8832edc1d"
+    "signature": "88c7102038220156ebbac6e5f1cca1d39c10b9b0"
   },
   "compilationOptions": {
     "defines": [
@@ -26,6 +26,7 @@
         "dependencies": {
           "AspNet.Security.OAuth.VK": "0.0.1",
           "Brik.Security.VkontakteMiddleware": "2.0.2",
+          "FroalaEditor": "2.9.1",
           "Microsoft.AspNetCore.All": "2.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.3",
           "Microsoft.NETCore.App": "2.0.0",
@@ -69,6 +70,14 @@
         }
       },
       "ckeditor-full/4.10.0": {},
+      "FontAwesome/4.6.3": {},
+      "FroalaEditor/2.9.1": {
+        "dependencies": {
+          "FontAwesome": "4.6.3",
+          "jQuery": "1.11.0"
+        }
+      },
+      "jQuery/1.11.0": {},
       "Libuv/1.10.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0"
@@ -4849,6 +4858,27 @@
       "sha512": "sha512-r38KbWKphT+gdReurc3oQ/XyMT3siOSWOBIXlfy0A5SrtakFxlLYD1otOK7qbR5EpGii/3ybNVEY3rCkLq/DAw==",
       "path": "ckeditor-full/4.10.0",
       "hashPath": "ckeditor-full.4.10.0.nupkg.sha512"
+    },
+    "FontAwesome/4.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IfG4qXYe/zf+dl3+m3aOO6Nh401jNML3wXQgYSs1cw/HnHJgmiPsDJ5+RLflGEuzOjKr9/ITLzOP/iflhArxFA==",
+      "path": "fontawesome/4.6.3",
+      "hashPath": "fontawesome.4.6.3.nupkg.sha512"
+    },
+    "FroalaEditor/2.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d0CXKmsWf4f0fwHj7ZRoHlOYj5V6gVOlqzkuMAyxkEvmJtUC5QLFdBIRwFK0wUxPdWaKOB2GVqusKDseINM/fQ==",
+      "path": "froalaeditor/2.9.1",
+      "hashPath": "froalaeditor.2.9.1.nupkg.sha512"
+    },
+    "jQuery/1.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mhS7dNNCAJNlKD9ftHsGuIRVbMED7QsmsU+TuopmHWrE9puxI9wrifQNI2Nbt1j+Khwq+fg7h4jlYzbsLsRSXA==",
+      "path": "jquery/1.11.0",
+      "hashPath": "jquery.1.11.0.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",
