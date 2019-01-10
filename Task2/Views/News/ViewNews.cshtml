@@ -24,51 +24,63 @@
         }
 
         .news_text {
-            margin-left: 3%;
+            margin-left: 5%;
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        .News_content {
+            background-color: white;
+            padding-left: 2%;
+            padding-right: 5%;
+        }
+
+        .btn-group{
+            margin-bottom:3%;
+        }
+        .tools{
+            margin-left:5%;
+        }
+
+        .control-label{
+            padding:2%;
         }
     </style>
 
 </head>
 
-<table class="table">
-    <tr>
-        <td align="center">
-            <div class="control-label">
-                <h2 class="text-center">@Model.Caption</h2>
-            </div>
-        </td>
-    </tr>
+<div class="News_content">
 
-    <tr>
-        <td align="center">
-            <img src="@Model.ImageURL">
-        </td>
-    </tr>
+    <div class="control-label">
+        <h1 class="text-center"><b>@Model.Caption</b></h1>
+    </div>
 
-    <tr>
-        <td>
-            <div class="fr-view">
-                <p>@Html.Raw(Model.Text)</p>
-            </div>
-        </td>
-    </tr>
+    <div class="image" align="center">
+        <img src="@Model.ImageURL">
+    </div>
+
+    <div class="news_text">
+        <p>@Html.Raw(Model.Text)</p>
+    </div>
 
     @if (User.IsInRole("admin"))
     {
-        <tr>
-            <td>
-                <form asp-action="EditNews" asp-route-id="@Model.Id" method="get">
-                    <button type="submit" class="btn btn-sm btn-primary">
+        <div class="tools">
+            <div class="btn-group">
+                <form asp-action="EditNews" asp-route-id="@Model.Id" method="get" class="btn-group">
+                    <button type="submit" class="btn btn-toolbar btn-primary">
                         Edit
                     </button>
                 </form>
 
-                <form asp-action="DeleteNews" asp-route-id="@Model.Id" method="post">
-                    <button type="submit" class="btn btn-sm btn-danger">
+                <form asp-action="DeleteNews" asp-route-id="@Model.Id" method="post" class="btn-group">
+                    <button type="submit" class="btn btn-toolbar btn-danger">
                         Delete
                     </button>
                 </form>
-            </td>
-        </tr>
+            </div>
+        </div>
     }
-</table>
+</div>

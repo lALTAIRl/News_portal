@@ -43,12 +43,12 @@
 
                     @if (User.IsInRole("admin"))
                     {
-                        <li><a asp-area="" asp-controller="Roles" asp-action="UserList">Users</a></li>
                         <li><a asp-area="" asp-controller="News" asp-action="NewsManagement">News Management</a></li>
+                        <li><a asp-area="" asp-controller="Roles" asp-action="UserList">Users</a></li>
                         @*<li><a asp-area="" asp-controller="News" asp-action="CreateNews">Create news</a></li>
-                            <li><a asp-area="" asp-controller="Roles" asp-action="RolesList">List of roles</a></li>
-                            <li><a asp-area="" asp-controller="Roles" asp-action="Create">Create</a></li>
-                            <li><a asp-area="" asp-controller="News" asp-action="NewsCollection">NewsCollection</a></li>*@
+                        <li><a asp-area="" asp-controller="Roles" asp-action="RolesList">List of roles</a></li>
+                        <li><a asp-area="" asp-controller="Roles" asp-action="Create">Create</a></li>
+                        <li><a asp-area="" asp-controller="News" asp-action="NewsCollection">NewsCollection</a></li>*@
                     }
 
                 </ul>

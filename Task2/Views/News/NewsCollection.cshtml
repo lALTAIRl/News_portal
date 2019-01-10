@@ -2,7 +2,7 @@
 @model Task2.ViewModels.PageIndexViewModel
 @addTagHelper "*, Task2"
 
-<h2 align="center">News Collection</h2>
+<h1 align="center"><b>News Collection</b></h1>
 
 <style>
     body {
@@ -10,7 +10,7 @@
     }
 
     table {
-        margin-top: 5%;
+        margin-top: 3%;
         background-color: white;
     }
 
@@ -38,7 +38,12 @@
 
     .newstext {
         margin-left: 3%;
-        margin-right: 2%;
+        margin-right: 3%;
+    }
+
+    .control-label {
+        padding-left: 2%;
+        padding-right: 2%;
     }
 </style>
 
@@ -53,7 +58,7 @@
             <tr>
                 <td align="center">
                     <div class="control-label">
-                        <a asp-action="ViewNews" asp-route-id="@news.Id"><h2>@news.Caption</h2></a>
+                        <a asp-action="ViewNews" asp-route-id="@news.Id"><h1><b>@news.Caption</b></h1></a>
                     </div>
                 </td>
             </tr>

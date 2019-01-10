@@ -7,5 +7,9 @@ namespace Task2.ViewModels
 {
     public class NewsViewModel
     {
+        public string Caption { get; set; }
+        public string Description { get; set; }
+        public string Text { get; set; }
+        public string ImageURL { get; set; }
     }
 }

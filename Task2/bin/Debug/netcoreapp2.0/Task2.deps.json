@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "88c7102038220156ebbac6e5f1cca1d39c10b9b0"
+    "signature": "c3623bbc7e1a48f4dc186fccb384b103d6673c70"
   },
   "compilationOptions": {
     "defines": [
@@ -25,13 +25,12 @@
       "Task2/1.0.0": {
         "dependencies": {
           "AspNet.Security.OAuth.VK": "0.0.1",
-          "Brik.Security.VkontakteMiddleware": "2.0.2",
-          "FroalaEditor": "2.9.1",
+          "AutoMapper": "8.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "Microsoft.AspNetCore.All": "2.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.3",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.4",
-          "ckeditor-full": "4.10.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.4"
         },
         "runtime": {
           "Task2.dll": {}
@@ -54,30 +53,36 @@
           "lib/netcoreapp2.0/AspNet.Security.OAuth.VK.dll": {}
         }
       },
-      "Brik.Security.VkontakteMiddleware/2.0.2": {
+      "AutoMapper/8.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.OAuth": "2.0.4",
-          "Newtonsoft.Json": "10.0.3"
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Brik.Security.VkontakteMiddleware.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
           }
         },
         "compile": {
-          "lib/netstandard2.0/Brik.Security.VkontakteMiddleware.dll": {}
+          "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
-      "ckeditor-full/4.10.0": {},
-      "FontAwesome/4.6.3": {},
-      "FroalaEditor/2.9.1": {
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/6.0.0": {
         "dependencies": {
-          "FontAwesome": "4.6.3",
-          "jQuery": "1.11.0"
+          "AutoMapper": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "jQuery/1.11.0": {},
       "Libuv/1.10.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0"
@@ -514,7 +519,7 @@
       "Microsoft.AspNetCore.Authentication.OAuth/2.0.4": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.0.4",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.OAuth.dll": {
@@ -973,8 +978,8 @@
       },
       "Microsoft.AspNetCore.JsonPatch/2.0.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.4.0",
-          "Newtonsoft.Json": "10.0.3"
+          "Microsoft.CSharp": "4.5.0",
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
@@ -1286,7 +1291,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.3",
           "Microsoft.Extensions.Logging.Console": "2.0.2",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.NodeServices.dll": {
@@ -1660,7 +1665,7 @@
           "Microsoft.Rest.ClientRuntime": "2.3.8",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.7",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "10.0.1",
           "System.Net.Http": "4.3.0"
         },
         "runtime": {
@@ -1677,7 +1682,7 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "10.0.1",
           "System.Collections": "4.3.0",
           "System.Collections.Concurrent": "4.3.0",
           "System.Linq": "4.3.0",
@@ -1812,7 +1817,7 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
-      "Microsoft.CSharp/4.4.0": {},
+      "Microsoft.CSharp/4.5.0": {},
       "Microsoft.Data.Edm/5.8.2": {
         "runtime": {
           "lib/netstandard1.1/Microsoft.Data.Edm.dll": {
@@ -1989,7 +1994,7 @@
       },
       "Microsoft.EntityFrameworkCore.Relational/2.0.3": {
         "dependencies": {
-          "Microsoft.CSharp": "4.4.0",
+          "Microsoft.CSharp": "4.5.0",
           "Microsoft.EntityFrameworkCore": "2.0.3",
           "Microsoft.Extensions.Configuration.Abstractions": "2.0.2"
         },
@@ -2227,7 +2232,7 @@
         "dependencies": {
           "Microsoft.Extensions.Configuration": "2.0.2",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.0.2",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.dll": {
@@ -2297,7 +2302,7 @@
       "Microsoft.Extensions.DependencyModel/2.0.3": {
         "dependencies": {
           "Microsoft.DotNet.PlatformAbstractions": "2.0.3",
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "10.0.1",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Dynamic.Runtime": "4.3.0",
           "System.Linq": "4.3.0"
@@ -2559,7 +2564,7 @@
       "Microsoft.Extensions.Logging.EventSource/2.0.2": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "2.0.2",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.EventSource.dll": {
@@ -2746,7 +2751,7 @@
       "Microsoft.IdentityModel.Tokens/5.1.4": {
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "1.1.4",
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "10.0.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Tools": "4.3.0",
           "System.Runtime": "4.3.0",
@@ -2789,7 +2794,7 @@
       "Microsoft.Rest.ClientRuntime/2.3.8": {
         "dependencies": {
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {
@@ -2805,7 +2810,7 @@
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.8",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {
@@ -2851,7 +2856,7 @@
       },
       "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.0.4": {
         "dependencies": {
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {
@@ -2867,7 +2872,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "2.0.4",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {
@@ -2927,7 +2932,7 @@
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "2.3.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "2.0.4",
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "10.0.1",
           "NuGet.Frameworks": "4.0.0"
         },
         "runtime": {
@@ -2981,19 +2986,39 @@
           "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/10.0.3": {
+      "Newtonsoft.Json/10.0.1": {
         "dependencies": {
-          "Microsoft.CSharp": "4.4.0",
-          "NETStandard.Library": "2.0.0",
+          "Microsoft.CSharp": "4.5.0",
+          "System.Collections": "4.3.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.ObjectModel": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Xml.ReaderWriter": "4.3.0",
+          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.3.21018"
+            "fileVersion": "10.0.1.20720"
           }
         },
         "compile": {
@@ -3003,7 +3028,7 @@
       "Newtonsoft.Json.Bson/1.0.1": {
         "dependencies": {
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.1"
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
@@ -4641,7 +4666,7 @@
         "dependencies": {
           "Microsoft.Data.OData": "5.8.2",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json": "10.0.1",
           "System.Spatial": "5.8.2"
         },
         "runtime": {
@@ -4845,40 +4870,19 @@
       "path": "aspnet.security.oauth.vk/0.0.1",
       "hashPath": "aspnet.security.oauth.vk.0.0.1.nupkg.sha512"
     },
-    "Brik.Security.VkontakteMiddleware/2.0.2": {
+    "AutoMapper/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sadb5U7oTeE1bmryM+2F76cLws+T5SlkZMrZeIeareqs+RaDjS1X2gcNEz5HzML8Rv+CFfZfadL2uCJyjyTAGA==",
-      "path": "brik.security.vkontaktemiddleware/2.0.2",
-      "hashPath": "brik.security.vkontaktemiddleware.2.0.2.nupkg.sha512"
+      "sha512": "sha512-kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
+      "path": "automapper/8.0.0",
+      "hashPath": "automapper.8.0.0.nupkg.sha512"
     },
-    "ckeditor-full/4.10.0": {
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-r38KbWKphT+gdReurc3oQ/XyMT3siOSWOBIXlfy0A5SrtakFxlLYD1otOK7qbR5EpGii/3ybNVEY3rCkLq/DAw==",
-      "path": "ckeditor-full/4.10.0",
-      "hashPath": "ckeditor-full.4.10.0.nupkg.sha512"
-    },
-    "FontAwesome/4.6.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IfG4qXYe/zf+dl3+m3aOO6Nh401jNML3wXQgYSs1cw/HnHJgmiPsDJ5+RLflGEuzOjKr9/ITLzOP/iflhArxFA==",
-      "path": "fontawesome/4.6.3",
-      "hashPath": "fontawesome.4.6.3.nupkg.sha512"
-    },
-    "FroalaEditor/2.9.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-d0CXKmsWf4f0fwHj7ZRoHlOYj5V6gVOlqzkuMAyxkEvmJtUC5QLFdBIRwFK0wUxPdWaKOB2GVqusKDseINM/fQ==",
-      "path": "froalaeditor/2.9.1",
-      "hashPath": "froalaeditor.2.9.1.nupkg.sha512"
-    },
-    "jQuery/1.11.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mhS7dNNCAJNlKD9ftHsGuIRVbMED7QsmsU+TuopmHWrE9puxI9wrifQNI2Nbt1j+Khwq+fg7h4jlYzbsLsRSXA==",
-      "path": "jquery/1.11.0",
-      "hashPath": "jquery.1.11.0.nupkg.sha512"
+      "sha512": "sha512-EHxmLh6OuTuiGU3U+pHhNHwWOq1juK+Wbvr2n7Oj8/L819+DCnr7dtVtIGmBYHrle6foukEXqT5rcbRS9+CFyA==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/6.0.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",
@@ -5545,12 +5549,12 @@
       "path": "microsoft.codeanalysis.workspaces.common/2.3.1",
       "hashPath": "microsoft.codeanalysis.workspaces.common.2.3.1.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.4.0": {
+    "Microsoft.CSharp/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ShGjgRL3UHUXcoPSlq8jDB6b+9WHo4n8VcY9ex7egt6kuHFuK3Z6BUN9ClF3Y8dR1yIoaRkHPQBfX/IH5i/YXg==",
-      "path": "microsoft.csharp/4.4.0",
-      "hashPath": "microsoft.csharp.4.4.0.nupkg.sha512"
+      "sha512": "sha512-EGoBmf3Na2ppbhPePDE9PlX81r1HuOZH5twBrq7couJZiPTjUnD3648balerQJO6EJ8Sj+43+XuRwQ7r+3tE3w==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
     },
     "Microsoft.Data.Edm/5.8.2": {
       "type": "package",
@@ -6084,12 +6088,12 @@
       "path": "microsoft.win32.registry/4.4.0",
       "hashPath": "microsoft.win32.registry.4.4.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/10.0.3": {
+    "Newtonsoft.Json/10.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MoATFm6YJyk5OdqDdxDWfKe5dkY3Cygu0wrpKPH/LbWtMmSuD/3G/JIInt9sIJN7hKQOFYCIb2UjLc2vO5byQQ==",
-      "path": "newtonsoft.json/10.0.3",
-      "hashPath": "newtonsoft.json.10.0.3.nupkg.sha512"
+      "sha512": "sha512-MOUhQfeI43upq9QiEv+7YYTDQPtEZEj9xB50MgplO1XF/aumP0f+TCYIHpZEmfsiahJJaXt/gdRFYLFEoF2VyQ==",
+      "path": "newtonsoft.json/10.0.1",
+      "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
     },
     "Newtonsoft.Json.Bson/1.0.1": {
       "type": "package",

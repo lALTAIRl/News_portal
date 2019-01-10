@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Task2.Data;
 using Task2.Models;
 using Task2.Services;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 
@@ -45,31 +46,39 @@ namespace Task2
             });
 
 
-            services.AddAuthentication().AddVK(vkoptions =>
+            //services.AddAuthentication().AddVK(vkoptions =>
+            //{
+            //    vkoptions.ClientId = Configuration["Authentication:Vk:AppId"];
+            //    vkoptions.ClientSecret = Configuration["Authentication:Vk:AppSecret"];
+
+            //    // Request for permissions https://vk.com/dev/permissions?f=1.%20Access%20Permissions%20for%20User%20Token
+            //    vkoptions.Scope.Add("email");
+
+            //    // Add fields https://vk.com/dev/objects/user
+            //    vkoptions.Fields.Add("uid");
+            //    vkoptions.Fields.Add("first_name");
+            //    vkoptions.Fields.Add("last_name");
+
+
+            //    // In this case email will return in OAuthTokenResponse, 
+            //    // but all scope values will be merged with user response
+            //    // so we can claim it as field
+            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "uid");
+            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.GivenName, "first_name");
+            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.Surname, "last_name");
+
+            //    //vkoptions.ClaimActions.MapJsonKey(ClaimTypes.)
+            //});
+
+            var mappingConfig = new MapperConfiguration(mc =>
             {
-                vkoptions.ClientId = Configuration["Authentication:Vk:AppId"];
-                vkoptions.ClientSecret = Configuration["Authentication:Vk:AppSecret"];
-
-                // Request for permissions https://vk.com/dev/permissions?f=1.%20Access%20Permissions%20for%20User%20Token
-                vkoptions.Scope.Add("email");
-
-                // Add fields https://vk.com/dev/objects/user
-                vkoptions.Fields.Add("uid");
-                vkoptions.Fields.Add("first_name");
-                vkoptions.Fields.Add("last_name");
-
-
-                // In this case email will return in OAuthTokenResponse, 
-                // but all scope values will be merged with user response
-                // so we can claim it as field
-                vkoptions.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "uid");
-                vkoptions.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
-                vkoptions.ClaimActions.MapJsonKey(ClaimTypes.GivenName, "first_name");
-                vkoptions.ClaimActions.MapJsonKey(ClaimTypes.Surname, "last_name");
-
-                //vkoptions.ClaimActions.MapJsonKey(ClaimTypes.)
+                mc.AddProfile(new MappingProfile());
             });
-           
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
