@@ -6,15 +6,18 @@ using Task2.Data;
 using Microsoft.EntityFrameworkCore;
 using Task2.Models;
 using Task2.ViewModels;
+using AutoMapper;
 
 namespace Task2.Controllers
 {
     public class NewsController : Controller
     {
+        private readonly IMapper _mapper;
         ApplicationDbContext db;
-        public NewsController(ApplicationDbContext context)
+        public NewsController(ApplicationDbContext context, IMapper mapper)
         {
             db = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -24,8 +27,9 @@ namespace Task2.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateNews(News news)
+        public IActionResult CreateNews(NewsCreateViewModel model)
         {
+            var news = _mapper.Map<News>(model);
             news.DateOfCreating = DateTime.Now;
             db.NewsCollection.Add(news);
             db.SaveChanges();
@@ -35,7 +39,8 @@ namespace Task2.Controllers
         public IActionResult ViewNews(int id)
         {
             var news = db.NewsCollection.FirstOrDefault(m => m.Id == id);
-            return View(news);
+            var model = _mapper.Map<NewsViewModel>(news);
+            return View(model);
         }
 
         [HttpPost]
@@ -61,12 +66,15 @@ namespace Task2.Controllers
         public IActionResult EditNews(int id)
         {
             var news = db.NewsCollection.FirstOrDefault(m => m.Id == id);
-            return View(news);
+            var model = _mapper.Map<NewsEditViewModel>(news);
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult ApplyNewsEditing(News news)
+        public IActionResult ApplyNewsEditing(NewsEditViewModel newsEditViewModel)
         {
+            var news = db.NewsCollection.FirstOrDefault(m => m.Id == newsEditViewModel.Id);
+            _mapper.Map<News>(newsEditViewModel);
             db.NewsCollection.Update(news);
             db.SaveChanges();
             return RedirectToAction("NewsManagement");

@@ -45,6 +45,26 @@
         padding-left: 2%;
         padding-right: 2%;
     }
+    .description {
+        color: rgba(0, 0, 0, 0.86);
+        font-family: &quot;
+        font-size: 19px;
+        font-style: normal;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        font-weight: 400;
+        letter-spacing: normal;
+        orphans: 2;
+        text-align: start;
+        text-indent: 0px;
+        text-transform: none;
+        white-space: normal;
+        widows: 2;
+        word-spacing: 0px;
+        -webkit-text-stroke-width: 0px;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+    }
 </style>
 
 <page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
@@ -74,7 +94,7 @@
                     <div class="newstext">
                         <p>
                             <div class="description">                        
-                                @Html.Raw(news.Description)
+                                @news.Description
                             </div>
                             <a asp-action="ViewNews" asp-route-id="@news.Id">Show more</a>
                         </p>
@@ -94,12 +114,12 @@
             var elem = document.getElementsByClassName('description');
             var text = elem.innerHTML;
             var size = 150;
-            for (var i = 0; i < @Model.EnumNews.Count(); i++) {
+            for (var i = 0; i < 10; i++) {
                 if (elem[i].innerHTML.length > size) {
                     text = elem[i].innerHTML.substr(0, size);
                 }
                 else {
-                    text = elem[i].innerHTML.substr(0, innerHTML.length);
+                    text = elem[i].innerHTML.substr(0, elem[i].innerHTML.length);
                 }
                 elem[i].innerHTML = text+"...";
             }
