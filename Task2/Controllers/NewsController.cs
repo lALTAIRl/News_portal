@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Task2.Models;
 using Task2.ViewModels;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Task2.Controllers
 {
@@ -14,10 +16,12 @@ namespace Task2.Controllers
     {
         private readonly IMapper _mapper;
         ApplicationDbContext db;
-        public NewsController(ApplicationDbContext context, IMapper mapper)
+        UserManager<ApplicationUser> _userManager;
+        public NewsController(ApplicationDbContext context, IMapper mapper, UserManager<ApplicationUser> userManager)
         {
             db = context;
             _mapper = mapper;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -29,11 +33,24 @@ namespace Task2.Controllers
         [HttpPost]
         public IActionResult CreateNews(NewsCreateViewModel model)
         {
-            var news = _mapper.Map<News>(model);
-            news.DateOfCreating = DateTime.Now;
-            db.NewsCollection.Add(news);
-            db.SaveChanges();
-            return RedirectToAction("NewsCollection");
+
+            if (ModelState.IsValid)
+            {
+                var news = _mapper.Map<News>(model);
+                news.DateOfCreating = DateTime.Now;
+                db.NewsCollection.Add(news);
+                db.SaveChanges();
+                return RedirectToAction("NewsCollection");
+            }
+
+            else
+            {
+                if (string.IsNullOrEmpty(model.Text))
+                {
+                    ModelState.AddModelError("", "Text required");
+                }
+                return View(model);
+            }
         }
 
         public IActionResult ViewNews(int id)
@@ -41,7 +58,7 @@ namespace Task2.Controllers
             var news = db.NewsCollection.FirstOrDefault(m => m.Id == id);
             var model = _mapper.Map<NewsViewModel>(news);
             return View(model);
-        }
+        }    
 
         [HttpPost]
         public async Task<IActionResult> PublishNews(int id)
@@ -73,11 +90,24 @@ namespace Task2.Controllers
         [HttpPost]
         public IActionResult ApplyNewsEditing(NewsEditViewModel newsEditViewModel)
         {
-            var news = db.NewsCollection.FirstOrDefault(m => m.Id == newsEditViewModel.Id);
-            _mapper.Map<News>(newsEditViewModel);
-            db.NewsCollection.Update(news);
-            db.SaveChanges();
-            return RedirectToAction("NewsManagement");
+            if(ModelState.IsValid)
+            {
+                var news = db.NewsCollection.FirstOrDefault(m => m.Id == newsEditViewModel.Id);
+                //Mapper.Initialize(cfg => cfg.CreateMap<NewsEditViewModel, News>());
+                //Mapper.Map(newsEditViewModel, news);
+
+                //var news = _mapper.Map<News>(newsEditViewModel);
+
+                _mapper.Map(newsEditViewModel, news);
+
+                db.NewsCollection.Update(news);
+                db.SaveChanges();
+                return RedirectToAction("NewsManagement");
+            }
+            else
+            {
+                return RedirectToAction("EditNews", newsEditViewModel);
+            }
         }
 
         [HttpPost]

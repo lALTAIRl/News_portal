@@ -39,8 +39,7 @@
                 <a asp-area="" asp-controller="News" asp-action="NewsCollection" class="navbar-brand">News</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-
+                <ul class="nav navbar-nav">           
                     @if (User.IsInRole("admin"))
                     {
                         <li><a asp-area="" asp-controller="News" asp-action="NewsManagement">News Management</a></li>

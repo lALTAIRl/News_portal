@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Task2.ViewModels.NewsCreateViewModel
+
+@{
     ViewData["Title"] = "CreateNews";
     Layout = "/Views/Shared/_Layout.cshtml";
 }
@@ -11,6 +13,32 @@
             margin-top: 2%;
         }
 
+        .field-validation-error {
+            color: #b94a48;
+        }
+
+        .field-validation-valid {
+            display: none;
+        }
+
+        input.input-validation-error {
+            border: 1px solid #b94a48;
+        }
+
+        input[type="checkbox"].input-validation-error {
+            border: 0 none;
+        }
+
+        .validation-summary-errors {
+            color: #b94a48;
+        }
+
+        .validation-summary-valid {
+            display: none;
+        }
+
+        .form-group-lg {
+        }
     </style>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.39/jodit.min.css">
@@ -19,34 +47,39 @@
 
 <form method="post" class="form-horizontal">
     <div>
-
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label">Heading</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="caption" name="caption" placeholder="Heading">
+        <label asp-for="Caption" class="col-sm-2 control-label">Heading</label>
+        <div class="col-sm-5">
+            <input asp-for="Caption" class="form-control" placeholder="Heading">
+            <span asp-validation-for="Caption" />
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label">Description</label>
+        <label asp-for="Description" class="col-sm-2 control-label">Description</label>
         <div class="col-sm-10">
-            <input class="form-control" id="description" name="description" placeholder="Description">
+            <input asp-for="Description" class="form-control" placeholder="Description">
+            <span asp-validation-for="Description" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Text" class="col-sm-2 control-label">Text</label>
+        <div class="col-sm-10">
+            <textarea asp-for="Text" class="form-control" id="editor" placeholder="Text"></textarea>
+            <span asp-validation-for="Text" />
         </div>
     </div>
 
     <div class="form-group">
-        <label class="col-sm-2 control-label">Text</label>
+        <label asp-for="ImageURL" class="col-sm-2 control-label">ImageURL</label>
         <div class="col-sm-10">
-            <textarea class="form-control" rows="12" id="editor" name="text" placeholder="Text"></textarea>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="col-sm-2 control-label">ImageURL</label>
-        <div class="col-sm-10">
-            <input class="form-control" id="imageurl" name="imageurl" placeholder="ImageURL">
+            <input asp-for="ImageURL" class="form-control" placeholder="ImageURL">
+            <span asp-validation-for="ImageURL" />
         </div>
     </div>
 
@@ -60,3 +93,11 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.39/jodit.min.js"></script>
 <script>var editor = new Jodit('#editor');</script>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+ 

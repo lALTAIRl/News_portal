@@ -71,6 +71,8 @@ namespace Task2
             //    //vkoptions.ClaimActions.MapJsonKey(ClaimTypes.)
             //});
 
+
+
             var mappingConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
