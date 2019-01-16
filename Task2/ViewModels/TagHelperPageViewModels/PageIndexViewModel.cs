@@ -9,6 +9,8 @@ namespace Task2.ViewModels
     public class PageIndexViewModel
     {
         public IEnumerable<News> EnumNews { get; set; }
+        public IEnumerable<NewsApplicationUser> EnumFavouriteNews { get; set; }
+
         public PageViewModel PageViewModel { get; set; }
     }
 }

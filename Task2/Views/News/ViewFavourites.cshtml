@@ -1,106 +1,120 @@
-﻿@model Task2.ViewModels.NewsViewModel
+﻿@model IEnumerable<Task2.Models.NewsApplicationUser>
 @{
     ViewData["Title"] = "ViewFavourites";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<head>
-    <style>
-        body {
-            background-color: #edeef0;
-        }
 
-        form {
-            display: inline-block;
-        }
+<style>
+    body {
+        background-color: #edeef0;
+    }
 
-        .news_conteiner {
-            background-color: white;
-            padding-left: 2%;
-            padding-right: 5%;
-            margin-top: 24px;
-            margin-bottom: 0px;
-            color: rgba(0, 0, 0, 0.86);
-            font-family: &quot;
-            font-size: 19px;
-            font-style: normal;
-            font-variant-ligatures: normal;
-            font-variant-caps: normal;
-            font-weight: 400;
-            letter-spacing: normal;
-            orphans: 2;
-            text-align: start;
-            text-indent: 0px;
-            text-transform: none;
-            white-space: normal;
-            widows: 2;
-            word-spacing: 0px;
-            -webkit-text-stroke-width: 0px;
-            text-decoration-style: initial;
-            text-decoration-color: initial;
-        }
+    .news_container {
+        background-color: white;
+        padding-left: 2%;
+        padding-right: 5%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-top: 24px;
+        margin-bottom: 0px;
+        color: rgba(0, 0, 0, 0.86);
+        font-family: &quot;
+        font-size: 19px;
+        font-style: normal;
+        font-variant-ligatures: normal;
+        font-variant-caps: normal;
+        font-weight: 400;
+        letter-spacing: normal;
+        orphans: 2;
+        text-align: start;
+        text-indent: 0px;
+        text-transform: none;
+        white-space: normal;
+        widows: 2;
+        word-spacing: 0px;
+        -webkit-text-stroke-width: 0px;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+    }
 
-        p {
-            padding-left: 5%;
-            padding-right: 5%;
-        }
+    .control-label {
+        align-self: center;
+    }
 
-        .news_text {
-            margin-left: 5%;
-        }
+    .form-control {
+        margin-top: 3%;
+    }
 
-        .btn-group {
-            margin-bottom: 3%;
-        }
+    img {
+        width: 80%;
+        margin-bottom: 3%;
+    }
 
-        .tools {
-            margin-left: 5%;
-        }
+    p {
+        margin-bottom: 3%;
+    }
 
-        .control-label {
-            padding: 2%;
-        }
+    .newstext {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
 
-        .image {
-            margin-bottom: 2%;
-        }
-    </style>
+    .control-label {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
 
-</head>
+    .favourites {
+        margin-left: 3%;
+    }
+</style>
 
-<div class="news_conteiner">
 
-    <div class="control-label">
-        <h1 class="text-center"><b>@Model.Caption</b></h1>
-    </div>
+@foreach (var news in Model)
+{
+        <div class="news_container">
+            <div class="control-label" align="center">
+                <a asp-action="ViewNews" asp-route-id="@news.NewsId"><h1><b>@news.FavouriteNews.Caption</b></h1></a>
+            </div>
 
-    <div class="image" align="center">
-        <img src="@Model.ImageURL">
-    </div>
+            <div class="image" align="center">
+                <img src="@news.FavouriteNews.ImageURL">
+            </div>
 
-    <div class="descripton">
-        <p>@Model.Description</p>
-    </div>
+            <div class="newstext">
+                <p>
+                    <div class="description">
+                        @news.FavouriteNews.Description
+                    </div>
+                    <a asp-action="ViewNews" asp-route-id="@news.NewsId">Show more</a>
+                </p>
+            </div>
 
-    <div class="news_text">
-        <p>@Html.Raw(Model.Text)</p>
-    </div>
-
-    @if (User.IsInRole("admin"))
-    {
-        <div class="tools">
-            <div class="btn-group">
-                <form asp-action="EditNews" asp-route-id="@Model.Id" method="get" class="btn-group">
-                    <button type="submit" class="btn btn-toolbar btn-primary">
-                        Edit
-                    </button>
-                </form>
-
-                <form asp-action="DeleteNews" asp-route-id="@Model.Id" method="post" class="btn-group">
-                    <button type="submit" class="btn btn-toolbar btn-danger">
-                        Delete
-                    </button>
+            <div class="favourites">
+                <form asp-action="AddToFavourites" asp-route-id="@news.NewsId" method="post">
+                    <button type="submit" class="btn btn-sm btn-primary">Add to favouritews</button>
                 </form>
             </div>
         </div>
+}
+
+<page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
+
+
+<script>
+    function title() {
+        var elem = document.getElementsByClassName('description');
+        var text = elem.innerHTML;
+        var size = 150;
+        for (var i = 0; i < 10; i++) {
+            if (elem[i].innerHTML.length > size) {
+                text = elem[i].innerHTML.substr(0, size);
+            }
+            else {
+                text = elem[i].innerHTML.substr(0, elem[i].innerHTML.length);
+            }
+            elem[i].innerHTML = text + "...";
+        }
     }
-</div>
+    title();
+</script>

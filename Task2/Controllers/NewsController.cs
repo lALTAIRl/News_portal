@@ -9,6 +9,7 @@ using Task2.ViewModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
 
 namespace Task2.Controllers
 {
@@ -151,6 +152,47 @@ namespace Task2.Controllers
                 EnumNews = items
             };
             return View(viewModel);
+        }
+
+
+
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> AddToFavourites(int id)
+        {
+            var news = await db.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+
+            var favouriteNews = new NewsApplicationUser
+            {
+                NewsId = news.Id,
+                FavouriteNews = news,
+                ApplicationUserId = _userManager.GetUserId(User),
+                ApplicationUserFavourited = await _userManager.GetUserAsync(User)
+            };
+
+            db.FavouriteNews.Add(favouriteNews);
+            db.SaveChanges();
+            return RedirectToAction("NewsCollection");
+        }
+
+        public IActionResult ViewFavourites(int page = 1)
+        {
+            var userId = _userManager.GetUserId(User);
+            var favNews = db.FavouriteNews.Where(item => item.ApplicationUserId == userId).ToList();
+            return View(favNews);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult RemoveFromFavourites(int newsId)
+        {
+            var userId = _userManager.GetUserId(User);
+            var favouriteNews = db.FavouriteNews.Where(item => item.ApplicationUserId == userId).Where(item => item.NewsId == newsId).FirstOrDefault();
+
+            db.FavouriteNews.Remove(favouriteNews);
+            db.SaveChanges();
+            return RedirectToAction("NewsCollection");
         }
 
     }
