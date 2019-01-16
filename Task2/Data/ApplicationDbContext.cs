@@ -11,7 +11,7 @@ namespace Task2.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<News> NewsCollection { get; set; }
-        public DbSet<NewsApplicationUser> FavouriteNews { get; set; }
+      //public DbSet<NewsApplicationUser> FavouriteNews { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -21,17 +21,17 @@ namespace Task2.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<NewsApplicationUser>()
-                .HasKey(key => new { key.Id });
+                .HasKey(key => new { key.NewsId, key.ApplicationUserId });
 
-            builder.Entity<NewsApplicationUser>()
-                .HasOne(newsAppUser => newsAppUser.FavouriteNews)
-                .WithMany(news => news.NewsApplicationUsers)
-                .HasForeignKey(newsAppUser => newsAppUser.NewsId);
+            //builder.Entity<NewsApplicationUser>()
+            //    .HasOne(newsAppUser => newsAppUser.FavouriteNews)
+            //    .WithMany(news => news.NewsApplicationUsers)
+            //    .HasForeignKey(newsAppUser => newsAppUser.NewsId);
 
-            builder.Entity<NewsApplicationUser>()
-                .HasOne(newsAppUser => newsAppUser.ApplicationUserFavourited)
-                .WithMany(news => news.NewsApplicationUsers)
-                .HasForeignKey(newsAppUser => newsAppUser.ApplicationUserId);
+            //builder.Entity<NewsApplicationUser>()
+            //    .HasOne(newsAppUser => newsAppUser.ApplicationUserFavourited)
+            //    .WithMany(news => news.NewsApplicationUsers)
+            //    .HasForeignKey(newsAppUser => newsAppUser.ApplicationUserId);
 
             base.OnModelCreating(builder);
             // Customize the ASP.NET Identity model and override the defaults if needed.
