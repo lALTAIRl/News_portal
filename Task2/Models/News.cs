@@ -15,7 +15,8 @@ namespace Task2.Models
         public DateTime DateOfCreating { get; set; }
         public bool IsPublished { get; set; }
         public DateTime DateOfPublishing { get; set; }
-        
-        public News () { }
+
+        public List<NewsApplicationUser> NewsApplicationUsers { get; set; }
+
     }
 }
