@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
-using Task2.Data;
+using News_portal.Data;
 
-namespace Task2.Migrations
+namespace News_portal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -128,7 +128,7 @@ namespace Task2.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Task2.Models.ApplicationUser", b =>
+            modelBuilder.Entity("News_portal.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -183,7 +183,7 @@ namespace Task2.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Task2.Models.News", b =>
+            modelBuilder.Entity("News_portal.Models.News", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -207,7 +207,7 @@ namespace Task2.Migrations
                     b.ToTable("NewsCollection");
                 });
 
-            modelBuilder.Entity("Task2.Models.NewsApplicationUser", b =>
+            modelBuilder.Entity("News_portal.Models.NewsApplicationUser", b =>
                 {
                     b.Property<int>("NewsId");
 
@@ -230,7 +230,7 @@ namespace Task2.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Task2.Models.ApplicationUser")
+                    b.HasOne("News_portal.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -238,7 +238,7 @@ namespace Task2.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Task2.Models.ApplicationUser")
+                    b.HasOne("News_portal.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -251,7 +251,7 @@ namespace Task2.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Task2.Models.ApplicationUser")
+                    b.HasOne("News_portal.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -259,20 +259,20 @@ namespace Task2.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Task2.Models.ApplicationUser")
+                    b.HasOne("News_portal.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Task2.Models.NewsApplicationUser", b =>
+            modelBuilder.Entity("News_portal.Models.NewsApplicationUser", b =>
                 {
-                    b.HasOne("Task2.Models.ApplicationUser", "ApplicationUserFavourited")
+                    b.HasOne("News_portal.Models.ApplicationUser", "ApplicationUserFavourited")
                         .WithMany("NewsApplicationUsers")
                         .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Task2.Models.News", "FavouriteNews")
+                    b.HasOne("News_portal.Models.News", "FavouriteNews")
                         .WithMany("NewsApplicationUsers")
                         .HasForeignKey("NewsId")
                         .OnDelete(DeleteBehavior.Cascade);

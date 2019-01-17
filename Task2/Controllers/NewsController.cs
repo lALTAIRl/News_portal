@@ -2,16 +2,16 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Task2.Data;
+using News_portal.Data;
 using Microsoft.EntityFrameworkCore;
-using Task2.Models;
-using Task2.ViewModels;
+using News_portal.Models;
+using News_portal.ViewModels;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 
-namespace Task2.Controllers
+namespace News_portal.Controllers
 {
     public class NewsController : Controller
     {

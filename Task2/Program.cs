@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
-using Task2.Models;
-using Task2.Data;
+using News_portal.Models;
+using News_portal.Data;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Task2
+namespace News_portal
 {
     public class Program
     {

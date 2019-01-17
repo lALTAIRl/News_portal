@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Task2.Data;
+using News_portal.Data;
 
 
-namespace Task2.Models
+namespace News_portal.Models
 {
     public class NewsInitializer
     {

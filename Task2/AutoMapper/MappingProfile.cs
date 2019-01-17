@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Task2.Models;
-using Task2.ViewModels;
+using News_portal.Models;
+using News_portal.ViewModels;
 
-namespace Task2
+namespace News_portal
 {
     public class MappingProfile : Profile
     {

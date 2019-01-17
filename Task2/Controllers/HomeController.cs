@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Task2.ViewModels;
+using News_portal.ViewModels;
 
-namespace Task2.Controllers
+namespace News_portal.Controllers
 {
     public class HomeController : Controller
     {

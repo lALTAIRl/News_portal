@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Task2.Data;
-using Task2.Models;
-using Task2.Services;
+using News_portal.Data;
+using News_portal.Models;
+using News_portal.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 
-namespace Task2
+namespace News_portal
 {
     public class Startup
     {

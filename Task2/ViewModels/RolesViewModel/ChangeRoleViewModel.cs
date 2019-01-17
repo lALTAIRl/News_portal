@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace Task2.ViewModels
+namespace News_portal.ViewModels
 {
     public class ChangeRoleViewModel
     {

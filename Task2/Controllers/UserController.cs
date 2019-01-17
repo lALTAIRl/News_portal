@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Task2.Models;
+using News_portal.Models;
 using Microsoft.AspNetCore.Identity;
-using Task2.Services;
+using News_portal.Services;
 using Microsoft.Extensions.Logging;
 using System.Text.Encodings.Web;
-using Task2.Data;
+using News_portal.Data;
 
-namespace Task2.Controllers
+namespace News_portal.Controllers
 {
     public class UserController : Controller
     {

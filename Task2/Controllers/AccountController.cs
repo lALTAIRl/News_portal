@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Task2.Models;
-using Task2.Models.AccountViewModels;
-using Task2.Services;
+using News_portal.Models;
+using News_portal.Models.AccountViewModels;
+using News_portal.Services;
 
-namespace Task2.Controllers
+namespace News_portal.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]

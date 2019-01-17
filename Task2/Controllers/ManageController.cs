@@ -10,14 +10,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Task2.Models;
-using Task2.Services;
-using Task2.Data;
-using Task2.Models.ManageViewModels;
-using Task2.ViewModels;
+using News_portal.Models;
+using News_portal.Services;
+using News_portal.Data;
+using News_portal.Models.ManageViewModels;
+using News_portal.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
-namespace Task2.Controllers
+namespace News_portal.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]

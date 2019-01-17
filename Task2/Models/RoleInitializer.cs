@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace Task2.Models
+namespace News_portal.Models
 {
     public class RoleInitializer
     {

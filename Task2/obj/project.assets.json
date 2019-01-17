@@ -13588,9 +13588,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TASK\\News_portal\\Task2\\Task2.csproj",
-      "projectName": "Task2",
-      "projectPath": "D:\\TASK\\News_portal\\Task2\\Task2.csproj",
+      "projectUniqueName": "D:\\TASK\\News_portal\\Task2\\News_portal.csproj",
+      "projectName": "News_portal",
+      "projectPath": "D:\\TASK\\News_portal\\Task2\\News_portal.csproj",
       "packagesPath": "C:\\Users\\i.garbuz\\.nuget\\packages\\",
       "outputPath": "D:\\TASK\\News_portal\\Task2\\obj\\",
       "projectStyle": "PackageReference",

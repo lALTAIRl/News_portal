@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Task2.Models;
+using News_portal.Models;
 
-namespace Task2.Data
+namespace News_portal.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Task2.Models;
-using Task2.ViewModels;
+using News_portal.Models;
+using News_portal.ViewModels;
 
-namespace Task2.TagHelpers
+namespace News_portal.TagHelpers
 {
     public class PageLinkTagHelper : TagHelper
     {

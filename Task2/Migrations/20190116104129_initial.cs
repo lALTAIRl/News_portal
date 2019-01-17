@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace Task2.Migrations
+namespace News_portal.Migrations
 {
     public partial class initial : Migration
     {

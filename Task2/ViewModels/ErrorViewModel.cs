@@ -1,6 +1,6 @@
 using System;
 
-namespace Task2.ViewModels
+namespace News_portal.ViewModels
 {
     public class ErrorViewModel
     {
