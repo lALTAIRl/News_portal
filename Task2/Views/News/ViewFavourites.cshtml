@@ -67,6 +67,12 @@
     .favourites {
         margin-left: 3%;
     }
+
+    .btn-1 {
+        background-color: white;
+        height: 7%;
+        width: 7%;
+    }
 </style>
 
 
@@ -92,9 +98,9 @@
 
             <div class="favourites">
                 <form asp-action="RemoveFromFavourites" asp-route-id="@news.Id" method="post">
-                    <button type="submit" class="btn btn-sm btn-primary">
-                        Remove from favouritews
-                    </button>
+                    <button type="submit" class="btn btn-1">
+                        <img src="http://s1.iconbird.com/ico/1212/264/w128h1281355246842delete2.png">
+                    </button>                  
                 </form>
             </div>
         </div>

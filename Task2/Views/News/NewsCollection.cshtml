@@ -67,6 +67,13 @@
     .favourites {
         margin-left: 3%;
     }
+
+    .btn-1{
+        background-color:white;
+        height:7%;
+        width:7%;
+    }
+
 </style>
 
 <page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
@@ -94,8 +101,8 @@
             </div>
             <div class="favourites">
                 <form asp-action="AddToFavourites" asp-route-id="@news.Id" method="post">
-                    <button type="submit" class="btn btn-sm btn-primary">
-                        Add to favouritews
+                    <button type="submit" class="btn btn-1">
+                        <img src="http://s1.iconbird.com/ico/1012/human02/w128h1281349046050bookmarknew.png">
                     </button>
                 </form>
             </div>
