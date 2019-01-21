@@ -10,6 +10,8 @@ using News_portal.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using News_portal.Interfaces;
+using News_portal.Repositories;
 
 namespace News_portal
 {
@@ -22,16 +24,20 @@ namespace News_portal
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
 
             services.AddAuthentication().AddGoogle(googleOptions =>
             {
@@ -43,51 +49,17 @@ namespace News_portal
             {
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
-
-
-            //services.AddAuthentication().AddVK(vkoptions =>
-            //{
-            //    vkoptions.ClientId = Configuration["Authentication:Vk:AppId"];
-            //    vkoptions.ClientSecret = Configuration["Authentication:Vk:AppSecret"];
-
-            //    // Request for permissions https://vk.com/dev/permissions?f=1.%20Access%20Permissions%20for%20User%20Token
-            //    vkoptions.Scope.Add("email");
-
-            //    // Add fields https://vk.com/dev/objects/user
-            //    vkoptions.Fields.Add("uid");
-            //    vkoptions.Fields.Add("first_name");
-            //    vkoptions.Fields.Add("last_name");
-
-
-            //    // In this case email will return in OAuthTokenResponse, 
-            //    // but all scope values will be merged with user response
-            //    // so we can claim it as field
-            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "uid");
-            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
-            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.GivenName, "first_name");
-            //    vkoptions.ClaimActions.MapJsonKey(ClaimTypes.Surname, "last_name");
-
-            //    //vkoptions.ClaimActions.MapJsonKey(ClaimTypes.)
-            //});
-
-
-
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MappingProfile());
-            });
-
-            IMapper mapper = mappingConfig.CreateMapper();
+            }); 
+            
             services.AddSingleton(mapper);
 
-            // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+
+            services.AddTransient<INewsRepository, NewsRepository>();
 
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
