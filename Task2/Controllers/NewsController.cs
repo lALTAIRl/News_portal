@@ -10,17 +10,19 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
+using News_portal.Interfaces;
+using News_portal.Repositories;
 
 namespace News_portal.Controllers
 {
     public class NewsController : Controller
     {
         private readonly IMapper _mapper;
-        ApplicationDbContext _contex;
+        ApplicationDbContext _context;
         UserManager<ApplicationUser> _userManager;
         public NewsController(ApplicationDbContext context, IMapper mapper, UserManager<ApplicationUser> userManager)
         {
-            _contex = context;
+            _context = context;
             _mapper = mapper;
             _userManager = userManager;
         }
@@ -39,8 +41,8 @@ namespace News_portal.Controllers
             {
                 var news = _mapper.Map<News>(model);
                 news.DateOfCreating = DateTime.Now;
-                _contex.NewsCollection.Add(news);
-                _contex.SaveChanges();
+                _context.NewsCollection.Add(news);
+                _context.SaveChanges();
                 return RedirectToAction("NewsCollection");
             }
             else
@@ -55,7 +57,7 @@ namespace News_portal.Controllers
 
         public IActionResult ViewNews(int id)
         {
-            var news = _contex.NewsCollection.FirstOrDefault(m => m.Id == id);
+            var news = _context.NewsCollection.FirstOrDefault(m => m.Id == id);
             var model = _mapper.Map<NewsViewModel>(news);
             return View(model);
         }    
@@ -63,26 +65,26 @@ namespace News_portal.Controllers
         [HttpPost]
         public async Task<IActionResult> PublishNews(int id)
         {
-            var news = await _contex.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            var news = await _context.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
             news.IsPublished = true;
             news.DateOfPublishing = DateTime.Now;
-            _contex.SaveChanges();
+            _context.SaveChanges();
             return RedirectToAction("NewsManagement");
         }
 
         [HttpPost]
         public async Task<IActionResult> UnpublishNews(int id)
         {
-            var news = await _contex.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            var news = await _context.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
             news.IsPublished = false;
-            _contex.SaveChanges();
+            _context.SaveChanges();
             return RedirectToAction("NewsManagement");
         }
 
         [HttpGet]
         public IActionResult EditNews(int id)
         {
-            var news = _contex.NewsCollection.FirstOrDefault(m => m.Id == id);
+            var news = _context.NewsCollection.FirstOrDefault(m => m.Id == id);
             var model = _mapper.Map<NewsEditViewModel>(news);
             return View(model);
         }
@@ -92,10 +94,10 @@ namespace News_portal.Controllers
         {
             if(ModelState.IsValid)
             {
-                var news = _contex.NewsCollection.FirstOrDefault(m => m.Id == newsEditViewModel.Id);
+                var news = _context.NewsCollection.FirstOrDefault(m => m.Id == newsEditViewModel.Id);
                 _mapper.Map(newsEditViewModel, news);
-                _contex.NewsCollection.Update(news);
-                _contex.SaveChanges();
+                _context.NewsCollection.Update(news);
+                _context.SaveChanges();
                 return RedirectToAction("NewsManagement");
             }
             else
@@ -107,15 +109,15 @@ namespace News_portal.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteNews(int id)
         {
-            var news = await _contex.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
-            _contex.NewsCollection.Remove(news);
-            _contex.SaveChanges();
+            var news = await _context.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            _context.NewsCollection.Remove(news);
+            _context.SaveChanges();
             return RedirectToAction("NewsManagement");
         }
 
         public async Task<IActionResult> NewsCollection(int page=1)
         {
-            IQueryable<News> news = _contex.NewsCollection;
+            IQueryable<News> news = _context.NewsCollection;
             news = news.OrderByDescending(s => s.DateOfCreating);
             int pageSize = 5;
             var count = await news.CountAsync();
@@ -131,7 +133,7 @@ namespace News_portal.Controllers
 
         public async Task<IActionResult> NewsManagement(int page = 1)
         {
-            IQueryable<News> news = _contex.NewsCollection;
+            IQueryable<News> news = _context.NewsCollection;
             news = news.OrderByDescending(s => s.DateOfCreating);
             int pageSize = 10;
             var count = await news.CountAsync();
@@ -152,7 +154,7 @@ namespace News_portal.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToFavourites(int id)
         {
-            var news = await _contex.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
+            var news = await _context.NewsCollection.SingleOrDefaultAsync(m => m.Id == id);
             var userId = _userManager.GetUserId(User);
             var favouriteNews = new NewsApplicationUser
             {
@@ -161,10 +163,10 @@ namespace News_portal.Controllers
                 ApplicationUserId = userId,
                 ApplicationUserFavourited = await _userManager.GetUserAsync(User)
             };
-            if(await _contex.FindAsync<NewsApplicationUser>(id, userId)==null)
+            if(await _context.FindAsync<NewsApplicationUser>(id, userId)==null)
             {
-                _contex.Add(favouriteNews);
-                _contex.SaveChanges();
+                _context.Add(favouriteNews);
+                _context.SaveChanges();
             }
             return RedirectToAction("NewsCollection");
         }
@@ -172,11 +174,11 @@ namespace News_portal.Controllers
         public async Task<IActionResult> ViewFavourites(int page = 1)
         {
             var userId = _userManager.GetUserId(User);
-            var favoriteNews = _contex.NewsCollection;
+            var favoriteNews = _context.NewsCollection;
             var model= new List<News>();
             foreach (var news in favoriteNews)
             {            
-                if(await _contex.FindAsync<NewsApplicationUser>(news.Id, userId)!=null)
+                if(await _context.FindAsync<NewsApplicationUser>(news.Id, userId)!=null)
                 {
                     model.Add(news);
                 }
@@ -189,11 +191,11 @@ namespace News_portal.Controllers
         public async Task<IActionResult> RemoveFromFavourites(int id)
         {
             var userId = _userManager.GetUserId(User);
-            var favouriteNews = await _contex.FindAsync<NewsApplicationUser>(id, userId);
+            var favouriteNews = await _context.FindAsync<NewsApplicationUser>(id, userId);
             if(favouriteNews!=null)
             {
-                _contex.Remove(favouriteNews);
-                _contex.SaveChanges();
+                _context.Remove(favouriteNews);
+                _context.SaveChanges();
             }           
             return RedirectToAction("ViewFavourites");
         }

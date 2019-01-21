@@ -6,16 +6,23 @@ using News_portal.Models;
 
 namespace News_portal.Interfaces
 {
-    public interface INewsRepository<T> :IDisposable 
+    public interface INewsRepository :IDisposable 
     {
+        IEnumerable<News> GetAllNews();
 
-        Task<News> GetNewsById(int newsId);
+        IEnumerable<News> FindNews(Func<News, bool> predicate);
 
-        Task<News> CreateNews(News news);
+        News GetNewsById(int id);
 
-        Task<News> UpdateNews(/*model*/);
+        int GetNewsId(News news);
 
-        Task<News> DeleteNews(/*model*/);
+        int Count(Func<News, bool> predicate);
+
+        void Create(News news);
+
+        void Update(News news);
+
+        void Delete(News news);
 
     }
 }

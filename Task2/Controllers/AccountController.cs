@@ -58,6 +58,7 @@ namespace News_portal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
+
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
@@ -102,6 +103,7 @@ namespace News_portal.Controllers
                     return View(model);
                 }
             }
+
 
             // If we got this far, something failed, redisplay form
             return View(model);
