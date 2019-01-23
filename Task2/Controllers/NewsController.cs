@@ -173,17 +173,9 @@ namespace News_portal.Controllers
 
         public async Task<IActionResult> ViewFavourites(int page = 1)
         {
-            var userId = _userManager.GetUserId(User);
-            var favoriteNews = _context.NewsCollection;
-            var model= new List<News>();
-            foreach (var news in favoriteNews)
-            {            
-                if(await _context.FindAsync<NewsApplicationUser>(news.Id, userId)!=null)
-                {
-                    model.Add(news);
-                }
-            }
-            return View(model);
+            var id =  _userManager.GetUserId(User);
+            var news = await _context.NewsCollection.Where(u => u.NewsApplicationUsers.Select(x => x.ApplicationUserId).Contains(id)).ToListAsync();
+            return View(news);
         }
 
         [Authorize]

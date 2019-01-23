@@ -11,6 +11,8 @@ namespace News_portal.Interfaces
 
         Task<IEnumerable<T>> FindAsync(Func<T, bool> predicate);
 
+        Task<IQueryable<T>> SelectAsync(Func<T, bool> predicate);
+
         Task<T> GetByIdAsync(int id);
 
         Task CreateAsync(T entity);

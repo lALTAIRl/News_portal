@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace T_portal.Repositories
+namespace News_portal.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
@@ -17,43 +17,60 @@ namespace T_portal.Repositories
             _context = context;
         }
 
-        protected void Save() => _context.SaveChanges();
-
-        public Task<IEnumerable<T>> GetAllAsync()
+        protected async Task Save() => await _context.SaveChangesAsync();
+   
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return _context.Set<T>();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public IEnumerable<T> FindAsync(Func<T, bool> predicate)
+        public async Task<IQueryable<T>> SelectAsync(Func<T, bool> predicate)
         {
-            return _context.Set<T>().Where(predicate);
+            return await Task.Run(() =>
+            {
+                return _context.Set<T>().Where(predicate).AsQueryable();
+            });
         }
 
-        public T GetByIdAsync(int id)
+        public async Task<IEnumerable<T>> FindAsync(Func<T, bool> predicate)
         {
-            return _context.Set<T>().Find(id);
+            return await Task.Run(() =>
+            {
+                return _context.Set<T>().Where(predicate);
+            });
         }
 
-        public int CountAsync(Func<T, bool> predicate)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return _context.Set<T>().Where(predicate).Count();
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public void CreateAsync(T entity)
+        public async Task<int> CountAsync(Func<T, bool> predicate)
         {
-            _context.Add(entity);
-            Save();
+            return await Task.Run(() =>
+            {
+                return _context.Set<T>().Where(predicate).Count();
+            });
         }
 
-        public void UpdateAsync(T entity)
+        public async Task CreateAsync(T entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
+            await _context.AddAsync(entity);
+            await Save();
         }
 
-        public void DeleteAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
+            await Task.Run(() =>
+             {
+                 _context.Entry(entity).State = EntityState.Modified;
+             });
+        }
+
+        public async Task DeleteAsync(T entity)
+        {          
             _context.Remove(entity);
-            Save();
+            await Save();
         }
     }
 }
