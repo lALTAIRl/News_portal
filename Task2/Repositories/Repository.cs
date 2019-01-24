@@ -63,8 +63,9 @@ namespace News_portal.Repositories
         {
             await Task.Run(() =>
              {
-                 _context.Entry(entity).State = EntityState.Modified;
+                 _context.Entry(entity).State = EntityState.Modified; 
              });
+            await Save();
         }
 
         public async Task DeleteAsync(T entity)

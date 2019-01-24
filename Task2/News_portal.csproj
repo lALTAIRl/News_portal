@@ -11,10 +11,6 @@
     <Optimize>false</Optimize>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Controllers\NewsController.cs" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <PackageReference Include="AspNet.Security.OAuth.VK" Version="0.0.1" />

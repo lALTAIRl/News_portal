@@ -25,12 +25,14 @@ namespace News_portal.Controllers
             _userManager = userManager;
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> CreateNews(NewsCreateViewModel model)
         {
@@ -58,6 +60,7 @@ namespace News_portal.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> PublishNews(int id)
         {
@@ -68,6 +71,7 @@ namespace News_portal.Controllers
             return RedirectToAction("NewsManagement");
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> UnpublishNews(int id)
         {
@@ -77,6 +81,7 @@ namespace News_portal.Controllers
             return RedirectToAction("NewsManagement");
         }
 
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public async Task<IActionResult> EditNews(int id)
         {
@@ -85,6 +90,8 @@ namespace News_portal.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "admin")]
+        [Authorize]
         public async Task<IActionResult> UpdateNews(NewsEditViewModel newsEditViewModel)
         {
             if (ModelState.IsValid)
@@ -100,6 +107,7 @@ namespace News_portal.Controllers
             }
         }
 
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteNews(News news)
         {
             await _newsRepository.DeleteAsync(news);
@@ -123,6 +131,7 @@ namespace News_portal.Controllers
 
         }
 
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> NewsManagement(int page = 1)
         {
             var news = await _newsRepository.GetAllAsync();
@@ -148,6 +157,7 @@ namespace News_portal.Controllers
             return RedirectToAction("NewsCollection");
         }
 
+        [Authorize]
         public async Task<IActionResult> ViewFavourites(int id)
         {
             var userId = _userManager.GetUserId(User);
