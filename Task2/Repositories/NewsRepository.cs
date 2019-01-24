@@ -24,12 +24,29 @@ namespace News_portal.Repositories
 
         public async Task RemoveNewsFromUserFavourites(int newsId, string userId)
         {
-
+            var favouriteNews = await _context.FindAsync<NewsApplicationUser>(newsId, userId);
+            if (favouriteNews != null)
+            {
+                _context.Remove(favouriteNews);
+                await Save();
+            }
         }
 
         public async Task AddNewsToUserFavourites(int newsId, string userId)
         {
-
+            var news = await _context.NewsCollection.SingleAsync(n => n.Id == newsId);
+            var favouriteNews = new NewsApplicationUser
+            {
+                NewsId = newsId,
+                FavouriteNews = news,
+                ApplicationUserId = userId,
+                ApplicationUserFavourited = await _context.Users.SingleAsync(u=>u.Id==userId)
+            };
+            if (await _context.FindAsync<NewsApplicationUser>(newsId, userId) == null)
+            {
+                _context.Add(favouriteNews);
+                await Save();
+            }
         }
 
     }

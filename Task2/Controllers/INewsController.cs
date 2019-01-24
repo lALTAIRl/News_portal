@@ -12,13 +12,13 @@ using News_portal.ViewModels;
 
 namespace News_portal.Controllers
 {
-    public class INewsController : Controller
+    public class NewsController : Controller
     {
         private readonly INewsRepository _newsRepository;
         private readonly IMapper _mapper;
         UserManager<ApplicationUser> _userManager;
 
-        public INewsController(INewsRepository newsRepository, IMapper mapper, UserManager<ApplicationUser> userManager)
+        public NewsController(INewsRepository newsRepository, IMapper mapper, UserManager<ApplicationUser> userManager)
         {
             _newsRepository = newsRepository;
             _mapper = mapper;
@@ -143,20 +143,8 @@ namespace News_portal.Controllers
         [HttpPost]
         public async Task<IActionResult> AddToFavourites(int id)
         {
-            var news = await _newsRepository.GetByIdAsync(id);
             var userId = _userManager.GetUserId(User);
-            var favouriteNews = new NewsApplicationUser
-            {
-                NewsId = news.Id,
-                FavouriteNews = news,
-                ApplicationUserId = userId,
-                ApplicationUserFavourited = await _userManager.GetUserAsync(User)
-            };
-            if (await _context.FindAsync<NewsApplicationUser>(id, userId) == null)
-            {
-                _context.Add(favouriteNews);
-                _context.SaveChanges();
-            }
+            await _newsRepository.AddNewsToUserFavourites(id, userId);
             return RedirectToAction("NewsCollection");
         }
 
@@ -172,12 +160,7 @@ namespace News_portal.Controllers
         public async Task<IActionResult> RemoveFromFavourites(int id)
         {
             var userId = _userManager.GetUserId(User);
-            var favouriteNews = await _context.FindAsync<NewsApplicationUser>(id, userId);
-            if (favouriteNews != null)
-            {
-                _context.Remove(favouriteNews);
-                _context.SaveChanges();
-            }
+            await _newsRepository.RemoveNewsFromUserFavourites(id, userId);
             return RedirectToAction("ViewFavourites");
         }
 
