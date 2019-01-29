@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Collections;
 
 
-namespace News_portal.Models
+namespace News_portal.DAL.Entities
 {
     public class ApplicationUser : IdentityUser
     {

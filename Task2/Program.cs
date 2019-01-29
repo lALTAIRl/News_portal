@@ -18,7 +18,6 @@ namespace News_portal
     {
         public static async Task Main(string[] args)
         {
-            //BuildWebHost(args).Run();
             var host = BuildWebHost(args);
 
             using (var scope = host.Services.CreateScope())

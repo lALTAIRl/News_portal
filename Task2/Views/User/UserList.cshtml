@@ -1,0 +1,88 @@
+﻿@model IEnumerable<News_portal.Models.ApplicationUser>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .bg-danger {
+        background: #808080;
+    }
+
+    .table {
+        border-style: double;
+        border-color: #808080;
+        margin-top: 3%;
+    }
+
+    thead {
+        background-color: #808080;
+    }
+
+    footer {
+        margin-top: 55%;
+        text-align: right
+    }
+
+    .btn-primary {
+        background: #808080;
+        border-color: #808080;
+    }
+</style>
+
+<meta charset="utf-8">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Email
+            </th>
+            <th>
+                User Id
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Access permissions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    role
+                    @*item.Role*@
+                </td>
+                <td>
+                    @if (item.LockoutEnabled == true)
+                    {
+                        <p>Active</p>
+                    }
+                    @if (item.LockoutEnabled == false)
+                    {
+                        <p>Blocked</p>
+                    }
+                </td>
+                <td>
+                    <div class="btn-group" role="toolbar">
+                        <a class="btn btn-sm btn-primary" asp-area="" asp-controller="Roles" asp-action="Edit" asp-route-userid="@item.Id">Roles</a>
+                        <a class="btn btn-sm btn-primary" asp-area="" asp-controller="User" asp-action="LockUser" asp-route-id="@item.Id">Block</a>
+                        <a class="btn btn-sm btn-primary" asp-area="" asp-controller="User" asp-action="UnLockUser" asp-route-id="@item.Id">Unblock</a>
+                        <a class="btn btn-sm btn-primary" asp-area="" asp-controller="User" asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-area="" asp-controller="Roles" asp-action="RolesList">Roles List</a>

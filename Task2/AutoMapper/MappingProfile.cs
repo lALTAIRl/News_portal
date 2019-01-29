@@ -16,11 +16,6 @@ namespace News_portal
 
             CreateMap<News, NewsEditViewModel>();
             CreateMap<NewsEditViewModel, News>();
-                //.ForMember(dest => dest.Caption, opt => opt.Ignore());
-                //.ForMember(dest => dest.DateOfCreating, opt => opt.Ignore())
-                //.ForMember(dest => dest.IsPublished, opt => opt.Ignore())
-                //.ForMember(dest => dest.DateOfPublishing, opt => opt.Ignore());
-                //.ForAllOtherMembers(opt => opt.Ignore());
 
             CreateMap<News, NewsViewModel>();
         }
