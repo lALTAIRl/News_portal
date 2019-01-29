@@ -5,9 +5,11 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News_portal", "Task2\News_portal.csproj", "{8361F862-A48C-48E2-A798-78195F4F9E3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "News_portal.DAL", "News_portal.DAL\News_portal.DAL.csproj", "{81988C8A-082A-4914-B0DA-C5B3B7CA8E0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News_portal.DAL", "News_portal.DAL\News_portal.DAL.csproj", "{81988C8A-082A-4914-B0DA-C5B3B7CA8E0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "News_portal.BLL", "News_portal.BLL\News_portal.BLL.csproj", "{84AE3047-4B7B-473B-B42D-88AEF9A290AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News_portal.BLL", "News_portal.BLL\News_portal.BLL.csproj", "{84AE3047-4B7B-473B-B42D-88AEF9A290AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{30248842-CE61-42A8-8C4A-28B6749E5846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{84AE3047-4B7B-473B-B42D-88AEF9A290AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84AE3047-4B7B-473B-B42D-88AEF9A290AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84AE3047-4B7B-473B-B42D-88AEF9A290AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30248842-CE61-42A8-8C4A-28B6749E5846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30248842-CE61-42A8-8C4A-28B6749E5846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30248842-CE61-42A8-8C4A-28B6749E5846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30248842-CE61-42A8-8C4A-28B6749E5846}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

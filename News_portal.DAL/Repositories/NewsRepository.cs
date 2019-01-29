@@ -23,14 +23,14 @@ namespace News_portal.DAL.Repositories
 
         public async Task<IEnumerable<News>> GetAllNewsAsync()
         {
-            return await _context.Set<News>().ToListAsync();
+            return await _context.Set<News>().AsNoTracking().ToListAsync();
         }
 
         public async Task<IQueryable<News>> SelectNewsAsync(Func<News, bool> predicate)
         {
             return await Task.Run(() =>
             {
-                return _context.Set<News>().Where(predicate).AsQueryable();
+                return _context.Set<News>().AsNoTracking().Where(predicate).AsQueryable();
             });
         }
 
@@ -38,7 +38,7 @@ namespace News_portal.DAL.Repositories
         {
             return await Task.Run(() =>
             {
-                return _context.Set<News>().Where(predicate);
+                return _context.Set<News>().AsNoTracking().Where(predicate);
             });
         }
 
@@ -51,7 +51,7 @@ namespace News_portal.DAL.Repositories
         {
             return await Task.Run(() =>
             {
-                return _context.Set<News>().Where(predicate).Count();
+                return _context.Set<News>().AsNoTracking().Where(predicate).Count();
             });
         }
 
@@ -78,7 +78,7 @@ namespace News_portal.DAL.Repositories
 
         public async Task<List<News>> GetUsersFavouritesAsync(string id)
         {
-                var news = await _context.NewsCollection.Where(u => u.NewsApplicationUsers.Select(x=>x.ApplicationUserId).Contains(id)).ToListAsync();     
+                var news = await _context.NewsCollection.Where(u => u.NewsApplicationUsers.Select(x=>x.ApplicationUserId).Contains(id)).AsNoTracking().ToListAsync();     
                 return news;      
         }
 

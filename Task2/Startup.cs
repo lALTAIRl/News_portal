@@ -6,8 +6,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using News_portal.Services;
 using AutoMapper;
-using Microsoft.AspNetCore.Authentication;
-using System.Security.Claims;
 using News_portal.BLL.Services;
 using News_portal.DAL.Data;
 using News_portal.DAL.Entities;

@@ -59,7 +59,9 @@ namespace News_portal.BLL.Services
         public async Task UpdateNewsAsync(NewsDTO newsDTO)
         {
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<NewsDTO, News>()).CreateMapper();
-            await _newsRepository.UpdateNewsAsync(mapper.Map<NewsDTO, News>(newsDTO));
+            var news = mapper.Map<NewsDTO, News>(newsDTO);
+            //await _newsRepository.UpdateNewsAsync(mapper.Map<NewsDTO, News>(newsDTO));
+            await _newsRepository.UpdateNewsAsync(news);
         }
 
         public async Task DeleteNewsAsync(NewsDTO newsDTO)
