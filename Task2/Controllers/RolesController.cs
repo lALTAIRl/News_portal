@@ -7,6 +7,7 @@ using News_portal.Models;
 using News_portal.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using News_portal.DAL.Entities;
 
 namespace Knowledge_pantry.Controllers
 {

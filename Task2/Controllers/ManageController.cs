@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -9,13 +8,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using News_portal.Models;
 using News_portal.Services;
-using News_portal.Data;
 using News_portal.Models.ManageViewModels;
-using News_portal.ViewModels;
-using Microsoft.EntityFrameworkCore;
+using News_portal.DAL.Data;
+using News_portal.DAL.Entities;
 
 namespace News_portal.Controllers
 {

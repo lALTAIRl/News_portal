@@ -4,14 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using News_portal.Data;
-using News_portal.Models;
 using News_portal.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
-using News_portal.Interfaces;
-using News_portal.Repositories;
+using News_portal.BLL.Services;
+using News_portal.DAL.Data;
+using News_portal.DAL.Entities;
+using News_portal.BLL.Interfaces;
+using News_portal.DAL.Interfaces;
+using News_portal.DAL.Repositories;
 
 namespace News_portal
 {
@@ -54,6 +56,8 @@ namespace News_portal
             services.AddSingleton(mapper);
 
             services.AddTransient<IEmailSender, EmailSender>();
+
+            services.AddTransient<INewsService, NewsService>();
 
             services.AddTransient<INewsRepository, NewsRepository>();
 

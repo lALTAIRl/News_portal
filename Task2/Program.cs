@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
-using News_portal.Models;
-using News_portal.Data;
 using Microsoft.Extensions.DependencyInjection;
+using News_portal.DAL;
+using News_portal.DAL.Entities;
+using News_portal.DAL.Data;
 
 namespace News_portal
 {

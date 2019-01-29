@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using News_portal.DAL.Entities;
 using News_portal.Models;
 using News_portal.Models.AccountViewModels;
 using News_portal.Services;
