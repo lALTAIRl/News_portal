@@ -12,6 +12,7 @@ using News_portal.DAL.Entities;
 using News_portal.BLL.Interfaces;
 using News_portal.DAL.Interfaces;
 using News_portal.DAL.Repositories;
+using News_portal.AutoMapper;
 
 namespace News_portal
 {

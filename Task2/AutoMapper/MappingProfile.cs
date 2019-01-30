@@ -8,7 +8,7 @@ using News_portal.ViewModels;
 using News_portal.DAL.Entities;
 using News_portal.BLL.DTO;
 
-namespace News_portal
+namespace News_portal.AutoMapper
 {
     public class MappingProfile : Profile
     {

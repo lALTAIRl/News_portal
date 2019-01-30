@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News_portal.DAL", "News_por
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News_portal.BLL", "News_portal.BLL\News_portal.BLL.csproj", "{84AE3047-4B7B-473B-B42D-88AEF9A290AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{30248842-CE61-42A8-8C4A-28B6749E5846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News_portal.TEST", "UnitTest\News_portal.TEST.csproj", "{30248842-CE61-42A8-8C4A-28B6749E5846}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
