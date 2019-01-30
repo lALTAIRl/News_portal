@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using News_portal.Models;
 using News_portal.ViewModels;
 using News_portal.DAL.Entities;
-using News_portal.BLL.DTO;
 
 namespace News_portal.AutoMapper
 {
@@ -20,16 +19,6 @@ namespace News_portal.AutoMapper
             CreateMap<NewsEditViewModel, News>();
 
             CreateMap<News, NewsViewModel>();
-
-
-
-
-            CreateMap<NewsCreateViewModel, NewsDTO>();
-
-            CreateMap<NewsDTO, NewsEditViewModel>();
-            CreateMap<NewsEditViewModel, NewsDTO>();
-
-            CreateMap<NewsDTO, NewsViewModel>();
         }
     }
 }

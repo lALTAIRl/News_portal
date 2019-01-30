@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using News_portal.BLL.DTO;
 using News_portal.BLL.Interfaces;
 using News_portal.Controllers;
 using News_portal.DAL.Entities;
@@ -31,7 +30,7 @@ namespace News_portal.TEST.ControllerTesting
         public void PublishNewsIsInstanceOfTypeTest()
         {
             //Arrange
-            var news = new NewsDTO
+            var news = new News
             {
                 Id = 1,
                 Caption = "test",

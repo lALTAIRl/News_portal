@@ -2,7 +2,6 @@
 using News_portal.Controllers;
 using Moq;
 using News_portal.BLL.Interfaces;
-using News_portal.BLL.DTO;
 using System;
 using Microsoft.AspNetCore.Identity;
 using News_portal.DAL.Entities;
@@ -17,7 +16,7 @@ namespace News_portal.TEST.ServiseTesting
         public void NewsServiceTesting()
         {
             //Arrange
-            var news = new NewsDTO
+            var news = new News
             {
                 Id = 1,
                 Caption = "test",
@@ -38,7 +37,7 @@ namespace News_portal.TEST.ServiseTesting
 
             //Assert
             Assert.IsNotNull(result);
-            Assert.IsInstanceOfType(result, typeof(NewsDTO));
+            Assert.IsInstanceOfType(result, typeof(News));
             Assert.AreEqual(news, result);
         }
     }

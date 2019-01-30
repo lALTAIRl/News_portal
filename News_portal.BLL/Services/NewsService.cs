@@ -1,7 +1,6 @@
 ﻿using News_portal.BLL.Interfaces;
 using News_portal.DAL.Interfaces;
 using News_portal.DAL.Entities;
-using News_portal.BLL.DTO;
 using System;
 using System.Collections.Generic;
 using AutoMapper;
@@ -22,76 +21,59 @@ namespace News_portal.BLL.Services
 
         protected async Task Save() => await _newsRepository.Save();
 
-        public async Task<IEnumerable<NewsDTO>> GetAllNewsAsync()
-        {
-            var mapper = new MapperConfiguration(cfg=> cfg.CreateMap<News, NewsDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<News>, List<NewsDTO>>(await _newsRepository.GetAllNewsAsync());
+        public async Task<IEnumerable<News>> GetAllNewsAsync()
+        {    
+            return await _newsRepository.GetAllNewsAsync();
         }
 
-        public async Task<IEnumerable<NewsDTO>> FindNewsAsync(Func<NewsDTO, bool> predicate)
+        public async Task<IEnumerable<News>> FindNewsAsync(Func<News, bool> predicate)
         {
-            var funcmapper = new MapperConfiguration(cfg => cfg.CreateMap<Func<NewsDTO, bool>, Func<News, bool>>()).CreateMapper();
-            var newsPredicate = funcmapper.Map<Func<NewsDTO, bool>, Func<News, bool>>(predicate);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<News>, IEnumerable<NewsDTO>>(await _newsRepository.FindNewsAsync(newsPredicate));
+          return await _newsRepository.FindNewsAsync(predicate);
         }
 
-        public async Task<IQueryable<NewsDTO>> SelectNewsAsync(Func<NewsDTO, bool> predicate)
+        public async Task<IQueryable<News>> SelectNewsAsync(Func<News, bool> predicate)
         {
-            var funcmapper = new MapperConfiguration(cfg => cfg.CreateMap<Func<NewsDTO, bool>, Func<News, bool>>()).CreateMapper();
-            var newsPredicate = funcmapper.Map<Func<NewsDTO, bool>, Func<News, bool>>(predicate);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<News>, IQueryable<NewsDTO>>(await _newsRepository.SelectNewsAsync(newsPredicate));
+            return await _newsRepository.SelectNewsAsync(predicate);
         }
 
-        public async Task<NewsDTO> GetNewsByIdAsync(int id)
+        public async Task<News> GetNewsByIdAsync(int id)
         {
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsDTO>()).CreateMapper();
-            return mapper.Map<News, NewsDTO>(await _newsRepository.GetNewsByIdAsync(id));
+            return await _newsRepository.GetNewsByIdAsync(id);
         }
 
-        public async Task CreateNewsAsync(NewsDTO newsDTO)
+        public async Task CreateNewsAsync(News news)
         {
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<NewsDTO, News>()).CreateMapper();
-            await _newsRepository.CreateNewsAsync(mapper.Map<NewsDTO, News>(newsDTO));
+            await _newsRepository.CreateNewsAsync(news);
         }
 
-        public async Task UpdateNewsAsync(NewsDTO newsDTO)
+        public async Task UpdateNewsAsync(News news)
         {
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<NewsDTO, News>()).CreateMapper();
-            var news = mapper.Map<NewsDTO, News>(newsDTO);
-            //await _newsRepository.UpdateNewsAsync(mapper.Map<NewsDTO, News>(newsDTO));
             await _newsRepository.UpdateNewsAsync(news);
         }
 
-        public async Task DeleteNewsAsync(NewsDTO newsDTO)
+        public async Task DeleteNewsAsync(News news)
         {
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<NewsDTO, News>()).CreateMapper();
-            await _newsRepository.DeleteNewsAsync(mapper.Map<NewsDTO, News>(newsDTO));
+            await _newsRepository.DeleteNewsAsync(news);
         }
 
-        public async Task<int> CountNewsAsync(Func<NewsDTO, bool> predicate)
+        public async Task<int> CountNewsAsync(Func<News, bool> predicate)
         {
-            var funcmapper = new MapperConfiguration(cfg => cfg.CreateMap<Func<NewsDTO, bool>, Func<News, bool>>()).CreateMapper();
-            var newsPredicate = funcmapper.Map<Func<NewsDTO, bool>, Func<News, bool>>(predicate);
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsDTO>()).CreateMapper();
-            return await _newsRepository.CountNewsAsync(newsPredicate);
+            return await _newsRepository.CountNewsAsync(predicate);
         }
 
-        public async Task<List<NewsDTO>> GetUsersFavouritesAsync(string id)
+        public async Task<List<News>> GetUsersFavouritesAsync(string id)
         {
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<News, NewsDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<News>, List<NewsDTO>>(await _newsRepository.GetUsersFavouritesAsync(id));
+            return await _newsRepository.GetUsersFavouritesAsync(id);
         }
 
-        public async Task RemoveNewsFromUserFavourites(int newsDTOId, string userId)
+        public async Task RemoveNewsFromUserFavourites(int newsId, string userId)
         {
-            await _newsRepository.RemoveNewsFromUserFavourites(newsDTOId, userId);
+            await _newsRepository.RemoveNewsFromUserFavourites(newsId, userId);
         }
 
-        public async Task AddNewsToUserFavourites(int newsDTOId, string userId)
+        public async Task AddNewsToUserFavourites(int newsId, string userId)
         {
-            await _newsRepository.AddNewsToUserFavourites(newsDTOId, userId);
+            await _newsRepository.AddNewsToUserFavourites(newsId, userId);
         }
 
     }

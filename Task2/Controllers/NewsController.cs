@@ -5,7 +5,6 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using News_portal.BLL.DTO;
 using News_portal.BLL.Interfaces;
 using News_portal.DAL.Entities;
 using News_portal.ViewModels;
@@ -38,7 +37,7 @@ namespace News_portal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var news = _mapper.Map<NewsDTO>(model);
+                var news = _mapper.Map<News>(model);
                 news.DateOfCreating = DateTime.Now;
                 await _newsService.CreateNewsAsync(news);
                 return RedirectToAction("NewsCollection");
@@ -56,8 +55,14 @@ namespace News_portal.Controllers
         public async Task<IActionResult> ViewNews(int id)
         {
             var news = await _newsService.GetNewsByIdAsync(id);
-            var model = _mapper.Map<NewsViewModel>(news);
-            return View(model);
+            if (news == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(news);
+            }
         }
 
         [Authorize(Roles = "admin")]
@@ -108,7 +113,7 @@ namespace News_portal.Controllers
         }
 
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> DeleteNews(NewsDTO news)
+        public async Task<IActionResult> DeleteNews(News news)
         {
             await _newsService.DeleteNewsAsync(news);
             return RedirectToAction("NewsManagement");

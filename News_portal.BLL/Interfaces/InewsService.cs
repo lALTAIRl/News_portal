@@ -1,4 +1,4 @@
-﻿using News_portal.BLL.DTO;
+﻿using News_portal.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,26 +9,26 @@ namespace News_portal.BLL.Interfaces
 {
     public interface INewsService
     {
-        Task<IEnumerable<NewsDTO>> GetAllNewsAsync();
+        Task<IEnumerable<News>> GetAllNewsAsync();
 
-        Task<IEnumerable<NewsDTO>> FindNewsAsync(Func<NewsDTO, bool> predicate);
+        Task<IEnumerable<News>> FindNewsAsync(Func<News, bool> predicate);
 
-        Task<IQueryable<NewsDTO>> SelectNewsAsync(Func<NewsDTO, bool> predicate);
+        Task<IQueryable<News>> SelectNewsAsync(Func<News, bool> predicate);
 
-        Task<NewsDTO> GetNewsByIdAsync(int id);
+        Task<News> GetNewsByIdAsync(int id);
 
-        Task CreateNewsAsync(NewsDTO newsDTO);
+        Task CreateNewsAsync(News news);
 
-        Task UpdateNewsAsync(NewsDTO newsDTO);
+        Task UpdateNewsAsync(News news);
 
-        Task DeleteNewsAsync(NewsDTO newsDTO);
+        Task DeleteNewsAsync(News news);
 
-        Task<int> CountNewsAsync(Func<NewsDTO, bool> predicate);
+        Task<int> CountNewsAsync(Func<News, bool> predicate);
 
-        Task<List<NewsDTO>> GetUsersFavouritesAsync(string id);
+        Task<List<News>> GetUsersFavouritesAsync(string id);
 
-        Task RemoveNewsFromUserFavourites(int newsDTOId, string userId);
+        Task RemoveNewsFromUserFavourites(int newsId, string userId);
 
-        Task AddNewsToUserFavourites(int newsDTOId, string userId);
+        Task AddNewsToUserFavourites(int newsId, string userId);
     }
 }
