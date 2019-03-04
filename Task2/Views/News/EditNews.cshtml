@@ -1,4 +1,4 @@
-﻿@model Task2.ViewModels.NewsEditViewModel
+﻿@model News_portal.ViewModels.NewsEditViewModel
 @{
     ViewData["Title"] = "EditNews";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,6 +13,7 @@
     .form-group {
         margin-top: 2%;
     }
+
     .field-validation-error {
         color: #b94a48;
     }
@@ -75,7 +76,7 @@
 
     <div class="form-group">
         <div class=" col-sm-offset-2">
-            <button type="submit" class="btn btn-primary" asp-action="ApplyNewsEditing" asp-route-id="@Model.Id">Save</button>
+            <button type="submit" class="btn btn-primary" asp-action="UpdateNews" asp-route-id="@Model.Id">Save</button>
         </div>
     </div>
 </form>

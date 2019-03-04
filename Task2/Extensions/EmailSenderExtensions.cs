@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using Task2.Services;
+using News_portal.Services;
 
-namespace Task2.Services
+namespace News_portal.Services
 {
     public static class EmailSenderExtensions
     {

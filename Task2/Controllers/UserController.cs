@@ -1,59 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Task2.Models;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Task2.Services;
-using Microsoft.Extensions.Logging;
-using System.Text.Encodings.Web;
-using Task2.Data;
+using Microsoft.AspNetCore.Mvc;
+using News_portal.DAL.Entities;
 
-namespace Task2.Controllers
+namespace News_portal.Controllers
 {
     public class UserController : Controller
     {
-        //private readonly UserManager<ApplicationUser> _ApplicationUserManager;
-        //private readonly SignInManager<ApplicationUser> _signInManager;
-        //private readonly RoleManager<IdentityRole> _roleManager;
-        //private readonly IEmailSender _emailSender;
-        //private readonly ILogger _logger;
-        //private readonly UrlEncoder _urlEncoder;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        //private const string AuthenticatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
-        //private const string RecoveryCodesKey = nameof(RecoveryCodesKey);
-
-        //ApplicationDbContext db;
-
-        //public UserController(UserManager<ApplicationUser> ApplicationUserManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager, IEmailSender emailSender, ILogger<ManageController> logger, UrlEncoder urlEncoder, ApplicationDbContext context) : base(ApplicationUserManager, signInManager, roleManager, emailSender, logger, urlEncoder, context)
-        //{
-        //    _ApplicationUserManager = ApplicationUserManager;
-        //    _signInManager = signInManager;
-        //    _roleManager = roleManager;
-        //    _emailSender = emailSender;
-        //    _logger = logger;
-        //    _urlEncoder = urlEncoder;
-        //    db = context;
-        //}
-
-
-        public IActionResult Index()
+        public UserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
-            return View();
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        public IActionResult FavoritesList()
+        [Authorize]
+        public async Task<IActionResult> DeleteUser(string id)
         {
-            return View();
+            var user = await _userManager.FindByIdAsync(id);
+            if (user.Email == User.Identity.Name)
+            {
+                await _signInManager.SignOutAsync();
+            }
+            await _userManager.DeleteAsync(user);
+            return RedirectPermanent("/User/UserList");
         }
 
-        //public async Task<IActionResult> AddToFavoritesList(/*   */)
-        //{
-        //    ////await
-        //    ////
-        //    db.SaveChanges();
-        //    return RedirectToAction("FavoritesList");
-        //}
+        [Authorize]
+        public async Task<IActionResult> LockUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            user.LockoutEnabled = false;
+            if (user.Email == User.Identity.Name)
+            {
+                await _signInManager.SignOutAsync();
+            }
+            await _userManager.UpdateAsync(user);
+            return RedirectPermanent("/User/UserList");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> UnLockUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            user.LockoutEnabled = true;
+            if (user.Email == User.Identity.Name)
+            {
+                await _signInManager.SignOutAsync();
+            }
+            await _userManager.UpdateAsync(user);
+            return RedirectPermanent("/User/UserList");
+        }
+
+        [Authorize(Roles = "admin")]
+        public IActionResult UserList()
+        {
+            var users = _userManager.Users;
+            return View(users);
+        }
     }
 }

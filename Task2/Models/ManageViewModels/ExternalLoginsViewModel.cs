@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace Task2.Models.ManageViewModels
+namespace News_portal.Models.ManageViewModels
 {
     public class ExternalLoginsViewModel
     {

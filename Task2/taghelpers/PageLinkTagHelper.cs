@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Task2.Models;
-using Task2.ViewModels;
+using News_portal.Models;
+using News_portal.ViewModels;
 
-namespace Task2.TagHelpers
+namespace News_portal.TagHelpers
 {
     public class PageLinkTagHelper : TagHelper
     {
@@ -30,14 +30,11 @@ namespace Task2.TagHelpers
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
             output.TagName = "div";
 
-            // набор ссылок будет представлять список ul
             TagBuilder tag = new TagBuilder("ul");
             tag.AddCssClass("pagination");
 
-            // формируем три ссылки - на текущую, предыдущую и следующую
             TagBuilder currentItem = CreateTag(PageModel.PageNumber, urlHelper);
 
-            // создаем ссылку на предыдущую страницу, если она есть
             if (PageModel.HasPreviousPage)
             {
                 TagBuilder prevItem = CreateTag(PageModel.PageNumber - 1, urlHelper);
@@ -45,7 +42,7 @@ namespace Task2.TagHelpers
             }
 
             tag.InnerHtml.AppendHtml(currentItem);
-            // создаем ссылку на следующую страницу, если она есть
+
             if (PageModel.HasNextPage)
             {
                 TagBuilder nextItem = CreateTag(PageModel.PageNumber + 1, urlHelper);

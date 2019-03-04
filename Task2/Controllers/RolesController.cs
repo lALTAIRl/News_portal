@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Task2.Models;
-using Task2.ViewModels;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
+using News_portal.ViewModels;
+using News_portal.DAL.Entities;
 
-namespace Knowledge_pantry.Controllers
+namespace News_portal.Controllers
 {
     public class RolesController : Controller
     {
@@ -54,35 +52,11 @@ namespace Knowledge_pantry.Controllers
             return RedirectToAction("RolesList");
         }
 
-        [Authorize(Roles = "admin")]
-        public async Task<IActionResult> UserList()
-        {
-            IQueryable UserList = _userManager.Users;
-            List<UserList> TableUserList = new List<UserList>();
-            foreach (ApplicationUser user in UserList)
-            {
-                var userRoles = await _userManager.GetRolesAsync(user);
-                TableUserList.Add(new UserList()
-                {
-                    Email = user.Email,
-                    Auth = user.Auth,
-                    Register = user.Register,
-                    ID = user.Id,
-                    Role = userRoles.FirstOrDefault(),
-                    Status = user.LockoutEnabled
-                });
-
-            }
-            return View(TableUserList);
-        }
-
         public async Task<IActionResult> Edit(string userId)
         {
-            // получаем пользователя
             ApplicationUser user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
-                // получем список ролей пользователя
                 var userRoles = await _userManager.GetRolesAsync(user);
                 var allRoles = _roleManager.Roles.ToList();
                 ChangeRoleViewModel model = new ChangeRoleViewModel
@@ -103,19 +77,12 @@ namespace Knowledge_pantry.Controllers
             ApplicationUser user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
-                // получем список ролей пользователя
                 var userRoles = await _userManager.GetRolesAsync(user);
-                // получаем все роли
                 var allRoles = _roleManager.Roles.ToList();
-                // получаем список ролей, которые были добавлены
                 var addedRoles = roles.Except(userRoles);
-                // получаем роли, которые были удалены
                 var removedRoles = userRoles.Except(roles);
-
                 await _userManager.AddToRolesAsync(user, addedRoles);
-
                 await _userManager.RemoveFromRolesAsync(user, removedRoles);
-
                 return RedirectToAction("UserList");
             }
 

@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
-using Task2.Models;
-using Task2.Data;
 using Microsoft.Extensions.DependencyInjection;
+using News_portal.DAL;
+using News_portal.DAL.Entities;
+using News_portal.DAL.Data;
 
-namespace Task2
+namespace News_portal
 {
     public class Program
     {
         public static async Task Main(string[] args)
         {
-            //BuildWebHost(args).Run();
             var host = BuildWebHost(args);
 
             using (var scope = host.Services.CreateScope())

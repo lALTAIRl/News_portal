@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Task2.Models;
-using Task2.Models.AccountViewModels;
-using Task2.Services;
+using News_portal.DAL.Entities;
+using News_portal.Models.AccountViewModels;
+using News_portal.Services;
 
-namespace Task2.Controllers
+namespace News_portal.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
@@ -46,9 +42,7 @@ namespace Task2.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(string returnUrl = null)
         {
-            // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -58,10 +52,10 @@ namespace Task2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
+
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                // This doesn't count login failures towards account lockout
                 ApplicationUser user11 = await _userManager.FindByEmailAsync(model.Email);
                 if(user11 != null  )
                 {
@@ -72,16 +66,11 @@ namespace Task2.Controllers
 
                 }
 
-
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    user11.Auth = DateTime.Now;
                     await _userManager.UpdateAsync(user11);  
-
-
 
                     return RedirectToLocal(returnUrl);
 
@@ -103,7 +92,6 @@ namespace Task2.Controllers
                 }
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
@@ -111,7 +99,6 @@ namespace Task2.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> LoginWith2fa(bool rememberMe, string returnUrl = null)
         {
-            // Ensure the user has gone through the username & password screen first
             var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
 
             if (user == null)
@@ -167,7 +154,6 @@ namespace Task2.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> LoginWithRecoveryCode(string returnUrl = null)
         {
-            // Ensure the user has gone through the username & password screen first
             var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
             if (user == null)
             {
@@ -216,57 +202,6 @@ namespace Task2.Controllers
                 return View();
             }
         }
-        
-public async Task<bool> DeleteUser(List<string> arr)
-        {
-            ApplicationUser user = new ApplicationUser();
-            foreach (string id in arr)
-            {
-                user = await _userManager.FindByIdAsync(id);
-                if (user.Email == User.Identity.Name)
-                {
-                    await _signInManager.SignOutAsync();
-                }
-                await _userManager.DeleteAsync(user);
-            }
-            return true;
-        }
-
-
-        [Authorize] 
-        public async Task<bool> LockUser(List<string> arr)
-        {
-            ApplicationUser user = new ApplicationUser();
-            foreach (string id in arr)
-            {
-                user = await _userManager.FindByIdAsync(id);
-                user.LockoutEnabled = false;
-                if (user.Email == User.Identity.Name)
-                {
-                    await _signInManager.SignOutAsync();
-                }
-                await _userManager.UpdateAsync(user);
-            }
-            return true;
-        }
-
-
-        [Authorize]
-        public async Task<bool> UnLockUser(List<string> arr)
-        {
-            ApplicationUser user = new ApplicationUser();
-            foreach (string id in arr)
-            {
-                user = await _userManager.FindByIdAsync(id);
-                user.LockoutEnabled = true;
-                if (user.Email == User.Identity.Name)
-                {
-                    await _signInManager.SignOutAsync();
-                }
-                await _userManager.UpdateAsync(user);
-            }
-            return true;
-        }
 
         [HttpGet]
         [AllowAnonymous]
@@ -291,7 +226,7 @@ public async Task<bool> DeleteUser(List<string> arr)
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Register= DateTime.Now, Auth = DateTime.Now};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -307,8 +242,6 @@ public async Task<bool> DeleteUser(List<string> arr)
                 }
                 AddErrors(result);
             }
-
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
@@ -326,7 +259,6 @@ public async Task<bool> DeleteUser(List<string> arr)
         [ValidateAntiForgeryToken]
         public IActionResult ExternalLogin(string provider, string returnUrl = null)
         {
-            // Request a redirect to the external login provider.
             var redirectUrl = Url.Action(nameof(ExternalLoginCallback), "Account", new { returnUrl });
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             return Challenge(properties, provider);
@@ -347,7 +279,6 @@ public async Task<bool> DeleteUser(List<string> arr)
                 return RedirectToAction(nameof(Login));
             }
 
-            // Sign in the user with this external login provider if the user already has a login.
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
             if (result.Succeeded)
             {
@@ -360,7 +291,6 @@ public async Task<bool> DeleteUser(List<string> arr)
             }
             else
             {
-                // If the user does not have an account, then ask the user to create an account.
                 ViewData["ReturnUrl"] = returnUrl;
                 ViewData["LoginProvider"] = info.LoginProvider;
                 var email = info.Principal.FindFirstValue(ClaimTypes.Email);
@@ -375,7 +305,6 @@ public async Task<bool> DeleteUser(List<string> arr)
         {
             if (ModelState.IsValid)
             {
-                // Get the information about the user from the external login provider
                 var info = await _signInManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
@@ -434,20 +363,14 @@ public async Task<bool> DeleteUser(List<string> arr)
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
                     return RedirectToAction(nameof(ForgotPasswordConfirmation));
                 }
-
-                // For more information on how to enable account confirmation and password reset please
-                // visit https://go.microsoft.com/fwlink/?LinkID=532713
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
                 await _emailSender.SendEmailAsync(model.Email, "Reset Password",
                    $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
                 return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }
-
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
@@ -482,7 +405,6 @@ public async Task<bool> DeleteUser(List<string> arr)
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
-                // Don't reveal that the user does not exist
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
             var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);

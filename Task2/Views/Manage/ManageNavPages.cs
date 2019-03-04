@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
-namespace Task2.Views.Manage
+namespace News_portal.Views.Manage
 {
     public static class ManageNavPages
     {

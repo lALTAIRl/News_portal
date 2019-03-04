@@ -1,5 +1,5 @@
-﻿@model Task2.ViewModels.PageIndexViewModel
-@addTagHelper "*, Task2"
+﻿@model News_portal.ViewModels.PageIndexViewModel
+@addTagHelper "*, News_portal"
 
 <h2 align="center">News Management</h2>
 
@@ -32,66 +32,66 @@
     <a asp-area="" asp-controller="News" asp-action="CreateNews" class="btn form-control btn-success">Create news</a>
 }
 
-    <table class="table">
-        @foreach (var news in Model.EnumNews)
-        {
-            <tr>
-                <td align="center">
-                    <div class="control-label">
-                        <a asp-action="ViewNews" asp-route-id="@news.Id"><h3>@news.Caption</h3></a>
-                    </div>
-                </td>
+<table class="table">
+    @foreach (var news in Model.EnumNews)
+    {
+        <tr>
+            <td align="center">
+                <div class="control-label">
+                    <a asp-action="ViewNews" asp-route-id="@news.Id"><h3>@news.Caption</h3></a>
+                </div>
+            </td>
 
-                <td>
-                    <div class="control-label">
-                        Created: @news.DateOfCreating
-                    </div>
-                </td>
+            <td>
+                <div class="control-label">
+                    Created: @news.DateOfCreating
+                </div>
+            </td>
 
-                @if (User.IsInRole("admin"))
-                {
-                    <td width="20%">
-                        <div class="btn-group">
+            @if (User.IsInRole("admin"))
+            {
+                <td width="20%">
+                    <div class="btn-group">
 
-                            @if (news.IsPublished == true)
-                            {
+                        @if (news.IsPublished == true)
+                        {
 
-                                <form asp-action="UnpublishNews" asp-route-id="@news.Id" method="post" class="btn-group">
-                                    <button type="submit" class="btn btn-toolbar btn-info">
-                                        Unublish
-                                    </button>
-                                </form>
-
-                            }
-
-                            @if (news.IsPublished == false)
-                            {
-
-                                <form asp-action="PublishNews" asp-route-id="@news.Id" method="post" class="btn-group">
-                                    <button type="submit" class="btn btn-toolbar btn-success">
-                                        Publish
-                                    </button>
-                                </form>
-
-                            }
-
-                            <form asp-action="EditNews" asp-route-id="@news.Id" method="get" class="btn-group">
-                                <button type="submit" class="btn btn-toolbar btn-primary">
-                                    Edit
+                            <form asp-action="UnpublishNews" asp-route-id="@news.Id" method="post" class="btn-group">
+                                <button type="submit" class="btn btn-toolbar btn-info">
+                                    Unublish
                                 </button>
                             </form>
 
-                            <form asp-action="DeleteNews" asp-route-id="@news.Id" method="post" class="btn-toobar">
-                                <button type="submit" class="btn btn-toolbar btn-danger">
-                                    Delete
+                        }
+
+                        @if (news.IsPublished == false)
+                        {
+
+                            <form asp-action="PublishNews" asp-route-id="@news.Id" method="post" class="btn-group">
+                                <button type="submit" class="btn btn-toolbar btn-success">
+                                    Publish
                                 </button>
                             </form>
 
-                        </div>
-                    </td>
-                }
-            </tr>
-        }
-    </table>
+                        }
+
+                        <form asp-action="EditNews" asp-route-id="@news.Id" method="get" class="btn-group">
+                            <button type="submit" class="btn btn-toolbar btn-primary">
+                                Edit
+                            </button>
+                        </form>
+
+                        <form asp-action="DeleteNews" asp-route-id="@news.Id" method="post" class="btn-toobar">
+                            <button type="submit" class="btn btn-toolbar btn-danger">
+                                Delete
+                            </button>
+                        </form>
+
+                    </div>
+                </td>
+            }
+        </tr>
+    }
+</table>
 
 <page-link page-model="Model.PageViewModel" page-action="NewsManagement"></page-link>

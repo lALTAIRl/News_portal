@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Task2": {
+    "News_portal": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

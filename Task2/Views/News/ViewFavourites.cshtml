@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Task2.Models.News>
+﻿@model IEnumerable<News_portal.DAL.Entities.News>
 @{
     ViewData["Title"] = "ViewFavourites";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -78,32 +78,32 @@
 
 @foreach (var news in Model)
 {
-        <div class="news_container">
-            <div class="control-label" align="center">
-                <a asp-action="ViewNews" asp-route-id="@news.Id"><h1><b>@news.Caption</b></h1></a>
-            </div>
-
-            <div class="image" align="center">
-                <img src="@news.ImageURL">
-            </div>
-
-            <div class="newstext">
-                <p>
-                    <div class="description">
-                        @news.Description
-                    </div>
-                    <a asp-action="ViewNews" asp-route-id="@news.Id">Show more</a>
-                </p>
-            </div>
-
-            <div class="favourites">
-                <form asp-action="RemoveFromFavourites" asp-route-id="@news.Id" method="post">
-                    <button type="submit" class="btn btn-1">
-                        <img src="http://s1.iconbird.com/ico/1212/264/w128h1281355246842delete2.png">
-                    </button>                  
-                </form>
-            </div>
+    <div class="news_container">
+        <div class="control-label" align="center">
+            <a asp-action="ViewNews" asp-route-id="@news.Id"><h1><b>@news.Caption</b></h1></a>
         </div>
+
+        <div class="image" align="center">
+            <img src="@news.ImageURL">
+        </div>
+
+        <div class="newstext">
+            <p>
+                <div class="description">
+                    @news.Description
+                </div>
+                <a asp-action="ViewNews" asp-route-id="@news.Id">Show more</a>
+            </p>
+        </div>
+
+        <div class="favourites">
+            <form asp-action="RemoveFromFavourites" asp-route-id="@news.Id" method="post">
+                <button type="submit" class="btn btn-1">
+                    <img src="http://s1.iconbird.com/ico/1212/264/w128h1281355246842delete2.png">
+                </button>
+            </form>
+        </div>
+    </div>
 }
 
 <page-link page-model="Model.PageViewModel" page-action="NewsCollection"></page-link>
